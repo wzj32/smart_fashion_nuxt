@@ -118,32 +118,27 @@
         </div>
 
         <!-- Solution list items -->
-        <div class="absolute top-[239px] left-0 h-[52px] flex items-center font-medium text-white text-xl tracking-[0] leading-[25.6px]">
-          多模態內容分析
+        <div class="absolute top-[239px] left-0 w-[260px] flex items-center justify-between h-[52px]">
+          <span class="flex items-center gap-2 font-medium text-white text-xl tracking-[0] leading-[25.6px]"><img src="/images/mn6tdh0s8MHj5j/background.svg" class="w-5 h-5" alt="icon" />多模態內容分析</span>
+          <span class="font-normal text-white text-xl tracking-[0] leading-[25.6px]">01.</span>
         </div>
-        <div class="absolute top-[233px] left-[199px] h-[26px] flex items-center font-normal text-white text-xl tracking-[0] leading-[25.6px] whitespace-nowrap">
-          01.
-        </div>
-
-        <div class="absolute top-[341px] left-0 h-[26px] flex items-center font-medium text-slate-300 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-          專業知識增強型 LLM
-        </div>
-        <div class="absolute top-[341px] left-[199px] h-[26px] flex items-center font-normal text-slate-400 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-          02.
+        <div class="absolute top-[291px] left-0 w-[338px] h-px bg-white">
+          <div class="h-full w-[15%] bg-cyan-500" />
         </div>
 
-        <div class="absolute top-[387px] left-0 h-[26px] flex items-center font-medium text-slate-300 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-          多維度品質評分系統
-        </div>
-        <div class="absolute top-[387px] left-[199px] h-[26px] flex items-center font-normal text-slate-400 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-          03.
+        <div class="absolute top-[341px] left-0 w-[260px] flex items-center justify-between h-[26px]">
+          <span class="flex items-center gap-2 font-medium text-slate-300 text-base tracking-[0] leading-[25.6px]">專業知識增強型 LLM</span>
+          <span class="font-normal text-slate-400 text-base tracking-[0] leading-[25.6px]">02.</span>
         </div>
 
-        <div class="absolute top-[433px] left-0 h-[26px] flex items-center font-medium text-slate-300 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-          審核輔助界面
+        <div class="absolute top-[387px] left-0 w-[260px] flex items-center justify-between h-[26px]">
+          <span class="font-medium text-slate-300 text-base tracking-[0] leading-[25.6px]">多維度品質評分系統</span>
+          <span class="font-normal text-slate-400 text-base tracking-[0] leading-[25.6px]">03.</span>
         </div>
-        <div class="absolute top-[433px] left-[199px] h-[26px] flex items-center font-normal text-slate-400 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-          04.
+
+        <div class="absolute top-[433px] left-0 w-[260px] flex items-center justify-between h-[26px]">
+          <span class="font-medium text-slate-300 text-base tracking-[0] leading-[25.6px]">審核輔助界面</span>
+          <span class="font-normal text-slate-400 text-base tracking-[0] leading-[25.6px]">04.</span>
         </div>
       </div>
     </section>

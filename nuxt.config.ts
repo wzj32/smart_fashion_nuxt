@@ -15,6 +15,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'AI 驅動開發，智慧交付每一行程式碼。' },
       ],
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/images/mn6tdh0s8MHj5j/background.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
       ],
