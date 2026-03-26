@@ -1,5 +1,5 @@
 <template>
-  <FeaturedCaseStudies />
+  <KnowledgeReviewMain />
 </template>
 
 <script setup lang="ts">

@@ -1,14 +1,14 @@
 <template>
   <header
-    class="flex w-full h-20 items-center justify-center bg-transparent border-b border-[#00000014] backdrop-blur-[6px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(6px)_brightness(100%)] sticky top-0 z-50"
+    class="flex w-full h-20 items-center justify-center px-20 bg-transparent border-b border-[#00000014] backdrop-blur-[6px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(6px)_brightness(100%)] sticky top-0 z-50"
   >
-    <div class="flex w-full max-w-[1280px] items-center justify-between px-6 py-0">
+    <div class="flex w-full items-center justify-between px-6 py-0">
       <!-- Logo -->
       <NuxtLink to="/" class="inline-flex items-center gap-3 flex-shrink-0">
         <img
           class="w-8 h-8"
           alt="Background"
-          src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/background.svg"
+          src="/images/mn6tdh0s8MHj5j/background.svg"
         />
         <span
           class="flex items-center h-8 font-normal text-slate-50 text-xl tracking-[0] leading-8 whitespace-nowrap"

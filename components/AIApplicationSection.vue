@@ -1,126 +1,210 @@
 <template>
-  <section class="relative w-full bg-[#ffffff03] py-16 overflow-hidden">
+  <section class="relative w-full py-12 md:py-16 overflow-hidden">
     <!-- Section Header -->
-    <div class="relative flex flex-col items-center mb-12">
-      <!-- Faint background text -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center font-normal text-[#f8fafc1a] text-[100px] tracking-[0] leading-normal whitespace-nowrap pointer-events-none select-none">
-        <span class="text-[100px]">S</span>
-        <span class="text-[40px]">ELECTED CASES</span>
-      </div>
-
-      <!-- Decorative shapes -->
-      <div class="relative z-10 flex items-center gap-[8.6px] mt-[29px] mb-2">
-        <div class="w-[20.57px] h-[20.57px] border border-solid border-violet-600" />
-        <div class="w-[20.57px] h-[20.57px] rounded-[10.29px] border border-solid border-blue-500" />
-        <div class="w-[18.55px] h-[18.55px] bg-cyan-500 border border-solid rotate-45" />
-      </div>
-
-      <!-- Title -->
-      <div class="relative z-10 flex items-center font-semibold text-slate-50 text-[40px] tracking-[0] leading-normal mt-1">
-        精選案例
-      </div>
+    <div class="mb-8 md:mb-12">
+      <SectionHeader first-letter="S" rest-text="ELECTED CASES" title="精選案例" fill-third />
     </div>
 
-    <!-- Cards Row -->
-    <div class="relative flex items-stretch justify-center gap-0 px-8 max-w-[1440px] mx-auto">
-      <!-- Left Card -->
-      <div class="relative flex-1 max-w-[387px]">
-        <img
-          class="absolute top-0 left-0 w-[357px] h-[294px] z-10 pointer-events-none"
-          alt="Subtract"
-          src="https://c.animaapp.com/mn5gtr03DZ8elR/img/subtract-1.svg"
+    <!-- Carousel -->
+    <div class="relative max-w-screen-xl mx-auto px-4 md:px-20">
+      <!-- Cards container -->
+      <div class="flex items-stretch justify-center gap-0 overflow-hidden">
+        <div
+          v-for="pos in visibleCards"
+          :key="pos.item.id + '-' + currentIndex"
+          class="relative flex-shrink-0 transition-all duration-500 ease-in-out bg-no-repeat"
+          :class="[
+            pos.position === 'center' ? 'z-20 w-full md:w-[387px]' : 'z-10 hidden md:block md:w-[387px]',
+          ]"
+          :style="cardBgStyle(pos.position)"
+        >
+          <button
+            v-if="pos.position === 'left'"
+            @click="prev"
+            class="absolute md:left-100 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
+            style="right: 5px;"
+          >
+            <img src="/images/mn5gtr03DZ8elR/group-24.png" alt="上一個" class="w-10 h-10 md:w-12 md:h-12" />
+          </button>
+          <button
+            v-if="pos.position === 'right'"
+            @click="next"
+            class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
+            style="left: 5px;"
+          >
+            <img src="/images/mn5gtr03DZ8elR/group-23.png" alt="下一個" class="w-10 h-10 md:w-12 md:h-12" />
+          </button>
+
+          <!-- Center card decoration -->
+          <img
+            v-if="pos.position === 'center'"
+            class="absolute top-6 right-0 w-16 h-16 md:w-20 md:h-20 z-20 pointer-events-none"
+            alt=""
+            src="/images/mn5gtr03DZ8elR/rectangle-58.png"
+          />
+
+          <!-- Card body -->
+          <div
+            class="relative w-full h-[280px] md:h-[295px] rounded-[10px] overflow-hidden transition-all duration-500"
+            :class="pos.position === 'center' ? 'border border-slate-200/30' : ''"
+            :style="{ background: pos.position === 'center'
+              ? 'linear-gradient(135deg, rgba(45,70,135,0.4) 0%, rgba(11,17,33,1) 100%)'
+              : ''
+            }"
+          >
+            <div 
+              class="flex flex-col justify-center h-full px-5 py-8 md:px-6 md:py-0 md:absolute md:top-[-3px]"
+              :class="pos.position === 'center' ? 'md:left-1' : pos.position === 'left' ? 'md:left-3 md:right-10' : 'md:left-10'"
+            >
+              <!-- Badge -->
+              <span
+                class="inline-block self-start rounded-full border px-4 py-0.5 text-sm md:text-base whitespace-nowrap"
+                :class="[pos.item.badgeBorderClass, pos.item.badgeTextClass]"
+              >
+                {{ pos.item.badge }}
+              </span>
+
+              <!-- Title -->
+              <h3 class="mt-4 text-lg md:text-xl font-medium text-slate-50 leading-normal">
+                {{ pos.item.title }}
+              </h3>
+
+              <!-- Description -->
+              <p class="mt-4 md:mt-5 text-sm text-slate-400 leading-relaxed max-w-[327px]">
+                {{ pos.item.description }}
+              </p>
+
+              <!-- Learn More -->
+              <NuxtLink
+                :to="pos.item.link"
+                class="mt-5 inline-flex items-center gap-2 no-underline hover:opacity-80 transition-opacity"
+              >
+                <span
+                  class="text-base"
+                  :class="pos.position === 'center' ? 'font-light text-white' : 'text-slate-400'"
+                >
+                  了解更多
+                </span>
+                <img
+                  v-if="pos.position === 'center'"
+                  class="w-5 h-[7px]"
+                  alt=""
+                  src="/images/mn5gtr03DZ8elR/arrow-2.svg"
+                />
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile dots indicator -->
+      <div class="flex md:hidden items-center justify-center gap-2 mt-6">
+        <button
+          v-for="(item, index) in cases"
+          :key="item.id"
+          @click="currentIndex = index"
+          class="w-2 h-2 rounded-full border-none cursor-pointer transition-all duration-300 p-0"
+          :class="index === currentIndex ? 'bg-blue-500 w-4' : 'bg-slate-600'"
         />
-        <div class="relative w-full h-[295px] rounded-[10px] border-[0.4px] border-solid border-slate-700 overflow-hidden"
-          style="background: linear-gradient(135deg, rgba(20,30,60,0.6) 0%, rgba(11,17,33,1) 100%);">
-          <div class="absolute top-[53px] left-[20px] w-[364px] h-[205px]">
-            <!-- Badge -->
-            <div class="inline-flex flex-col w-[153px] h-[26px] items-center justify-center rounded-[20px] border-[0.5px] border-solid border-violet-600">
-              <span class="font-normal text-violet-600 text-base text-center tracking-[0.50px] leading-normal">AI CUSTOMER SERVICE</span>
-            </div>
-            <!-- Title & Desc -->
-            <div class="mt-[14px] flex flex-col gap-5">
-              <div class="flex items-center w-[227px] h-6 font-medium text-slate-50 text-xl tracking-[0] leading-normal">AI 輔助獸醫系統</div>
-              <div class="w-[263px] font-normal text-slate-400 text-sm leading-[22px] tracking-[0]">
-                使用 AI 模型，輔助獸醫進行病歷預覽，加速診斷進度，並提供寵物主人專業知識解釋的管道
-              </div>
-            </div>
-            <div class="mt-[20px]">
-              <span class="font-normal text-slate-400 text-base tracking-[0] leading-[21px]">了解更多</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Center Card (featured) -->
-      <div class="relative flex-1 max-w-[387px] z-20">
-        <!-- Navigation arrows -->
-        <div class="absolute left-[-24px] top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full border border-solid border-slate-600 bg-[rgba(11,17,33,0.8)] cursor-pointer">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 12L6 8L10 4" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="absolute right-[-24px] top-1/2 -translate-y-1/2 z-30 flex items-center justify-center w-10 h-10 rounded-full border border-solid border-slate-600 bg-[rgba(11,17,33,0.8)] cursor-pointer">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 4L10 8L6 12" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-
-        <!-- Rectangle top-right decoration -->
-        <img class="absolute top-[26px] right-0 w-20 h-20 z-20 pointer-events-none" alt="Rectangle" src="https://c.animaapp.com/mn5gtr03DZ8elR/img/rectangle-58.png" />
-
-        <div class="relative w-full h-[295px] rounded-[10px] border-[0.4px] border-solid border-slate-200 overflow-hidden"
-          style="background: linear-gradient(135deg, rgba(45,70,135,0.4) 0%, rgba(11,17,33,1) 100%);">
-          <!-- Group icon -->
-          <img class="absolute top-[70px] left-[-93px] w-12 h-12 z-10 pointer-events-none" alt="Group" src="https://c.animaapp.com/mn5gtr03DZ8elR/img/group-24.png" />
-
-          <div class="absolute top-[53px] left-[20px] w-[364px] h-[205px]">
-            <!-- Badge -->
-            <div class="inline-flex flex-col w-[126px] h-[26px] items-center justify-center rounded-[20px] border-[0.5px] border-solid border-blue-500">
-              <span class="font-normal text-blue-500 text-base text-center tracking-[0.50px] leading-normal">BACKEND SYSTEM</span>
-            </div>
-            <!-- Title & Desc -->
-            <div class="mt-[14px] flex flex-col gap-5">
-              <div class="flex items-center w-[227px] h-6 font-medium text-slate-50 text-xl tracking-[0] leading-normal">專業知識內容審核系統</div>
-              <div class="w-[327px] font-normal text-slate-400 text-sm leading-[22px] tracking-[0]">
-                使用 AI 技術分析專業文件與媒體內容，<br />即時識別準確性與合規性問題，提升審核效率
-              </div>
-            </div>
-            <!-- Learn More -->
-            <div class="mt-[20px] flex items-center gap-2">
-              <span class="font-extralight text-white text-base tracking-[0] leading-[21px]">了解更多</span>
-              <img class="w-[21px] h-[7px]" alt="Arrow" src="https://c.animaapp.com/mn5gtr03DZ8elR/img/arrow-2.svg" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Card -->
-      <div class="relative flex-1 max-w-[387px]">
-        <img class="absolute top-0 right-0 w-[357px] h-[294px] z-10 pointer-events-none" alt="Subtract" src="https://c.animaapp.com/mn5gtr03DZ8elR/img/subtract.svg" />
-        <img class="absolute top-[70px] right-[-10px] w-12 h-12 z-20 pointer-events-none" alt="Group" src="https://c.animaapp.com/mn5gtr03DZ8elR/img/group-23.png" />
-        <div class="relative w-full h-[295px] rounded-[10px] border-[0.4px] border-solid border-slate-700 overflow-hidden"
-          style="background: linear-gradient(135deg, rgba(20,30,60,0.6) 0%, rgba(11,17,33,1) 100%);">
-          <div class="absolute top-[53px] left-[20px] w-[364px] h-[205px]">
-            <!-- Badge -->
-            <div class="inline-flex flex-col w-[153px] h-[26px] items-center justify-center rounded-[20px] border-[0.5px] border-solid border-cyan-500">
-              <span class="font-normal text-cyan-500 text-base text-center tracking-[0.50px] leading-normal">AI CUSTOMER SERVICE</span>
-            </div>
-            <!-- Title & Desc -->
-            <div class="mt-[14px] flex flex-col gap-5">
-              <div class="flex items-center w-[227px] h-6 font-medium text-slate-50 text-xl tracking-[0] leading-normal">24/7 AI 智能客服</div>
-              <div class="w-[286px] font-normal text-slate-400 text-sm leading-[22px] tracking-[0]">
-                使用 AI 模型協助客服 7*24 不間斷服務，<br />確保降低真人客服 Loading
-              </div>
-            </div>
-            <div class="mt-[20px]">
-              <span class="font-normal text-slate-400 text-base tracking-[0] leading-[21px]">了解更多</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+interface CaseItem {
+  id: string
+  badge: string
+  badgeBorderClass: string
+  badgeTextClass: string
+  title: string
+  description: string
+  link: string
+}
+
+const cases: CaseItem[] = [
+  {
+    id: 'vet-ai',
+    badge: 'AI CUSTOMER SERVICE',
+    badgeBorderClass: 'border-violet-600',
+    badgeTextClass: 'text-violet-600',
+    title: 'AI 輔助獸醫系統',
+    description: '使用 AI 模型，輔助獸醫進行病歷預覽，加速診斷進度，並提供寵物主人專業知識解釋的管道',
+    link: '/cases',
+  },
+  {
+    id: 'content-review',
+    badge: 'BACKEND SYSTEM',
+    badgeBorderClass: 'border-blue-500',
+    badgeTextClass: 'text-blue-500',
+    title: '專業知識內容審核系統',
+    description: '使用 AI 技術分析專業文件與媒體內容，即時識別準確性與合規性問題，提升審核效率',
+    link: '/cases/detail',
+  },
+  {
+    id: 'ai-cs',
+    badge: 'AI CUSTOMER SERVICE',
+    badgeBorderClass: 'border-cyan-500',
+    badgeTextClass: 'text-cyan-500',
+    title: '24/7 AI 智能客服',
+    description: '使用 AI 模型協助客服 7*24 不間斷服務，確保降低真人客服 Loading',
+    link: '/cases',
+  },
+  {
+    id: 'ecommerce',
+    badge: 'WEB APPLICATION',
+    badgeBorderClass: 'border-violet-600',
+    badgeTextClass: 'text-violet-600',
+    title: '電商平台整合系統',
+    description: '整合多通路電商平台，提供統一的商品管理、訂單處理與數據分析解決方案',
+    link: '/cases',
+  },
+  {
+    id: 'data-platform',
+    badge: 'DATA PLATFORM',
+    badgeBorderClass: 'border-blue-500',
+    badgeTextClass: 'text-blue-500',
+    title: '企業數據中台',
+    description: '建構企業級數據中台，整合多源數據，提供即時分析與智能決策支援',
+    link: '/cases',
+  },
+]
+
+const currentIndex = ref(0)
+
+function getWrappedIndex(index: number) {
+  return ((index % cases.length) + cases.length) % cases.length
+}
+
+const visibleCards = computed(() => [
+  { position: 'left' as const, item: cases[getWrappedIndex(currentIndex.value - 1)] },
+  { position: 'center' as const, item: cases[getWrappedIndex(currentIndex.value)] },
+  { position: 'right' as const, item: cases[getWrappedIndex(currentIndex.value + 1)] },
+])
+
+function prev() {
+  currentIndex.value = getWrappedIndex(currentIndex.value - 1)
+}
+
+function next() {
+  currentIndex.value = getWrappedIndex(currentIndex.value + 1)
+}
+
+function cardBgStyle(position: string) {
+  if (position === 'left') {
+    return {
+      backgroundImage: 'url(/images/mn5gtr03DZ8elR/subtract-1.svg)',
+      backgroundPosition: 'left top',
+      backgroundSize: '357px 294px',
+    }
+  }
+  if (position === 'right') {
+    return {
+      backgroundImage: 'url(/images/mn5gtr03DZ8elR/subtract.svg)',
+      backgroundPosition: 'right top',
+      backgroundSize: '357px 294px',
+    }
+  }
+  return {}
+}
 </script>

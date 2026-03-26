@@ -4,7 +4,7 @@
     <img
       class="absolute w-full h-full top-0 left-0 object-cover"
       alt="AI background"
-      src="https://c.animaapp.com/mn5gtr03DZ8elR/img/img---ai-background-mask-group.svg"
+      src="/images/mn5gtr03DZ8elR/img---ai-background-mask-group.svg"
     />
 
     <!-- Hero content -->
@@ -30,18 +30,19 @@
       <!-- Subtitle -->
       <div class="flex flex-col items-start pt-[1.19px] relative self-stretch w-full flex-[0_0_auto]">
         <p class="relative flex items-center w-[630px] h-[46px] mt-[-1px] font-normal text-slate-400 text-xl leading-8">
-          专业的AI 应用开发与系统架构设计，助您迈向数位转型
+          專業的 AI 應用開發與系統架構設計，助您邁向數位轉型
         </p>
       </div>
 
       <!-- CTA button -->
       <div class="flex items-start gap-4 pt-[17.2px] relative self-stretch w-full flex-[0_0_auto]">
-        <button
-          class="h-auto flex w-[180px] items-center justify-center py-[13px] px-8 rounded-[99px] border-[0.5px] border-solid border-slate-400 hover:opacity-90 transition-opacity text-white font-medium text-base"
+        <NuxtLink
+          to="/contact"
+          class="h-auto flex w-[180px] items-center justify-center py-[13px] px-8 rounded-[99px] border-[0.5px] border-solid border-slate-400 hover:opacity-90 transition-opacity text-white font-medium text-base no-underline"
           style="background: linear-gradient(141deg, rgba(59,130,246,1) 0%, rgba(124,58,237,1) 100%); box-shadow: 0px 4px 14px rgba(124,58,237,0.3);"
         >
           開始您的專案
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </section>

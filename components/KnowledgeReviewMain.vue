@@ -1,31 +1,31 @@
 <template>
-  <div class="flex flex-col w-full items-center relative py-0">
+  <div class="px-[120px] flex flex-col w-full items-center relative py-0">
     <!-- Top section: breadcrumb + hero + title -->
-    <div class="flex flex-col items-center gap-6 px-0 py-[60px] relative self-stretch w-full">
+    <div class=" flex flex-col items-center gap-6 px-0 py-[0px] relative self-stretch w-full">
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 relative self-stretch w-full">
-        <span class="font-medium text-slate-400 text-sm tracking-[0] leading-[22.4px] whitespace-nowrap">
+      <!-- <nav class="flex items-center gap-2 relative self-stretch w-full">
+        <NuxtLink to="/cases" class="font-medium text-slate-400 text-sm tracking-[0] leading-[22.4px] whitespace-nowrap no-underline hover:text-white transition-colors">
           精選案例
-        </span>
+        </NuxtLink>
         <img
           class="flex-shrink-0"
           alt="Iconify icon"
-          src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/iconify-icon.svg"
+          src="/images/mn6tdh0s8MHj5j/iconify-icon.svg"
         />
         <span class="font-normal text-white text-sm tracking-[0] leading-[22.4px] whitespace-nowrap">
           寶雅 POYA App
         </span>
-      </nav>
+      </nav> -->
 
       <!-- Spacer -->
-      <div class="relative self-stretch w-full h-[58px]" />
+      <!-- <div class="relative self-stretch w-full h-[58px]" /> -->
 
       <!-- Hero card container -->
       <div class="flex flex-col items-center gap-20 relative self-stretch w-full rounded-lg overflow-hidden border border-solid border-[#00000014]">
         <!-- Hero image -->
         <div
           class="relative w-full h-[600px] rounded-[20px] overflow-hidden bg-cover bg-center"
-          :style="{ backgroundImage: 'url(https://c.animaapp.com/mn6tdh0s8MHj5j/img/rectangle-48.png)' }"
+          :style="{ backgroundImage: 'url(/images/mn6tdh0s8MHj5j/rectangle-48.png)' }"
         >
           <!-- Cyan circle -->
           <div class="absolute top-[427px] left-[37px] w-[140px] h-[140px] bg-cyan-500 rounded-full" />
@@ -62,8 +62,8 @@
     </div>
 
     <!-- BACKGROUND / 挑戰 section -->
-    <section class="flex items-center justify-center gap-16 relative self-stretch w-full py-8">
-      <div class="flex w-full max-w-[1148px] items-center justify-center gap-[23.4px] relative">
+    <section class=" flex items-center justify-center gap-16 relative self-stretch w-full py-8">
+      <div class="flex w-full items-center justify-center gap-[23.4px] relative">
         <div class="flex flex-col w-[182px] items-start flex-shrink-0">
           <div class="flex items-center self-stretch font-semibold text-cyan-500 text-4xl tracking-[0] leading-[26px]">
             <span class="font-semibold text-cyan-500 text-4xl tracking-[0] leading-[26px]">B</span>
@@ -90,7 +90,7 @@
 
     <!-- SOLUTION / 解決方案 section -->
     <section class="flex items-start justify-center gap-16 relative self-stretch w-full py-8">
-      <div class="relative flex w-full max-w-[1152px] items-start gap-[509px]">
+      <div class="relative flex w-full items-start gap-[509px]">
         <!-- Left column: label -->
         <div class="flex flex-col items-start w-[182px] flex-shrink-0">
           <div class="flex items-center self-stretch font-semibold text-cyan-500 text-4xl tracking-[0] leading-[26px]">
@@ -106,7 +106,7 @@
         <img
           class="w-[459px] h-[459px] rounded-[20px] object-cover flex-shrink-0"
           alt="Rectangle"
-          src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/rectangle-49.png"
+          src="/images/mn6tdh0s8MHj5j/rectangle-49.png"
         />
 
         <!-- Active solution item -->
@@ -149,8 +149,8 @@
     </section>
 
     <!-- BENEFITS / 成果與效益 section -->
-    <section class="flex items-start justify-center gap-16 relative self-stretch w-full py-8">
-      <div class="flex w-full max-w-[1148px] items-center justify-center gap-[23.4px] relative">
+    <section class=" flex items-start justify-center gap-16 relative self-stretch w-full py-8">
+      <div class="flex w-full items-center justify-center gap-[23.4px] relative">
         <div class="flex flex-col w-[182px] items-start flex-shrink-0">
           <div class="flex items-center self-stretch font-semibold text-cyan-500 text-4xl tracking-[0] leading-[26px]">
             <span class="font-semibold text-cyan-500 text-4xl tracking-[0] leading-[26px]">B</span>
@@ -172,7 +172,7 @@
     </section>
 
     <!-- Stats cards -->
-    <div class="flex items-center justify-end w-full py-8">
+    <div class=" flex items-center justify-end w-full py-8">
       <div class="flex w-[833px] items-start justify-end gap-4">
         <div
           v-for="(stat, index) in statsItems"
@@ -197,8 +197,8 @@
     </div>
 
     <!-- TECHNICAL / 技術標籤 section -->
-    <section class="flex items-start justify-center gap-16 relative self-stretch w-full py-8">
-      <div class="flex w-full max-w-[1148px] items-center justify-center gap-[23.4px] relative">
+    <section class=" flex items-start justify-center gap-16 relative self-stretch w-full py-8">
+      <div class="flex w-full items-center justify-center gap-[23.4px] relative">
         <div class="flex flex-col w-[182px] items-start flex-shrink-0">
           <div class="flex items-center self-stretch font-semibold text-cyan-500 text-4xl tracking-[0] leading-[26px]">
             <span class="font-semibold text-cyan-500 text-4xl tracking-[0] leading-[26px]">T</span>
@@ -231,44 +231,47 @@
     </section>
 
     <!-- CTA section -->
-    <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 mt-8 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden"
-      style="background: linear-gradient(164deg, rgba(124,58,237,0.1) 0%, rgba(59,130,246,0.1) 100%)"
-    >
-      <!-- Background mask image -->
-      <img
-        class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
-        alt="Mask group"
-        src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/mask-group.png"
-      />
-
-      <!-- Title -->
-      <div class="relative flex flex-col items-center z-10">
-        <h2 class="flex items-center justify-center font-semibold text-slate-50 text-[32px] text-center tracking-[0] leading-[51.2px] whitespace-nowrap">
-          準備好開始您的專案了嗎？
-        </h2>
-      </div>
-
-      <!-- Subtitle -->
-      <div class="relative flex flex-col max-w-[600px] w-full items-center z-10">
-        <p class="self-stretch font-normal text-slate-400 text-lg text-center tracking-[0] leading-[28.8px]">
-          從概念到落地，我們是您最值得信賴的技術夥伴。立即預約，<br />
-          開啟高效開發之旅。
-        </p>
-      </div>
-
-      <!-- CTA Button -->
-      <div
-        class="relative z-10 w-[172px] h-[53.59px] rounded-md flex items-center justify-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
-        style="background: linear-gradient(163deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%)"
-      >
-        <span class="font-normal text-white text-base text-center tracking-[0] leading-[25.6px] whitespace-nowrap">
-          聯絡我們
-        </span>
-        <img
-          class="w-5 h-5"
-          alt="Iconify icon"
-          src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/iconify-icon-1.svg"
-        />
+    <div class="" style="width: 100%;">
+      <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 mt-8 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden"
+         style="background: linear-gradient(164deg, rgba(124,58,237,0.1) 0%, rgba(59,130,246,0.1) 100%)"
+       >
+         <!-- Background mask image -->
+         <img
+           class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
+           alt="Mask group"
+           src="/images/mn6tdh0s8MHj5j/mask-group.png"
+         />
+   
+         <!-- Title -->
+         <div class="relative flex flex-col items-center z-10">
+           <h2 class="flex items-center justify-center font-semibold text-slate-50 text-[32px] text-center tracking-[0] leading-[51.2px] whitespace-nowrap">
+             準備好開始您的專案了嗎？
+           </h2>
+         </div>
+   
+         <!-- Subtitle -->
+         <div class="relative flex flex-col max-w-[600px] w-full items-center z-10">
+           <p class="self-stretch font-normal text-slate-400 text-lg text-center tracking-[0] leading-[28.8px]">
+             從概念到落地，我們是您最值得信賴的技術夥伴。立即預約，<br />
+             開啟高效開發之旅。
+           </p>
+         </div>
+   
+         <!-- CTA Button -->
+         <NuxtLink
+           to="/contact"
+           class="relative z-10 w-[172px] h-[53.59px] rounded-md flex items-center justify-center gap-2 cursor-pointer hover:opacity-90 transition-opacity no-underline"
+           style="background: linear-gradient(163deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%)"
+         >
+           <span class="font-normal text-white text-base text-center tracking-[0] leading-[25.6px] whitespace-nowrap">
+             聯絡我們
+           </span>
+           <img
+             class="w-5 h-5"
+             alt="Iconify icon"
+             src="/images/mn6tdh0s8MHj5j/iconify-icon-1.svg"
+           />
+         </NuxtLink>
       </div>
     </div>
   </div>

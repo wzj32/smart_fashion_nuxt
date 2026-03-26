@@ -32,12 +32,13 @@
       </div>
 
       <!-- CTA Button -->
-      <button
-        class="h-auto inline-flex items-center justify-center py-[17px] px-12 rounded-[99px] hover:opacity-90 transition-opacity text-white text-lg font-normal whitespace-nowrap"
+      <NuxtLink
+        to="/contact"
+        class="h-auto inline-flex items-center justify-center py-[17px] px-12 rounded-[99px] hover:opacity-90 transition-opacity text-white text-lg font-normal whitespace-nowrap no-underline"
         style="background: linear-gradient(163deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%); box-shadow: 0px 4px 14px rgba(124,58,237,0.3);"
       >
         和我們聊聊
-      </button>
+      </NuxtLink>
     </div>
   </section>
 </template>

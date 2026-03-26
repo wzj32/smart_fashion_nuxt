@@ -1,20 +1,20 @@
 <script setup lang="ts">
 const contactInfoItems = [
   {
-    icon: 'https://c.animaapp.com/mn6wtbljcCQQNA/img/overlay-border-1.svg',
+    icon: '/images/mn6wtbljcCQQNA/overlay-border-1.svg',
     title: '電話諮詢',
     detail: '(02) 2331-2907',
     subDetail: '週一至週五 09:30 - 18:30',
     hasSubDetail: true,
   },
   {
-    icon: 'https://c.animaapp.com/mn6wtbljcCQQNA/img/overlay-border.svg',
+    icon: '/images/mn6wtbljcCQQNA/overlay-border.svg',
     title: '公司地址',
     detail: '台北市信義區基隆路二段 51 號 5 樓之 3',
     hasSubDetail: false,
   },
   {
-    icon: 'https://c.animaapp.com/mn6wtbljcCQQNA/img/overlay-border-2.svg',
+    icon: '/images/mn6wtbljcCQQNA/overlay-border-2.svg',
     title: '電子郵件',
     detail: 'contact@smartfashion.com.tw',
     hasSubDetail: false,
@@ -23,11 +23,11 @@ const contactInfoItems = [
 
 const socialButtons = [
   {
-    icon: 'https://c.animaapp.com/mn6wtbljcCQQNA/img/iconify-icon-2.svg',
+    icon: '/images/mn6wtbljcCQQNA/iconify-icon-2.svg',
     label: 'LINE 官方帳號',
   },
   {
-    icon: 'https://c.animaapp.com/mn6wtbljcCQQNA/img/iconify-icon.svg',
+    icon: '/images/mn6wtbljcCQQNA/iconify-icon.svg',
     label: 'LinkedIn',
   },
 ]
@@ -47,7 +47,7 @@ function handleSubmit() {
 </script>
 
 <template>
-  <section class="flex flex-col w-full items-start px-6 py-0">
+  <section class="flex flex-col w-full max-w-screen-xl mx-auto items-start px-20 py-0">
     <!-- Header section -->
     <div
       class="flex flex-col items-center gap-[14.9px] pt-[79px] pb-[60px] px-0 relative self-stretch w-full"
@@ -56,7 +56,7 @@ function handleSubmit() {
       <img
         class="absolute top-0 right-0 w-[400px] h-[400px] object-cover pointer-events-none opacity-60"
         alt="Decorative wave"
-        src="https://c.animaapp.com/mn6wtbljcCQQNA/img/image-22.png"
+        src="/images/mn6wtbljcCQQNA/image-22.png"
       />
 
       <!-- Title -->
@@ -240,7 +240,7 @@ function handleSubmit() {
             <img
               class="w-[18px] h-[18px]"
               alt="Send"
-              src="https://c.animaapp.com/mn6wtbljcCQQNA/img/svg.svg"
+              src="/images/mn6wtbljcCQQNA/svg.svg"
             />
           </button>
         </form>

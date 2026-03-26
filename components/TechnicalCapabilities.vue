@@ -1,11 +1,11 @@
 <template>
-  <section class="flex flex-col items-center gap-[37px] px-6 py-0 w-full max-w-[1200px] mx-auto mt-[49px]">
+  <section class="px-[120px] flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px]">
     <!-- Badge -->
     <div class="flex items-center gap-2 bg-[#06b6d41a] rounded-xl px-4 h-[34.39px]">
       <img
         class="w-4 h-4 flex-shrink-0"
         alt="Iconify icon"
-        src="https://c.animaapp.com/mn6whp7lktE587/img/iconify-icon-1.svg"
+        src="/images/mn6whp7lktE587/iconify-icon-1.svg"
       />
       <span class="font-medium text-slate-50 text-sm text-center leading-[22.4px] whitespace-nowrap font-inter tracking-[0]">
         Technical Capabilities
@@ -18,7 +18,7 @@
       <img
         class="absolute top-0 left-1/2 -translate-x-1/2 w-[989px] h-[610px] pointer-events-none"
         alt="Mask group"
-        src="https://c.animaapp.com/mn6whp7lktE587/img/mask-group.png"
+        src="/images/mn6whp7lktE587/mask-group.png"
       />
 
       <!-- Gradient heading -->
@@ -51,25 +51,7 @@
     <!-- Tech Stack Section -->
     <div class="relative flex flex-col items-center w-full gap-8">
       <!-- Section heading with decorative shapes -->
-      <div class="relative flex flex-col items-center">
-        <!-- Background large text -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 flex items-center font-normal text-[#f8fafc1a] tracking-[0] leading-[normal] whitespace-nowrap pointer-events-none select-none">
-          <span class="text-[100px]" style="font-family: 'Bebas Neue', sans-serif;">S</span>
-          <span class="text-[40px]" style="font-family: 'Bebas Neue', sans-serif;">TACK</span>
-        </div>
-
-        <!-- Decorative shapes -->
-        <div class="flex items-center gap-[8.6px] mb-2 mt-[29px] relative z-10">
-          <div class="w-[20.57px] h-[20.57px] border border-solid border-violet-600" />
-          <div class="w-[20.57px] h-[20.57px] bg-blue-500 rounded-[10.29px] border border-solid" />
-          <div class="w-[16.55px] h-[16.55px] border border-solid border-cyan-500 rotate-45" />
-        </div>
-
-        <!-- Section title -->
-        <h3 class="font-semibold text-slate-50 text-[40px] tracking-[0] leading-[normal] relative z-10 mt-8 font-inter">
-          開發技術棧
-        </h3>
-      </div>
+      <SectionHeader first-letter="S" rest-text="TACK" title="開發技術棧" fill-second />
 
       <!-- Tab buttons -->
       <div class="flex items-center gap-[60px] flex-wrap justify-center">
@@ -77,8 +59,8 @@
           v-for="tab in techTabs"
           :key="tab.id"
           @click="activeTab = tab.id"
-          class="flex w-[200px] h-[72px] items-center justify-center gap-2.5 rounded-[10px] transition-colors"
-          :class="activeTab === tab.id ? 'bg-violet-600' : 'bg-[#262c3a]'"
+          class="flex w-[200px] h-[72px] items-center justify-center gap-2.5 rounded-[10px] transition-colors cursor-pointer border-none"
+          :class="activeTab === tab.id ? 'bg-violet-600' : 'bg-[#262c3a] hover:bg-[#363d4f]'"
         >
           <img class="w-14 h-14" alt="Rectangle" :src="tab.img" />
           <span class="font-normal text-white text-xl tracking-[0] leading-[normal] whitespace-nowrap" style="font-family: 'Bebas Neue', sans-serif;">
@@ -107,7 +89,7 @@
         <img
           class="w-[325px] h-[323px] object-cover flex-shrink-0"
           alt="Image"
-          src="https://c.animaapp.com/mn6whp7lktE587/img/image-58.png"
+          src="/images/mn6whp7lktE587/image-58.png"
         />
       </div>
     </div>
@@ -118,7 +100,7 @@
       <img
         class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
         alt="Mask group"
-        src="https://c.animaapp.com/mn6whp7lktE587/img/mask-group-1.png"
+        src="/images/mn6whp7lktE587/mask-group-1.png"
       />
 
       <!-- CTA heading -->
@@ -137,8 +119,9 @@
 
       <!-- CTA Button -->
       <div class="relative z-10">
-        <button
-          class="h-[53.59px] w-[172px] rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity border-0"
+        <NuxtLink
+          to="/contact"
+          class="h-[53.59px] w-[172px] rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity border-0 no-underline"
           style="background: linear-gradient(163deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%)"
         >
           <span class="font-normal text-white text-base leading-[25.6px] whitespace-nowrap tracking-[0] font-inter">
@@ -147,9 +130,9 @@
           <img
             class="w-5 h-5"
             alt="Iconify icon"
-            src="https://c.animaapp.com/mn6whp7lktE587/img/iconify-icon.svg"
+            src="/images/mn6whp7lktE587/iconify-icon.svg"
           />
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </section>
@@ -173,25 +156,25 @@ const techTabs: TechTab[] = [
   {
     id: 'architecture',
     label: '架構設計',
-    img: 'https://c.animaapp.com/mn6whp7lktE587/img/rectangle-59.png',
+    img: '/images/mn6whp7lktE587/rectangle-59.png',
     active: true,
   },
   {
     id: 'ai',
     label: 'AI 導入',
-    img: 'https://c.animaapp.com/mn6whp7lktE587/img/rectangle-59-1.png',
+    img: '/images/mn6whp7lktE587/rectangle-59-1.png',
     active: false,
   },
   {
     id: 'llm',
     label: '私有 LLM',
-    img: 'https://c.animaapp.com/mn6whp7lktE587/img/rectangle-59-2.png',
+    img: '/images/mn6whp7lktE587/rectangle-59-2.png',
     active: false,
   },
   {
     id: 'rag',
     label: 'RAG 技術',
-    img: 'https://c.animaapp.com/mn6whp7lktE587/img/rectangle-59-3.png',
+    img: '/images/mn6whp7lktE587/rectangle-59-3.png',
     active: false,
   },
 ]
@@ -200,27 +183,27 @@ const bulletItems: BulletItem[] = [
   {
     id: 'item-1',
     text: '雲原生應用設計：打造彈性高、易擴展的雲端應用架構',
-    icon: 'https://c.animaapp.com/mn6whp7lktE587/img/group-29.png',
+    icon: '/images/mn6whp7lktE587/group-29.png',
   },
   {
     id: 'item-2',
     text: '微服務架構：將系統拆分模組，提升維護與擴充效率',
-    icon: 'https://c.animaapp.com/mn6whp7lktE587/img/group-30.png',
+    icon: '/images/mn6whp7lktE587/group-30.png',
   },
   {
     id: 'item-3',
     text: '容器化技術：以容器封裝應用，實現快速部署與管理',
-    icon: 'https://c.animaapp.com/mn6whp7lktE587/img/group-31.png',
+    icon: '/images/mn6whp7lktE587/group-31.png',
   },
   {
     id: 'item-4',
     text: '無服務器計算：免維護伺服器，按需執行降低營運成本',
-    icon: 'https://c.animaapp.com/mn6whp7lktE587/img/group-32.png',
+    icon: '/images/mn6whp7lktE587/group-32.png',
   },
   {
     id: 'item-5',
     text: '高可用架構：確保系統穩定運行，降低中斷風險',
-    icon: 'https://c.animaapp.com/mn6whp7lktE587/img/group-33.png',
+    icon: '/images/mn6whp7lktE587/group-33.png',
   },
 ]
 

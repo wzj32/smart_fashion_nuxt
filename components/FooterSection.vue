@@ -1,6 +1,6 @@
 <template>
   <footer class="flex flex-col w-full items-start pt-[79px] pb-8 px-20 bg-[#0b1121] border-t border-[#00000014]">
-    <div class="flex flex-col max-w-screen-xl items-start gap-16 px-6 py-0 w-full">
+    <div class="flex flex-col items-start gap-2 px-6 py-0 w-full">
       <!-- Main footer columns -->
       <div class="flex items-end justify-center gap-12 self-stretch w-full">
         <!-- Brand / Description column -->
@@ -10,7 +10,7 @@
             <img
               class="w-8 h-8"
               alt="Background"
-              src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/background-1.svg"
+              src="/images/mn6tdh0s8MHj5j/background-1.svg"
             />
             <span class="flex items-center w-20 h-8 font-medium text-slate-50 text-xl tracking-[0] leading-8 whitespace-nowrap">
               智慧時尚
@@ -65,7 +65,7 @@
             <img
               class="flex-shrink-0"
               alt="Phone icon"
-              src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/iconify-icon-margin.svg"
+              src="/images/mn6tdh0s8MHj5j/iconify-icon-margin.svg"
             />
             <span class="font-normal text-slate-400 text-sm tracking-[0] leading-[22.4px] whitespace-nowrap">
               (02) 2331-2907
@@ -77,7 +77,7 @@
             <img
               class="w-[18px] h-5 flex-shrink-0 mt-[1px]"
               alt="Address icon"
-              src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/iconify-icon-margin-1.svg"
+              src="/images/mn6tdh0s8MHj5j/iconify-icon-margin-1.svg"
             />
             <address class="not-italic font-normal text-slate-400 text-sm tracking-[0] leading-[22.4px]">
               台北市信義區基隆路二段51號<br />
@@ -97,7 +97,7 @@
           <img
             class="self-stretch w-full"
             alt="Social media links"
-            src="https://c.animaapp.com/mn6tdh0s8MHj5j/img/container.svg"
+            src="/images/mn6tdh0s8MHj5j/container.svg"
           />
         </div>
       </div>
@@ -131,6 +131,7 @@ const quickLinks = [
   { label: '服務項目', to: '/services' },
   { label: '作品案例', to: '/cases' },
   { label: '技術能力', to: '/technology' },
+  { label: '聯絡我們', to: '/contact' },
 ]
 
 const bottomLinks = [

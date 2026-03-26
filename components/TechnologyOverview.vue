@@ -6,9 +6,9 @@
       <img
         class="absolute top-0 left-0 w-full h-[800px] object-cover"
         alt="Banner"
-        src="https://c.animaapp.com/mn69fej5o9rxxH/img/banner2-5.png"
+        src="/images/mn69fej5o9rxxH/banner2-5.png"
       />
-      <div class="flex flex-col max-w-[1200px] items-start justify-center gap-6 px-6 py-0 relative w-full">
+      <div class="flex flex-col items-start justify-center gap-6 px-6 py-0 relative w-full">
         <!-- Since 2011 Badge -->
         <div class="inline-flex items-center justify-center px-3 py-1 bg-[#ffffff33] rounded-xl border border-solid border-[#7c3aed4c]">
           <span class="font-medium text-violet-400 text-[13px] text-center leading-[20.8px] whitespace-nowrap">
@@ -21,7 +21,7 @@
           <img
             class="relative w-[441.7px] h-[103.46px]"
             alt="Ai"
-            src="https://c.animaapp.com/mn69fej5o9rxxH/img/--------ai--------.svg"
+            src="/images/mn69fej5o9rxxH/--------ai--------.svg"
           />
         </div>
 
@@ -36,34 +36,19 @@
     </section>
 
     <!-- Company Overview / Stats Section -->
-    <section class="flex max-w-[1200px] w-full items-center justify-center gap-20 px-6 py-0 relative">
+    <section class="flex max-w-screen-xl w-full items-center justify-center gap-20 px-6 py-0 relative">
       <!-- Section heading -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[249px] h-[119px]">
-        <div class="absolute top-0 left-0 w-full h-[95px] flex items-center font-normal text-[#f8fafc1a] text-[100px] leading-normal whitespace-nowrap" style="font-family:'Bebas-Regular',Helvetica">
-          <span style="font-family:'Bebas-Regular',Helvetica">C</span>
-          <span style="font-size:40px">OMPANY STORY</span>
-        </div>
-
-        <!-- Decorative shapes -->
-        <div class="absolute top-[29px] left-[83px] w-[78px] h-[21px] flex items-center">
-          <div class="w-[20.57px] h-[20.57px] bg-violet-600 flex-shrink-0" />
-          <div class="w-[20.57px] h-[20.57px] ml-[8.6px] bg-blue-500 rounded-[10.29px] border border-solid flex-shrink-0" />
-          <div class="w-[16.55px] h-[16.55px] ml-[9.7px] mt-[2px] border border-solid border-cyan-500 rotate-45 flex-shrink-0" />
-        </div>
-
-        <!-- Title -->
-        <div class="absolute top-[70px] left-1/2 -translate-x-1/2 w-40 h-[49px] flex items-center font-semibold text-slate-50 text-[40px] leading-normal whitespace-nowrap">
-          公司簡介
-        </div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2">
+        <SectionHeader first-letter="C" rest-text="OMPANY STORY" title="公司簡介" fill-first fill-second />
       </div>
 
       <!-- Grid lines and stats -->
       <div class="relative w-full mt-[119px]">
         <div class="relative w-full h-[754px]">
-          <img class="absolute top-[455px] left-0 w-full h-px" alt="Line" src="https://c.animaapp.com/mn69fej5o9rxxH/img/line-2.svg" />
-          <img class="absolute top-0 left-[25%] w-px h-[754px]" alt="Line" src="https://c.animaapp.com/mn69fej5o9rxxH/img/line-3.svg" />
-          <img class="absolute top-[219px] left-[50%] w-px h-[535px]" alt="Line" src="https://c.animaapp.com/mn69fej5o9rxxH/img/line-4.svg" />
-          <img class="absolute top-[219px] left-[75%] w-px h-[535px]" alt="Line" src="https://c.animaapp.com/mn69fej5o9rxxH/img/line-5.svg" />
+          <img class="absolute top-[455px] left-0 w-full h-px" alt="Line" src="/images/mn69fej5o9rxxH/line-2.svg" />
+          <img class="absolute top-0 left-[25%] w-px h-[754px]" alt="Line" src="/images/mn69fej5o9rxxH/line-3.svg" />
+          <img class="absolute top-[219px] left-[50%] w-px h-[535px]" alt="Line" src="/images/mn69fej5o9rxxH/line-4.svg" />
+          <img class="absolute top-[219px] left-[75%] w-px h-[535px]" alt="Line" src="/images/mn69fej5o9rxxH/line-5.svg" />
 
           <!-- 12+ 年開發經驗 -->
           <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-64 left-[33.5%]">
@@ -109,30 +94,15 @@
           <img
             class="absolute top-0 left-[-10%] w-[332px] h-[593px] object-contain pointer-events-none"
             alt="Mask group"
-            src="https://c.animaapp.com/mn69fej5o9rxxH/img/mask-group.png"
+            src="/images/mn69fej5o9rxxH/mask-group.png"
           />
         </div>
       </div>
     </section>
 
     <!-- Core Philosophy Section -->
-    <section class="flex flex-col max-w-[1200px] w-full items-center gap-16 pt-5 pb-0 px-6 relative">
-      <div class="w-[273px] relative h-[119px]">
-        <div class="absolute top-0 left-0 w-[269px] h-[95px] flex items-center font-normal text-[#f8fafc1a] text-[100px] leading-normal whitespace-nowrap" style="font-family:'Bebas-Regular',Helvetica">
-          <span style="font-family:'Bebas-Regular',Helvetica">C</span>
-          <span style="font-size:40px">ORE PHILOSOPHY</span>
-        </div>
-
-        <div class="left-[52px] absolute top-[29px] w-[78px] h-[21px] flex items-center">
-          <div class="w-[20.57px] h-[20.57px] border border-solid border-violet-600 flex-shrink-0" />
-          <div class="w-[20.57px] h-[20.57px] ml-[8.6px] bg-blue-500 rounded-[10.29px] flex-shrink-0" />
-          <div class="w-[16.55px] h-[16.55px] ml-[9.7px] mt-[2px] border border-solid border-cyan-500 rotate-45 flex-shrink-0" />
-        </div>
-
-        <div class="absolute top-[70px] left-1/2 -translate-x-1/2 w-40 h-[49px] flex items-center font-semibold text-slate-50 text-[40px] leading-normal whitespace-nowrap">
-          核心理念
-        </div>
-      </div>
+    <section class="flex flex-col max-w-screen-xl w-full items-center gap-16 pt-5 pb-0 px-6 relative">
+      <SectionHeader first-letter="C" rest-text="ORE PHILOSOPHY" title="核心理念" fill-second />
 
       <!-- Cards -->
       <div class="flex items-start justify-center gap-8 relative self-stretch w-full">
@@ -162,23 +132,8 @@
 
     <!-- AI Development Process Section -->
     <section class="flex flex-col w-full items-start px-[120px] py-[100px] relative overflow-hidden">
-      <div class="flex flex-col max-w-[1200px] items-start gap-16 px-6 py-0 relative w-full">
-        <div class="w-[351px] relative h-[119px]">
-          <div class="absolute top-0 left-0 w-[347px] h-[95px] flex items-center font-normal text-[#f8fafc1a] text-[100px] leading-normal whitespace-nowrap" style="font-family:'Bebas-Regular',Helvetica">
-            <span style="font-family:'Bebas-Regular',Helvetica">D</span>
-            <span style="font-size:40px">EVELOPMENT PROCESS</span>
-          </div>
-
-          <div class="left-12 absolute top-[29px] w-[78px] h-[21px] flex items-center">
-            <div class="w-[20.57px] h-[20.57px] border border-solid border-violet-600 flex-shrink-0" />
-            <div class="w-[22.57px] h-[22.57px] ml-[7.6px] mt-[-1px] rounded-[11.29px] border border-solid border-blue-500 flex-shrink-0" />
-            <div class="w-[16.55px] h-[16.55px] ml-[8.7px] mt-[2px] border border-solid border-cyan-500 rotate-45 flex-shrink-0" />
-          </div>
-
-          <div class="absolute top-[70px] left-0 w-[285px] h-[49px] flex items-center font-semibold text-slate-50 text-[40px] leading-normal">
-            AI原生開發流程
-          </div>
-        </div>
+      <div class="flex flex-col max-w-screen-xl items-start gap-16 px-6 py-0 relative w-full">
+        <SectionHeader first-letter="D" rest-text="EVELOPMENT PROCESS" title="AI原生開發流程" align="left" />
       </div>
 
       <!-- Content area -->
@@ -207,7 +162,7 @@
               <span style="color:#404852">STEP</span>
               <span style="color:#404852; font-size:64px; font-family:'DIN-Regular',Helvetica">3</span>
             </div>
-            <img class="absolute top-[128px] left-1 w-[747px] h-px" alt="Line" src="https://c.animaapp.com/mn69fej5o9rxxH/img/line-6.svg" />
+            <img class="absolute top-[128px] left-1 w-[747px] h-px" alt="Line" src="/images/mn69fej5o9rxxH/line-6.svg" />
             <div class="absolute top-[128px] left-[252px] w-[250px] h-0.5 bg-cyan-500 rounded-[50px]" />
           </div>
         </div>
@@ -216,14 +171,14 @@
         <img
           class="absolute top-[-100px] right-0 w-[640px] h-[640px] object-contain"
           alt="Image"
-          src="https://c.animaapp.com/mn69fej5o9rxxH/img/image-34.png"
+          src="/images/mn69fej5o9rxxH/image-34.png"
         />
 
         <!-- Decorative mask group -->
         <img
           class="absolute top-[459px] right-[-120px] w-[273px] h-[618px] object-contain pointer-events-none"
           alt="Mask group"
-          src="https://c.animaapp.com/mn69fej5o9rxxH/img/mask-group-1.png"
+          src="/images/mn69fej5o9rxxH/mask-group-1.png"
         />
       </div>
     </section>
@@ -236,19 +191,19 @@ const corePhilosophyCards = [
   {
     title: 'AI 原生思維',
     description: '從第一天就以 AI 為出發點，重新設計問題的解決方案。',
-    imgSrc: 'https://c.animaapp.com/mn69fej5o9rxxH/img/rectangle-25.png',
+    imgSrc: '/images/mn69fej5o9rxxH/rectangle-25.png',
     imgAlt: 'Rectangle',
   },
   {
     title: '品質即效率',
     description: '我們打破了「快就品質差」的迷思。AI 讓我們在速度和品質之間不再取捨。',
-    imgSrc: 'https://c.animaapp.com/mn69fej5o9rxxH/img/rectangle-25-1.png',
+    imgSrc: '/images/mn69fej5o9rxxH/rectangle-25-1.png',
     imgAlt: 'Rectangle',
   },
   {
     title: '持續進化',
     description: '我們持續追蹤最新的模型與工具，確保客戶永遠享有最先進的技術優勢。',
-    imgSrc: 'https://c.animaapp.com/mn69fej5o9rxxH/img/rectangle-25-2.png',
+    imgSrc: '/images/mn69fej5o9rxxH/rectangle-25-2.png',
     imgAlt: 'Rectangle',
   },
 ]

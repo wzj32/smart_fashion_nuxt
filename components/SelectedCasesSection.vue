@@ -1,7 +1,7 @@
 <template>
-  <section class="gap-[60px] px-36 py-[60px] bg-[#0b1121] flex flex-col items-start self-stretch w-full">
+  <section class="gap-[60px] px-20 py-[60px] bg-[#0b1121] flex flex-col items-center self-stretch w-full">
     <!-- Row 1 -->
-    <div class="flex items-center gap-10 py-0 self-stretch w-full opacity-60 overflow-hidden">
+    <div class="flex items-center gap-10 py-0 w-full max-w-screen-xl opacity-60 overflow-hidden">
       <div
         v-for="(item, index) in row1Items"
         :key="`row1-${index}`"
@@ -14,7 +14,7 @@
     </div>
 
     <!-- Row 2 -->
-    <div class="flex items-center gap-10 py-0 self-stretch w-full opacity-60 overflow-hidden">
+    <div class="flex items-center gap-10 py-0 w-full max-w-screen-xl opacity-60 overflow-hidden">
       <div
         v-for="(item, index) in row2Items"
         :key="`row2-${index}`"
@@ -48,18 +48,18 @@ const plainText = 'font-normal text-white text-xl tracking-[0] leading-normal wh
 const row1Items: BadgeItem[] = [
   { label: 'POYA 寶雅', icon: null, width: 'w-[162px]', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
   { label: '日藥本舖', icon: null, width: 'w-[162px]', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
-  { label: '欣漾生醫', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon-1.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
-  { label: '台新銀行', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
-  { label: '遠傳電信', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon-6.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
-  { label: '台新銀行', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
+  { label: '欣漾生醫', icon: '/images/mn5gtr03DZ8elR/iconify-icon-1.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
+  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
+  { label: '遠傳電信', icon: '/images/mn5gtr03DZ8elR/iconify-icon-6.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
+  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
 ]
 
 const row2Items: BadgeItem[] = [
   { label: 'POYA 寶雅寶貝', icon: null, width: 'w-[211px]', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
   { label: '日藥本舖藥業', icon: null, width: 'w-48', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
-  { label: '欣漾生醫', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon-1.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
-  { label: '台新銀行', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
-  { label: '遠傳電信', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon-6.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
-  { label: '台新銀行', icon: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/iconify-icon.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
+  { label: '欣漾生醫', icon: '/images/mn5gtr03DZ8elR/iconify-icon-1.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
+  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px]', textClass: plainText, borderClass: solidBorder },
+  { label: '遠傳電信', icon: '/images/mn5gtr03DZ8elR/iconify-icon-6.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
+  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
 ]
 </script>

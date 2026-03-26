@@ -1,6 +1,6 @@
 <template>
-  <section class="px-10 py-10 border-b border-[#00000014] backdrop-blur-[5px] flex flex-col items-start self-stretch w-full">
-    <div class="flex items-stretch justify-center gap-6 self-stretch w-full">
+  <section class="px-20 py-10 border-b border-[#00000014] backdrop-blur-[5px] flex flex-col items-center self-stretch w-full">
+    <div class="flex items-stretch justify-center gap-8 w-full max-w-screen-xl">
       <div
         v-for="(stat, index) in statisticsData"
         :key="index"
@@ -42,28 +42,28 @@ const statisticsData = [
   {
     value: '12+',
     label: '年開發經驗',
-    imgSrc: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/mask-group.png',
+    imgSrc: '/images/mn5gtr03DZ8elR/mask-group.png',
     imgAlt: 'Mask group',
     cardBg: 'linear-gradient(136deg, rgba(82,85,238,0.64) 0%, rgba(148,163,184,0.16) 100%)',
   },
   {
     value: '100+',
     label: '完成專案',
-    imgSrc: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/mask-group-1.png',
+    imgSrc: '/images/mn5gtr03DZ8elR/mask-group-1.png',
     imgAlt: 'Mask group',
     cardBg: 'linear-gradient(136deg, rgba(148,163,184,0.16) 0%, rgba(148,163,184,0.04) 100%)',
   },
   {
     value: '200+',
     label: '服務客戶',
-    imgSrc: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/mask-group-2.png',
+    imgSrc: '/images/mn5gtr03DZ8elR/mask-group-2.png',
     imgAlt: 'Mask group',
     cardBg: 'linear-gradient(136deg, rgba(148,163,184,0.16) 0%, rgba(148,163,184,0.04) 100%)',
   },
   {
     value: '50+',
     label: '團隊成員',
-    imgSrc: 'https://c.animaapp.com/mn5gtr03DZ8elR/img/mask-group-3.png',
+    imgSrc: '/images/mn5gtr03DZ8elR/mask-group-3.png',
     imgAlt: 'Mask group',
     cardBg: 'linear-gradient(136deg, rgba(148,163,184,0.16) 0%, rgba(148,163,184,0.04) 100%)',
   },

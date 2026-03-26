@@ -3,25 +3,7 @@
     <!-- Header Section -->
     <div class="flex flex-col w-full items-center justify-center gap-12 px-0 py-12">
       <!-- Title block -->
-      <div class="relative w-[164px] h-[119px]">
-        <!-- Background "CASE" text -->
-        <div class="absolute top-0 left-[calc(50%_-_48px)] w-[91px] h-[95px] flex items-center [font-family:'Bebas-Regular',Helvetica] font-normal text-[#f8fafc1a] text-[100px] tracking-[0] leading-[normal] whitespace-nowrap">
-          <span class="[font-family:'Bebas-Regular',Helvetica] font-normal text-[#f8fafc1a] text-[100px] tracking-[0]">C</span>
-          <span class="text-[40px]">ASE</span>
-        </div>
-
-        <!-- Decorative shapes -->
-        <div class="absolute top-11 left-10 w-[78px] h-[21px] flex items-center">
-          <div class="w-[20.57px] h-[20.57px] bg-violet-600 flex-shrink-0" />
-          <div class="w-[20.57px] h-[20.57px] ml-[8.6px] bg-blue-500 rounded-[10.29px] border border-solid flex-shrink-0" />
-          <div class="w-[16.55px] h-[16.55px] ml-[9.7px] mt-[2px] border border-solid border-cyan-500 rotate-45 flex-shrink-0" />
-        </div>
-
-        <!-- Main title -->
-        <div class="absolute top-[70px] left-[calc(50%_-_82px)] w-40 h-[49px] flex items-center font-semibold text-slate-50 text-[40px] leading-[normal] [font-family:'Inter',Helvetica] tracking-[0]">
-          精選案例
-        </div>
-      </div>
+      <SectionHeader first-letter="C" rest-text="ASE" title="精選案例" fill-first fill-second />
 
       <!-- Subtitle -->
       <div class="flex flex-col max-w-[600px] w-full items-center relative">
@@ -110,7 +92,7 @@
               <img
                 class="w-10 h-10"
                 alt="詳情"
-                src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/group-20.png"
+                src="/images/mn6sgmdo6ocCMY/group-20.png"
               />
             </NuxtLink>
           </div>
@@ -123,7 +105,7 @@
         <img
           class="w-12 h-12 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200"
           alt="向左"
-          src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/group-18.png"
+          src="/images/mn6sgmdo6ocCMY/group-18.png"
           @click="goLeft"
         />
 
@@ -140,7 +122,7 @@
         <img
           class="w-12 h-12 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200"
           alt="向右"
-          src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/group-17.png"
+          src="/images/mn6sgmdo6ocCMY/group-17.png"
           @click="goRight"
         />
       </div>
@@ -152,7 +134,7 @@
         <img
           class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
           alt="Mask group"
-          src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/mask-group.png"
+          src="/images/mn6sgmdo6ocCMY/mask-group.png"
         />
         <div class="relative z-10 flex flex-col items-center gap-[14.9px] w-full">
           <div class="flex items-center justify-center">
@@ -172,7 +154,7 @@
             <img
               class="w-5 h-5"
               alt="Iconify icon"
-              src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/iconify-icon.svg"
+              src="/images/mn6sgmdo6ocCMY/iconify-icon.svg"
             />
           </div>
         </div>
@@ -192,22 +174,22 @@ const filterTabs = [
 
 const galleryImages = [
   {
-    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-42.png',
+    src: '/images/mn6sgmdo6ocCMY/rectangle-42.png',
     alt: 'Rectangle',
     className: 'mt-[70px] w-80 h-[400px] flex-shrink-0',
   },
   {
-    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-43.png',
+    src: '/images/mn6sgmdo6ocCMY/rectangle-43.png',
     alt: 'Rectangle',
     className: 'w-80 h-[400px] flex-shrink-0',
   },
   {
-    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-44.png',
+    src: '/images/mn6sgmdo6ocCMY/rectangle-44.png',
     alt: 'Rectangle',
     className: 'mt-20 w-80 h-80 rounded-[20px] object-cover flex-shrink-0',
   },
   {
-    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-45.png',
+    src: '/images/mn6sgmdo6ocCMY/rectangle-45.png',
     alt: 'Rectangle',
     className: 'w-80 h-[400px] rounded-[20px] object-cover flex-shrink-0',
   },
