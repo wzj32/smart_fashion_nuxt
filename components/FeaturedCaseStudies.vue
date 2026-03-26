@@ -1,0 +1,232 @@
+<template>
+  <section class="relative w-full flex flex-col items-center overflow-hidden">
+    <!-- Header Section -->
+    <div class="flex flex-col w-full items-center justify-center gap-12 px-0 py-12">
+      <!-- Title block -->
+      <div class="relative w-[164px] h-[119px]">
+        <!-- Background "CASE" text -->
+        <div class="absolute top-0 left-[calc(50%_-_48px)] w-[91px] h-[95px] flex items-center [font-family:'Bebas-Regular',Helvetica] font-normal text-[#f8fafc1a] text-[100px] tracking-[0] leading-[normal] whitespace-nowrap">
+          <span class="[font-family:'Bebas-Regular',Helvetica] font-normal text-[#f8fafc1a] text-[100px] tracking-[0]">C</span>
+          <span class="text-[40px]">ASE</span>
+        </div>
+
+        <!-- Decorative shapes -->
+        <div class="absolute top-11 left-10 w-[78px] h-[21px] flex items-center">
+          <div class="w-[20.57px] h-[20.57px] bg-violet-600 flex-shrink-0" />
+          <div class="w-[20.57px] h-[20.57px] ml-[8.6px] bg-blue-500 rounded-[10.29px] border border-solid flex-shrink-0" />
+          <div class="w-[16.55px] h-[16.55px] ml-[9.7px] mt-[2px] border border-solid border-cyan-500 rotate-45 flex-shrink-0" />
+        </div>
+
+        <!-- Main title -->
+        <div class="absolute top-[70px] left-[calc(50%_-_82px)] w-40 h-[49px] flex items-center font-semibold text-slate-50 text-[40px] leading-[normal] [font-family:'Inter',Helvetica] tracking-[0]">
+          精選案例
+        </div>
+      </div>
+
+      <!-- Subtitle -->
+      <div class="flex flex-col max-w-[600px] w-full items-center relative">
+        <p class="text-slate-400 text-lg text-center leading-[28.8px] [font-family:'Inter',Helvetica] font-normal tracking-[0]">
+          我們與各領域的領導品牌合作，透過 AI 與技術創新，打造具備商業價值的<br />數位產品。
+        </p>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="flex w-full items-center justify-center gap-3 mb-8">
+      <button
+        v-for="tab in filterTabs"
+        :key="tab.id"
+        @click="activeTab = tab.id"
+        :class="[
+          'px-5 py-2.5 rounded-[20px] border border-solid inline-flex flex-col items-center justify-center flex-shrink-0 cursor-pointer',
+          'transition-all duration-300 ease-in-out',
+          'hover:scale-105 active:scale-95',
+          activeTab === tab.id
+            ? 'border-violet-600 bg-[linear-gradient(135deg,rgba(124,58,237,0.18)_0%,rgba(59,130,246,0.12)_100%)] shadow-[0_0_16px_2px_rgba(124,58,237,0.35)] hover:shadow-[0_0_22px_4px_rgba(124,58,237,0.5)]'
+            : 'border-[#ffffff14] bg-[#ffffff05] hover:border-violet-600/50 hover:bg-[#ffffff0d] hover:shadow-[0_0_10px_1px_rgba(124,58,237,0.15)]',
+        ]"
+      >
+        <span
+          :class="[
+            'flex items-center justify-center h-4 text-base text-center leading-[normal] whitespace-nowrap [font-family:\'Inter\',Helvetica] tracking-[0]',
+            'transition-colors duration-300',
+            activeTab === tab.id ? 'font-semibold text-white' : 'font-normal text-slate-400',
+          ]"
+        >
+          {{ tab.label }}
+        </span>
+      </button>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="relative w-full overflow-hidden">
+      <div class="flex gap-5 justify-center w-full">
+        <div
+          v-for="(image, index) in galleryImages"
+          :key="index"
+          :class="[
+            image.className,
+            'group overflow-hidden transition-all duration-500 ease-out cursor-pointer',
+            activeIndex === index
+              ? '-translate-y-4 shadow-[0_24px_48px_rgba(124,58,237,0.35)]'
+              : 'hover:-translate-y-2 hover:shadow-[0_12px_32px_rgba(124,58,237,0.2)]',
+          ]"
+          @click="activeIndex = index"
+        >
+          <img
+            :class="[
+              'w-full h-full object-cover transition-transform duration-500 ease-out',
+              activeIndex === index ? 'scale-105' : 'group-hover:scale-105',
+            ]"
+            :alt="image.alt"
+            :src="image.src"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study Info + Navigation -->
+    <div class="relative w-full max-w-[1280px] flex flex-col items-start px-4 mt-[20px]">
+      <div class="flex w-full justify-center">
+        <!-- Animated spacer -->
+        <div
+          :style="{ width: spacerWidth }"
+          class="flex-shrink-0 transition-all duration-[400ms] ease-in-out"
+        />
+
+        <div class="flex flex-col w-80 transition-all duration-[400ms] ease-in-out">
+          <h3 class="font-semibold text-white text-xl leading-7 whitespace-nowrap [font-family:'Inter',Helvetica] tracking-[0]">
+            專業知識內容審核系統
+          </h3>
+          <div class="flex items-end gap-3 mt-1">
+            <p class="w-[245px] text-slate-400 text-sm leading-5 [font-family:'Inter',Helvetica] font-normal tracking-[0]">
+              使用 AI 技術分析專業文件與媒體內容，即時識別準確性與合規性問題，提升審核效率與內容品質
+            </p>
+            <NuxtLink
+              to="/cases/detail"
+              class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(124,58,237,0.7)] active:scale-95"
+              aria-label="查看詳情"
+            >
+              <img
+                class="w-10 h-10"
+                alt="詳情"
+                src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/group-20.png"
+              />
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress bar + navigation arrows -->
+      <div class="flex items-center justify-center w-full gap-6 mt-8">
+        <!-- Left arrow -->
+        <img
+          class="w-12 h-12 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200"
+          alt="向左"
+          src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/group-18.png"
+          @click="goLeft"
+        />
+
+        <!-- Progress bar -->
+        <div class="relative w-[380px] h-0.5 flex-shrink-0">
+          <div class="w-full h-0.5 bg-slate-500 rounded-[10px]" />
+          <div
+            class="absolute top-0 h-0.5 bg-cyan-500 rounded-[10px] transition-all duration-[400ms] ease-in-out"
+            :style="{ width: segW + 'px', left: indicatorLeft + 'px' }"
+          />
+        </div>
+
+        <!-- Right arrow -->
+        <img
+          class="w-12 h-12 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200"
+          alt="向右"
+          src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/group-17.png"
+          @click="goRight"
+        />
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="relative w-full max-w-[1200px] mt-16 mb-0">
+      <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 rounded-[10px] border border-solid border-[#7c3aed33] bg-[linear-gradient(164deg,rgba(124,58,237,0.1)_0%,rgba(59,130,246,0.1)_100%)] overflow-hidden">
+        <img
+          class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
+          alt="Mask group"
+          src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/mask-group.png"
+        />
+        <div class="relative z-10 flex flex-col items-center gap-[14.9px] w-full">
+          <div class="flex items-center justify-center">
+            <h2 class="font-semibold text-slate-50 text-[32px] text-center leading-[51.2px] whitespace-nowrap [font-family:'Inter',Helvetica] tracking-[0]">
+              準備好開始您的專案了嗎？
+            </h2>
+          </div>
+          <div class="flex flex-col max-w-[600px] w-full items-center pb-[17.79px]">
+            <p class="font-normal text-slate-400 text-lg text-center leading-[28.8px] [font-family:'Inter',Helvetica] tracking-[0]">
+              從概念到落地，我們是您最值得信賴的技術夥伴。立即預約，<br />開啟高效開發之旅。
+            </p>
+          </div>
+          <div class="relative w-[172px] h-[53.59px] rounded-md bg-[linear-gradient(163deg,rgba(124,58,237,1)_0%,rgba(59,130,246,1)_100%)] flex items-center justify-center cursor-pointer">
+            <span class="font-normal text-white text-base text-center leading-[25.6px] whitespace-nowrap [font-family:'Inter',Helvetica] tracking-[0] mr-2">
+              聯絡我們
+            </span>
+            <img
+              class="w-5 h-5"
+              alt="Iconify icon"
+              src="https://c.animaapp.com/mn6sgmdo6ocCMY/img/iconify-icon.svg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+const filterTabs = [
+  { id: 'all', label: '全部案例' },
+  { id: 'webapp', label: 'Web App' },
+  { id: 'mobileapp', label: 'Mobile App' },
+  { id: 'ai', label: 'AI 整合' },
+  { id: 'enterprise', label: '企業系統' },
+]
+
+const galleryImages = [
+  {
+    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-42.png',
+    alt: 'Rectangle',
+    className: 'mt-[70px] w-80 h-[400px] flex-shrink-0',
+  },
+  {
+    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-43.png',
+    alt: 'Rectangle',
+    className: 'w-80 h-[400px] flex-shrink-0',
+  },
+  {
+    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-44.png',
+    alt: 'Rectangle',
+    className: 'mt-20 w-80 h-80 rounded-[20px] object-cover flex-shrink-0',
+  },
+  {
+    src: 'https://c.animaapp.com/mn6sgmdo6ocCMY/img/rectangle-45.png',
+    alt: 'Rectangle',
+    className: 'w-80 h-[400px] rounded-[20px] object-cover flex-shrink-0',
+  },
+]
+
+const TOTAL = galleryImages.length
+const BAR_WIDTH = 380
+
+const activeTab = ref('all')
+const activeIndex = ref(0)
+
+const segW = computed(() => BAR_WIDTH / TOTAL)
+const indicatorLeft = computed(() => activeIndex.value * segW.value)
+const spacerWidth = computed(() => `calc(50% - 670px + ${activeIndex.value * 340}px)`)
+
+function goLeft() {
+  activeIndex.value = (activeIndex.value - 1 + TOTAL) % TOTAL
+}
+function goRight() {
+  activeIndex.value = (activeIndex.value + 1) % TOTAL
+}
+</script>
