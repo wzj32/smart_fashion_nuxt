@@ -61,6 +61,7 @@ function handleSubmit() {
 
       <!-- Title -->
       <div
+        v-reveal="{ direction: 'up', delay: 200, duration: 1000 }"
         class="items-center pt-0 pb-[0.8px] px-0 relative self-stretch flex-[0_0_auto] flex flex-col w-full z-10"
       >
         <h1
@@ -72,6 +73,7 @@ function handleSubmit() {
 
       <!-- Subtitle -->
       <div
+        v-reveal="{ direction: 'up', delay: 400, duration: 800 }"
         class="flex flex-col max-w-[600px] items-center pt-0 pb-[0.69px] px-0 relative flex-[0_0_auto] z-10"
       >
         <p class="text-lg max-md:text-base text-center leading-[28.8px] font-normal text-slate-400 tracking-[0]">
@@ -83,7 +85,10 @@ function handleSubmit() {
     <!-- Main content: left info + right form -->
     <div class="flex max-lg:flex-col items-start justify-center gap-20 max-lg:gap-10 relative self-stretch w-full flex-[0_0_auto]">
       <!-- Left column: contact info -->
-      <div class="flex flex-col w-[428px] max-lg:w-full items-start gap-8 relative self-stretch">
+      <div
+        v-reveal="{ stagger: 150, staggerEl: ':scope > div:not(.divider)', duration: 700, direction: 'left', distance: '30px' }"
+        class="flex flex-col w-[428px] max-lg:w-full items-start gap-8 relative self-stretch"
+      >
         <!-- Contact info items -->
         <div
           v-for="(item, index) in contactInfoItems"
@@ -108,7 +113,7 @@ function handleSubmit() {
         </div>
 
         <!-- Divider -->
-        <div class="flex flex-col items-start px-0 py-2 relative self-stretch w-full">
+        <div class="divider flex flex-col items-start px-0 py-2 relative self-stretch w-full">
           <hr class="w-full border-t border-[#ffffff20]" />
         </div>
 
@@ -122,7 +127,7 @@ function handleSubmit() {
             <button
               v-for="(btn, index) in socialButtons"
               :key="index"
-              class="h-auto flex items-center gap-2 px-4 py-2 bg-cyan-500 hover:bg-cyan-400 rounded-md border border-solid border-[#00000014] flex-1 cursor-pointer transition-colors"
+              class="h-auto flex items-center gap-2 px-4 py-2 bg-cyan-500 rounded-md border border-solid border-[#00000014] flex-1 cursor-pointer transition-all duration-300 hover:bg-cyan-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/20"
             >
               <img class="w-5 h-5 flex-shrink-0" alt="Social icon" :src="btn.icon" />
               <span class="font-medium text-slate-50 text-sm tracking-[0] leading-[22.4px] whitespace-nowrap">
@@ -135,6 +140,7 @@ function handleSubmit() {
 
       <!-- Right column: contact form -->
       <div
+        v-reveal="{ direction: 'right', delay: 200, duration: 800, distance: '40px' }"
         class="flex-1 max-lg:w-full bg-[#ffffff0d] rounded-lg border border-solid border-[#00000014] self-stretch"
       >
         <form
@@ -154,7 +160,7 @@ function handleSubmit() {
               <input
                 v-model="form.name"
                 required
-                class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 outline-none focus:ring-1 focus:ring-purple-500"
+                class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 outline-none transition-all duration-300 focus:ring-1 focus:ring-purple-500 focus:border-purple-500/50"
               />
             </div>
 
@@ -170,7 +176,7 @@ function handleSubmit() {
                 v-model="form.email"
                 type="email"
                 required
-                class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 outline-none focus:ring-1 focus:ring-purple-500"
+                class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 outline-none transition-all duration-300 focus:ring-1 focus:ring-purple-500 focus:border-purple-500/50"
               />
             </div>
           </div>
@@ -187,7 +193,7 @@ function handleSubmit() {
             </div>
             <input
               v-model="form.company"
-              class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 outline-none focus:ring-1 focus:ring-purple-500"
+              class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 outline-none transition-all duration-300 focus:ring-1 focus:ring-purple-500 focus:border-purple-500/50"
             />
           </div>
 
@@ -203,7 +209,7 @@ function handleSubmit() {
             </div>
             <select
               v-model="form.budget"
-              class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-400 w-full px-3 text-[15px] outline-none focus:ring-1 focus:ring-purple-500 appearance-none cursor-pointer"
+              class="h-[50px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-400 w-full px-3 text-[15px] outline-none transition-all duration-300 focus:ring-1 focus:ring-purple-500 focus:border-purple-500/50 appearance-none cursor-pointer"
             >
               <option value="" disabled>請選擇專案預算範圍</option>
               <option value="under-100k">100,000 以下</option>
@@ -224,14 +230,14 @@ function handleSubmit() {
             <textarea
               v-model="form.description"
               required
-              class="h-[120px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 py-2 resize-none outline-none focus:ring-1 focus:ring-purple-500"
+              class="h-[120px] bg-[#0f1724] border border-solid border-[#00000014] rounded-md text-slate-50 w-full px-3 py-2 resize-none outline-none transition-all duration-300 focus:ring-1 focus:ring-purple-500 focus:border-purple-500/50"
             />
           </div>
 
           <!-- Submit button -->
           <button
             type="submit"
-            class="h-auto flex items-center justify-center gap-2 pt-[18px] pb-[17.5px] px-4 relative self-stretch w-full flex-[0_0_auto] rounded-md bg-[linear-gradient(175deg,rgba(124,58,237,1)_0%,rgba(59,130,246,1)_100%)] hover:opacity-90 border-0 cursor-pointer transition-opacity"
+            class="h-auto flex items-center justify-center gap-2 pt-[18px] pb-[17.5px] px-4 relative self-stretch w-full flex-[0_0_auto] rounded-md bg-[linear-gradient(175deg,rgba(124,58,237,1)_0%,rgba(59,130,246,1)_100%)] hover-glow border-0 cursor-pointer"
           >
             <span class="font-medium text-white text-base text-center tracking-[0] leading-[normal] whitespace-nowrap">
               送出詢問

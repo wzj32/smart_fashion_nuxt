@@ -3,10 +3,12 @@
     <!-- Header Section -->
     <div class="flex flex-col w-full items-center justify-center gap-12 max-md:gap-6 px-0 py-12 max-md:py-8">
       <!-- Title block -->
-      <SectionHeader first-letter="C" rest-text="ASE" title="精選案例" fill-first fill-second />
+      <div v-reveal="{ direction: 'up', duration: 800 }">
+        <SectionHeader first-letter="C" rest-text="ASE" title="精選案例" fill-first fill-second />
+      </div>
 
       <!-- Subtitle -->
-      <div class="flex flex-col max-w-[600px] w-full items-center relative max-md:px-4">
+      <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex flex-col max-w-[600px] w-full items-center relative max-md:px-4">
         <p class="text-slate-400 text-lg max-md:text-base text-center leading-[28.8px] [font-family:'Inter',Helvetica] font-normal tracking-[0]">
           我們與各領域的領導品牌合作，透過 AI 與技術創新，打造具備商業價值的數位產品。
         </p>
@@ -14,7 +16,7 @@
     </div>
 
     <!-- Filter Tabs -->
-    <div class="flex w-full items-center justify-center gap-3 max-md:gap-2 mb-8 max-md:px-4 max-md:flex-wrap">
+    <div v-reveal="{ direction: 'up', delay: 300, duration: 800 }" class="flex w-full items-center justify-center gap-3 max-md:gap-2 mb-8 max-md:px-4 max-md:flex-wrap">
       <button
         v-for="tab in filterTabs"
         :key="tab.id"
@@ -133,8 +135,8 @@
     </div>
 
     <!-- CTA Section -->
-    <div class="relative w-full max-w-[1200px] mt-16 mb-0 max-md:px-4">
-      <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 rounded-[10px] border border-solid border-[#7c3aed33] bg-[linear-gradient(164deg,rgba(124,58,237,0.1)_0%,rgba(59,130,246,0.1)_100%)] overflow-hidden">
+    <div v-reveal="{ direction: 'up', delay: 200, duration: 900 }" class="relative w-full max-w-[1200px] mt-16 mb-0 max-md:px-4">
+      <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 rounded-[10px] border border-solid border-[#7c3aed33] bg-[linear-gradient(164deg,rgba(124,58,237,0.1)_0%,rgba(59,130,246,0.1)_100%)] overflow-hidden hover-border-glow">
         <img
           class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
           alt="Mask group"

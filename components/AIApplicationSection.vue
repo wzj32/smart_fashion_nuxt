@@ -6,12 +6,12 @@
     @touchend="onTouchEnd"
   >
     <!-- Section Header -->
-    <div class="mb-8 md:mb-12">
+    <div v-reveal="{ direction: 'up', duration: 800 }" class="mb-8 md:mb-12">
       <SectionHeader first-letter="S" rest-text="ELECTED CASES" title="精選案例" fill-third />
     </div>
 
     <!-- Carousel -->
-    <div class="relative max-w-screen-xl mx-auto px-4 md:px-20">
+    <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="relative max-w-screen-xl mx-auto px-4 md:px-20">
       <!-- Cards container -->
       <div class="flex items-stretch justify-center gap-0 overflow-hidden">
         <div
@@ -26,7 +26,7 @@
           <button
             v-if="pos.position === 'left'"
             @click="prev"
-            class="absolute md:left-100 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
+            class="absolute md:left-100 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer transition-transform duration-300 hover:scale-110"
             style="right: 5px;"
           >
             <img src="/images/mn5gtr03DZ8elR/group-24.png" alt="上一個" class="w-10 h-10 md:w-12 md:h-12" />
@@ -34,7 +34,7 @@
           <button
             v-if="pos.position === 'right'"
             @click="next"
-            class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
+            class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer transition-transform duration-300 hover:scale-110"
             style="left: 5px;"
           >
             <img src="/images/mn5gtr03DZ8elR/group-23.png" alt="下一個" class="w-10 h-10 md:w-12 md:h-12" />
@@ -57,13 +57,13 @@
               : ''
             }"
           >
-            <div 
+            <div
               class="flex flex-col justify-center h-full px-5 py-8 md:px-6 md:py-0 md:absolute md:top-[-3px]"
               :class="pos.position === 'center' ? 'md:left-1' : pos.position === 'left' ? 'md:left-3 md:right-10' : 'md:left-10'"
             >
               <!-- Badge -->
               <span
-                class="inline-block self-start rounded-full border px-4 py-0.5 text-sm md:text-base whitespace-nowrap"
+                class="inline-block self-start rounded-full border px-4 py-0.5 text-sm md:text-base whitespace-nowrap transition-colors duration-300"
                 :class="[pos.item.badgeBorderClass, pos.item.badgeTextClass]"
               >
                 {{ pos.item.badge }}
@@ -82,17 +82,17 @@
               <!-- Learn More -->
               <NuxtLink
                 :to="pos.item.link"
-                class="mt-5 inline-flex items-center gap-2 no-underline hover:opacity-80 transition-opacity"
+                class="mt-5 inline-flex items-center gap-2 no-underline group"
               >
                 <span
-                  class="text-base"
-                  :class="pos.position === 'center' ? 'font-light text-white' : 'text-slate-400'"
+                  class="text-base transition-colors duration-300"
+                  :class="pos.position === 'center' ? 'font-light text-white group-hover:text-cyan-300' : 'text-slate-400 group-hover:text-slate-200'"
                 >
                   了解更多
                 </span>
                 <img
                   v-if="pos.position === 'center'"
-                  class="w-5 h-[7px]"
+                  class="w-5 h-[7px] transition-transform duration-300 group-hover:translate-x-1"
                   alt=""
                   src="/images/mn5gtr03DZ8elR/arrow-2.svg"
                 />
@@ -191,7 +191,6 @@ function onTouchStart(e: TouchEvent) {
 function onTouchMove(e: TouchEvent) {
   const diffX = Math.abs(e.touches[0].clientX - touchStartX.value)
   const diffY = Math.abs(e.touches[0].clientY - touchStartY.value)
-  // If horizontal swipe is dominant, prevent page scroll
   if (diffX > diffY && diffX > 10) {
     isSwiping.value = true
     e.preventDefault()

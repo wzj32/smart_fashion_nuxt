@@ -9,11 +9,20 @@
       <span class="text-[40px] max-lg:text-[24px] max-md:text-[16px]">{{ restText }}</span>
     </div>
 
-    <!-- Decorative shapes -->
+    <!-- Decorative shapes with animation -->
     <div class="relative z-10 flex items-center gap-[8.6px] mt-[29px] max-lg:mt-[18px] max-md:mt-[12px] mb-2">
-      <div class="w-[20.57px] h-[20.57px] max-md:w-[14px] max-md:h-[14px] border border-solid border-violet-600 flex-shrink-0" :class="fillFirst ? 'bg-violet-600' : ''" />
-      <div class="w-[20.57px] h-[20.57px] max-md:w-[14px] max-md:h-[14px] rounded-[10.29px] max-md:rounded-[7px] border border-solid border-blue-500 flex-shrink-0" :class="fillSecond ? 'bg-blue-500' : ''" />
-      <div class="w-[16.55px] h-[16.55px] max-md:w-[11px] max-md:h-[11px] border border-solid border-cyan-500 rotate-45 flex-shrink-0" :class="fillThird ? 'bg-cyan-500' : ''" />
+      <div
+        class="w-[20.57px] h-[20.57px] max-md:w-[14px] max-md:h-[14px] border border-solid border-violet-600 flex-shrink-0 transition-all duration-500"
+        :class="fillFirst ? 'bg-violet-600 rotate-0' : 'rotate-45'"
+      />
+      <div
+        class="w-[20.57px] h-[20.57px] max-md:w-[14px] max-md:h-[14px] rounded-[10.29px] max-md:rounded-[7px] border border-solid border-blue-500 flex-shrink-0 transition-all duration-500 delay-100"
+        :class="fillSecond ? 'bg-blue-500 scale-110' : 'scale-100'"
+      />
+      <div
+        class="w-[16.55px] h-[16.55px] max-md:w-[11px] max-md:h-[11px] border border-solid border-cyan-500 rotate-45 flex-shrink-0 transition-all duration-500 delay-200"
+        :class="fillThird ? 'bg-cyan-500' : ''"
+      />
     </div>
 
     <!-- Title -->

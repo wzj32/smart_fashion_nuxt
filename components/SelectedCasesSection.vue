@@ -1,65 +1,49 @@
 <template>
-  <section class="gap-[60px] max-md:gap-8 px-20 max-lg:px-8 max-md:px-4 py-[60px] max-md:py-8 bg-[#0b1121] flex flex-col items-center self-stretch w-full">
-    <!-- Row 1 -->
-    <div class="flex items-center gap-10 max-md:gap-4 py-0 w-full max-w-screen-xl opacity-60 overflow-hidden">
-      <div
-        v-for="(item, index) in row1Items"
-        :key="`row1-${index}`"
-        class="flex h-[62px] max-md:h-[48px] items-center justify-center gap-2 relative rounded-[50px] flex-shrink-0"
-        :class="[item.width, item.borderClass]"
-      >
-        <img v-if="item.icon" class="relative flex-[0_0_auto]" alt="Iconify icon" :src="item.icon" />
-        <div class="relative flex items-center h-6" :class="item.textClass">{{ item.label }}</div>
+  <section class="relative flex justify-center items-center w-full py-[120px] max-lg:py-16 max-md:py-10 overflow-hidden">
+    <!-- Decorative large background text -->
+    <div class="absolute top-[81px] max-lg:top-10 left-1/2 -translate-x-1/2 w-[247px] h-[95px] pointer-events-none select-none max-md:hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[245px] h-[95px] flex items-center font-normal text-[#f8fafc1a] text-[100px] tracking-[0] leading-normal whitespace-nowrap">
+        <span class="text-[100px]">S</span>
+        <span class="text-[40px]">ELECTED CASES</span>
+      </div>
+
+      <!-- Decorative shapes -->
+      <div class="absolute top-3.5 left-[45px] w-[78px] h-[21px] flex items-center">
+        <div class="mt-[-1px] w-[22.57px] h-[22.57px] ml-[-1px] border border-solid border-violet-600 flex-shrink-0" />
+        <div class="w-[20.57px] h-[20.57px] ml-[7.6px] bg-blue-500 rounded-[10.29px] border border-solid flex-shrink-0" />
+        <div class="mt-[2px] w-[16.55px] h-[16.55px] ml-[9.7px] border border-solid border-cyan-500 rotate-45 flex-shrink-0" />
       </div>
     </div>
 
-    <!-- Row 2 -->
-    <div class="flex items-center gap-10 max-md:gap-4 py-0 w-full max-w-screen-xl opacity-60 overflow-hidden">
-      <div
-        v-for="(item, index) in row2Items"
-        :key="`row2-${index}`"
-        class="flex h-[62px] max-md:h-[48px] items-center justify-center gap-2 relative rounded-[50px] flex-shrink-0"
-        :class="[item.width, item.borderClass]"
-      >
-        <img v-if="item.icon" class="relative flex-[0_0_auto]" alt="Iconify icon" :src="item.icon" />
-        <div class="relative flex items-center h-6" :class="item.textClass">{{ item.label }}</div>
+    <!-- Main content -->
+    <div class="relative flex flex-col items-center gap-6 px-6 max-md:px-4 py-0 w-full max-w-[600px]">
+      <!-- Heading -->
+      <div v-reveal="{ direction: 'up', duration: 800 }" class="flex flex-col items-center pt-px pb-1 px-0 w-full">
+        <h2 class="font-semibold text-slate-50 text-5xl max-lg:text-4xl max-md:text-3xl text-center tracking-[0] leading-normal">
+          您有專案想討論？
+        </h2>
+      </div>
+
+      <!-- Subtitle -->
+      <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex flex-col items-center gap-[3px] pt-px pb-[18px] px-0 w-full">
+        <p class="font-medium text-slate-400 text-lg max-md:text-base text-center tracking-[0] leading-normal whitespace-nowrap max-md:whitespace-normal">
+          無論是技術諮詢還是專案開發，我們都樂意與您分享經驗。
+        </p>
+      </div>
+
+      <!-- CTA Button -->
+      <div v-reveal="{ direction: 'up', delay: 400, duration: 800 }">
+        <NuxtLink
+          to="/contact"
+          class="h-auto inline-flex items-center justify-center py-[17px] max-md:py-3 px-12 max-md:px-8 rounded-[99px] hover-glow text-white text-lg max-md:text-base font-normal whitespace-nowrap no-underline animate-pulse-glow"
+          style="background: linear-gradient(163deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%); box-shadow: 0px 4px 14px rgba(124,58,237,0.3);"
+        >
+          和我們聊聊
+        </NuxtLink>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-interface BadgeItem {
-  label: string
-  icon: string | null
-  width: string
-  textClass: string
-  borderClass: string
-}
-
-const solidBorder = 'border border-solid border-slate-200'
-const gradientBorderLeft = 'border-[none] relative before:content-[\'\'] before:absolute before:inset-0 before:p-px before:rounded-[50px] before:[background:linear-gradient(90deg,rgba(16,22,37,1)_0%,rgba(226,232,240,1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none'
-const gradientBorderRight = 'border-[none] relative before:content-[\'\'] before:absolute before:inset-0 before:p-px before:rounded-[50px] before:[background:linear-gradient(90deg,rgba(226,232,240,1)_0%,rgba(16,22,37,1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none'
-
-const gradientTextLeft = 'bg-[linear-gradient(90deg,rgba(16,22,37,1)_0%,rgba(255,255,255,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] font-normal text-transparent text-xl max-md:text-base tracking-[0] leading-normal whitespace-nowrap'
-const gradientTextRight = 'bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(16,22,37,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] font-normal text-transparent text-xl max-md:text-base tracking-[0] leading-normal whitespace-nowrap'
-const plainText = 'font-normal text-white text-xl max-md:text-base tracking-[0] leading-normal whitespace-nowrap'
-
-const row1Items: BadgeItem[] = [
-  { label: 'POYA 寶雅', icon: null, width: 'w-[162px] max-md:w-[120px]', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
-  { label: '日藥本舖', icon: null, width: 'w-[162px] max-md:w-[120px]', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
-  { label: '欣漾生醫', icon: '/images/mn5gtr03DZ8elR/iconify-icon-1.svg', width: 'w-[162px] max-md:w-[120px]', textClass: plainText, borderClass: solidBorder },
-  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px] max-md:w-[120px]', textClass: plainText, borderClass: solidBorder },
-  { label: '遠傳電信', icon: '/images/mn5gtr03DZ8elR/iconify-icon-6.svg', width: 'w-[162px] max-md:w-[120px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
-  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px] max-md:w-[120px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
-]
-
-const row2Items: BadgeItem[] = [
-  { label: 'POYA 寶雅寶貝', icon: null, width: 'w-[211px] max-md:w-[150px]', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
-  { label: '日藥本舖藥業', icon: null, width: 'w-48 max-md:w-[130px]', textClass: gradientTextLeft, borderClass: gradientBorderLeft },
-  { label: '欣漾生醫', icon: '/images/mn5gtr03DZ8elR/iconify-icon-1.svg', width: 'w-[162px] max-md:w-[120px]', textClass: plainText, borderClass: solidBorder },
-  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px] max-md:w-[120px]', textClass: plainText, borderClass: solidBorder },
-  { label: '遠傳電信', icon: '/images/mn5gtr03DZ8elR/iconify-icon-6.svg', width: 'w-[162px] max-md:w-[120px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
-  { label: '台新銀行', icon: '/images/mn5gtr03DZ8elR/iconify-icon.svg', width: 'w-[162px] max-md:w-[120px]', textClass: gradientTextRight, borderClass: gradientBorderRight },
-]
 </script>

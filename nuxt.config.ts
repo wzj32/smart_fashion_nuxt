@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     cssPath: '~/assets/css/tailwind.css',
   },
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: '智慧時尚 Smart Fashion',
       meta: [

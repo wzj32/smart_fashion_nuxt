@@ -1,7 +1,7 @@
 <template>
   <section class="px-[120px] max-lg:px-8 max-md:px-4 flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px] max-md:mt-6">
     <!-- Badge -->
-    <div class="flex items-center gap-2 bg-[#06b6d41a] rounded-xl px-4 h-[34.39px]">
+    <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex items-center gap-2 bg-[#06b6d41a] rounded-xl px-4 h-[34.39px]">
       <img
         class="w-4 h-4 flex-shrink-0"
         alt="Iconify icon"
@@ -22,7 +22,7 @@
       />
 
       <!-- Gradient heading -->
-      <div class="relative flex flex-col items-center gap-1.5 z-10">
+      <div v-reveal="{ direction: 'up', delay: 400, duration: 1000 }" class="relative flex flex-col items-center gap-1.5 z-10">
         <div class="flex flex-col items-center">
           <h1
             class="font-semibold text-5xl max-lg:text-4xl max-md:text-3xl text-center tracking-[-0.96px] leading-[57.6px] max-md:leading-normal whitespace-nowrap font-inter"
@@ -38,7 +38,7 @@
       </div>
 
       <!-- Subtitle text -->
-      <div class="relative z-10 mt-6 flex items-center justify-center max-md:px-2">
+      <div v-reveal="{ direction: 'up', delay: 600, duration: 800 }" class="relative z-10 mt-6 flex items-center justify-center max-md:px-2">
         <p class="font-normal text-white text-lg max-md:text-base text-center leading-[28.8px] whitespace-nowrap max-lg:whitespace-normal tracking-[0] font-inter">
           我們精選現代化開源技術，結合自研 AI 模型，構建高擴展、高並發、高安全的企業級軟體系統。
         </p>
@@ -51,16 +51,18 @@
     <!-- Tech Stack Section -->
     <div class="relative flex flex-col items-center w-full gap-8">
       <!-- Section heading with decorative shapes -->
-      <SectionHeader first-letter="S" rest-text="TACK" title="開發技術棧" fill-second />
+      <div v-reveal="{ direction: 'up', duration: 800 }">
+        <SectionHeader first-letter="S" rest-text="TACK" title="開發技術棧" fill-second />
+      </div>
 
       <!-- Tab buttons -->
-      <div class="flex items-center gap-[60px] max-lg:gap-4 max-md:gap-3 flex-wrap justify-center">
+      <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex items-center gap-[60px] max-lg:gap-4 max-md:gap-3 flex-wrap justify-center">
         <button
           v-for="tab in techTabs"
           :key="tab.id"
           @click="activeTab = tab.id"
-          class="flex w-[200px] max-md:w-[140px] h-[72px] max-md:h-[56px] items-center justify-center gap-2.5 rounded-[10px] transition-colors cursor-pointer border-none"
-          :class="activeTab === tab.id ? 'bg-violet-600' : 'bg-[#262c3a] hover:bg-[#363d4f]'"
+          class="flex w-[200px] max-md:w-[140px] h-[72px] max-md:h-[56px] items-center justify-center gap-2.5 rounded-[10px] transition-all duration-300 cursor-pointer border-none"
+          :class="activeTab === tab.id ? 'bg-violet-600 scale-105' : 'bg-[#262c3a] hover:bg-[#363d4f]'"
         >
           <img class="w-14 max-md:w-10 h-14 max-md:h-10" alt="Rectangle" :src="tab.img" />
           <span class="font-normal text-white text-xl max-md:text-base tracking-[0] leading-[normal] whitespace-nowrap" style="font-family: 'Bebas Neue', sans-serif;">
@@ -72,30 +74,40 @@
       <!-- Content area: bullet list + image -->
       <div class="relative flex max-lg:flex-col w-full items-start max-lg:items-center justify-between mt-4 max-lg:gap-8">
         <!-- Bullet points list -->
-        <div class="flex flex-col gap-0">
-          <div
-            v-for="item in bulletItems"
-            :key="item.id"
-            class="flex items-center gap-4 h-16"
-          >
-            <img class="w-5 h-5 flex-shrink-0" alt="Group" :src="item.icon" />
-            <span class="font-normal text-white text-xl max-md:text-base leading-[64px] max-md:leading-normal tracking-[0] whitespace-nowrap max-lg:whitespace-normal font-inter">
-              {{ item.text }}
-            </span>
+        <Transition name="tab-bullets" mode="out-in">
+          <div :key="activeTab" class="flex flex-col gap-0">
+            <div
+              v-for="(item, index) in bulletItems"
+              :key="item.id"
+              class="flex items-center gap-4 h-16"
+              :style="{ transitionDelay: `${index * 80}ms` }"
+            >
+              <img class="w-5 h-5 flex-shrink-0" alt="Group" :src="item.icon" />
+              <span class="font-normal text-white text-xl max-md:text-base leading-[64px] max-md:leading-normal tracking-[0] whitespace-nowrap max-lg:whitespace-normal font-inter">
+                {{ item.text }}
+              </span>
+            </div>
           </div>
-        </div>
+        </Transition>
 
         <!-- 3D decorative image -->
-        <img
-          class="w-[325px] max-lg:w-full max-lg:max-w-[280px] h-[323px] max-lg:h-auto object-cover flex-shrink-0"
-          alt="Image"
-          :src="contentImage"
-        />
+        <Transition name="tab-image" mode="out-in">
+          <img
+            :key="activeTab + '-img'"
+            class="w-[325px] max-lg:w-full max-lg:max-w-[280px] h-[323px] max-lg:h-auto object-cover flex-shrink-0"
+            alt="Image"
+            :src="contentImage"
+          />
+        </Transition>
       </div>
     </div>
 
     <!-- CTA Card -->
-    <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden" style="background: linear-gradient(164deg, rgba(124,58,237,0.1) 0%, rgba(59,130,246,0.1) 100%)">
+    <div
+      v-reveal="{ direction: 'up', delay: 200, duration: 900 }"
+      class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden hover-border-glow"
+      style="background: linear-gradient(164deg, rgba(124,58,237,0.1) 0%, rgba(59,130,246,0.1) 100%)"
+    >
       <!-- Background mask image -->
       <img
         class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
@@ -121,7 +133,7 @@
       <div class="relative z-10">
         <NuxtLink
           to="/contact"
-          class="h-[53.59px] w-[172px] rounded-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity border-0 no-underline"
+          class="h-[53.59px] w-[172px] rounded-md flex items-center justify-center gap-2 hover-glow border-0 no-underline"
           style="background: linear-gradient(163deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%)"
         >
           <span class="font-normal text-white text-base leading-[25.6px] whitespace-nowrap tracking-[0] font-inter">
@@ -220,3 +232,31 @@ const activeTab = ref<string>('architecture')
 const bulletItems = computed(() => tabBulletItems[activeTab.value])
 const contentImage = computed(() => tabImages[activeTab.value])
 </script>
+
+<style scoped>
+.tab-bullets-enter-active,
+.tab-bullets-leave-active {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.tab-bullets-enter-from {
+  opacity: 0;
+  transform: translateY(15px);
+}
+.tab-bullets-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.tab-image-enter-active,
+.tab-image-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.tab-image-enter-from {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.tab-image-leave-to {
+  opacity: 0;
+  transform: scale(1.02);
+}
+</style>
