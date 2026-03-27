@@ -2,13 +2,13 @@
   <div class="flex flex-col w-full items-center gap-[30px] relative">
 
     <!-- Hero Banner Section -->
-    <section class="flex flex-col h-[800px] items-center justify-center px-[120px] py-20 relative self-stretch w-full overflow-hidden">
+    <section class="flex flex-col h-[800px] max-lg:h-[500px] max-md:h-[400px] items-center justify-center px-[120px] max-lg:px-8 max-md:px-4 py-20 relative self-stretch w-full overflow-hidden">
       <img
-        class="absolute top-0 left-0 w-full h-[800px] object-cover"
+        class="absolute top-0 left-0 w-full h-[800px] max-lg:h-[500px] max-md:h-[400px] object-cover"
         alt="Banner"
         src="/images/mn69fej5o9rxxH/banner2-5.png"
       />
-      <div class="flex flex-col items-start justify-center gap-6 px-6 py-0 relative w-full">
+      <div class="flex flex-col items-start justify-center gap-6 px-6 max-md:px-0 py-0 relative w-full">
         <!-- Since 2011 Badge -->
         <div class="inline-flex items-center justify-center px-3 py-1 bg-[#ffffff33] rounded-xl border border-solid border-[#7c3aed4c]">
           <span class="font-medium text-violet-400 text-[13px] text-center leading-[20.8px] whitespace-nowrap">
@@ -19,16 +19,16 @@
         <!-- Heading SVG -->
         <div class="items-start relative self-stretch w-full flex flex-col">
           <img
-            class="relative w-[441.7px] h-[103.46px]"
+            class="relative w-[441.7px] max-lg:w-full max-lg:max-w-[350px] max-md:max-w-[280px] h-auto"
             alt="Ai"
             src="/images/mn69fej5o9rxxH/--------ai--------.svg"
           />
         </div>
 
         <!-- Description -->
-        <div class="flex flex-col max-w-[600px] w-full items-center pt-[7.59px] pb-[49.4px] px-0">
-          <p class="relative w-full font-normal text-white text-lg leading-[28.8px]">
-            我們不僅僅是一間軟體開發公司，更是您在 AI 時代的數位轉型加速器。<br />
+        <div class="flex flex-col max-w-[600px] w-full items-center pt-[7.59px] pb-[49.4px] max-md:pb-6 px-0">
+          <p class="relative w-full font-normal text-white text-lg max-md:text-base leading-[28.8px]">
+            我們不僅僅是一間軟體開發公司，更是您在 AI 時代的數位轉型加速器。<br class="max-md:hidden" />
             融合十餘年開發經驗與最新人工智慧技術，重新定義交付標準。
           </p>
         </div>
@@ -36,23 +36,24 @@
     </section>
 
     <!-- Company Overview / Stats Section -->
-    <section class="flex max-w-screen-xl w-full items-center justify-center gap-20 px-6 py-0 relative">
+    <section class="flex max-w-screen-xl w-full items-center justify-center gap-20 max-lg:gap-8 px-6 max-md:px-4 py-0 relative max-lg:flex-col">
       <!-- Section heading -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:translate-x-0 max-lg:w-full max-lg:flex max-lg:justify-center">
         <SectionHeader first-letter="C" rest-text="OMPANY STORY" title="公司簡介" fill-first fill-second />
       </div>
 
       <!-- Grid lines and stats -->
-      <div class="relative w-full mt-[119px]">
-        <div class="relative w-full h-[754px]">
-          <img class="absolute top-[455px] left-0 w-full h-px" alt="Line" src="/images/mn69fej5o9rxxH/line-2.svg" />
-          <img class="absolute top-0 left-[25%] w-px h-[754px]" alt="Line" src="/images/mn69fej5o9rxxH/line-3.svg" />
-          <img class="absolute top-[219px] left-[50%] w-px h-[535px]" alt="Line" src="/images/mn69fej5o9rxxH/line-4.svg" />
-          <img class="absolute top-[219px] left-[75%] w-px h-[535px]" alt="Line" src="/images/mn69fej5o9rxxH/line-5.svg" />
+      <div class="relative w-full mt-[119px] max-lg:mt-0">
+        <div class="relative w-full h-[754px] max-lg:h-auto max-lg:flex max-lg:flex-wrap max-lg:justify-center max-lg:gap-8 max-lg:py-8">
+          <!-- Grid lines (desktop only) -->
+          <img class="absolute top-[455px] left-0 w-full h-px max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-2.svg" />
+          <img class="absolute top-0 left-[25%] w-px h-[754px] max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-3.svg" />
+          <img class="absolute top-[219px] left-[50%] w-px h-[535px] max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-4.svg" />
+          <img class="absolute top-[219px] left-[75%] w-px h-[535px] max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-5.svg" />
 
           <!-- 12+ 年開發經驗 -->
-          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-64 left-[33.5%]">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-64 left-[33.5%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
+            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
               12+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -61,8 +62,8 @@
           </div>
 
           <!-- 200+ 服務客戶 -->
-          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-[455px] left-[8%]">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-[455px] left-[8%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
+            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
               200+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -71,8 +72,8 @@
           </div>
 
           <!-- AI 核心驅動 -->
-          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-[455px] left-[33.5%]">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] text-center leading-[57.6px]" style="background: linear-gradient(152deg,#5255ee 0%,#fff 55%,#3cb4d9 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-[455px] left-[33.5%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
+            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(152deg,#5255ee 0%,#fff 55%,#3cb4d9 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
               AI
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -81,8 +82,8 @@
           </div>
 
           <!-- 100+ 專案交付 -->
-          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-64 left-[56.8%]">
-            <div class="relative flex items-center justify-center w-[226px] h-[93px] text-transparent text-[80px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-64 left-[56.8%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
+            <div class="relative flex items-center justify-center w-[226px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
               100+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -92,7 +93,7 @@
 
           <!-- Decorative mask group image -->
           <img
-            class="absolute top-0 left-[-10%] w-[332px] h-[593px] object-contain pointer-events-none"
+            class="absolute top-0 left-[-10%] w-[332px] h-[593px] object-contain pointer-events-none max-lg:hidden"
             alt="Mask group"
             src="/images/mn69fej5o9rxxH/mask-group.png"
           />
@@ -101,28 +102,28 @@
     </section>
 
     <!-- Core Philosophy Section -->
-    <section class="flex flex-col max-w-screen-xl w-full items-center gap-16 pt-5 pb-0 px-6 relative">
+    <section class="flex flex-col max-w-screen-xl w-full items-center gap-16 max-md:gap-8 pt-5 pb-0 px-6 max-md:px-4 relative">
       <SectionHeader first-letter="C" rest-text="ORE PHILOSOPHY" title="核心理念" fill-second />
 
       <!-- Cards -->
-      <div class="flex items-start justify-center gap-8 relative self-stretch w-full">
+      <div class="flex max-lg:flex-col items-start justify-center gap-8 max-lg:gap-6 relative self-stretch w-full max-lg:items-center">
         <div
           v-for="(card, index) in corePhilosophyCards"
           :key="index"
-          class="relative flex-1 min-w-0 h-[280px] bg-[#ffffff1a] rounded-lg border border-solid border-[#00000014]"
+          class="relative flex-1 min-w-0 max-lg:w-full max-lg:max-w-[400px] h-[280px] max-md:h-auto bg-[#ffffff1a] rounded-lg border border-solid border-[#00000014] max-md:flex max-md:flex-col max-md:items-center max-md:px-8 max-md:py-6"
         >
           <img
-            class="absolute top-5 left-1/2 -translate-x-1/2 w-[100px] h-[100px]"
+            class="absolute top-5 left-1/2 -translate-x-1/2 w-[100px] h-[100px] max-md:relative max-md:top-auto max-md:left-auto max-md:translate-x-0 max-md:w-[80px] max-md:h-[80px]"
             :alt="card.imgAlt"
             :src="card.imgSrc"
           />
-          <div class="w-[calc(100%_-_66px)] items-center absolute top-[130px] left-[33px] flex flex-col">
+          <div class="w-[calc(100%_-_66px)] items-center absolute top-[130px] left-[33px] flex flex-col max-md:relative max-md:top-auto max-md:left-auto max-md:w-full max-md:mt-3">
             <div class="relative flex items-center h-8 font-medium text-slate-50 text-xl leading-8 whitespace-nowrap">
               {{ card.title }}
             </div>
           </div>
-          <div class="flex flex-col w-[calc(100%_-_66px)] items-center absolute top-[172px] left-[33px]">
-            <p class="relative flex items-center justify-center w-full h-[72px] font-normal text-slate-400 text-[15px] text-center leading-6">
+          <div class="flex flex-col w-[calc(100%_-_66px)] items-center absolute top-[172px] left-[33px] max-md:relative max-md:top-auto max-md:left-auto max-md:w-full max-md:mt-2">
+            <p class="relative flex items-center justify-center w-full h-[72px] max-md:h-auto font-normal text-slate-400 text-[15px] text-center leading-6">
               {{ card.description }}
             </p>
           </div>
@@ -131,52 +132,58 @@
     </section>
 
     <!-- AI Development Process Section -->
-    <section class="flex flex-col w-full items-start px-[120px] py-[100px] relative overflow-hidden">
-      <div class="flex flex-col max-w-screen-xl items-start gap-16 px-6 py-0 relative w-full">
+    <section class="flex flex-col w-full items-start px-[120px] max-lg:px-8 max-md:px-4 py-[100px] max-lg:py-16 max-md:py-10 relative overflow-hidden">
+      <div class="flex flex-col max-w-screen-xl items-start gap-16 max-md:gap-8 px-6 max-md:px-0 py-0 relative w-full">
         <SectionHeader first-letter="D" rest-text="EVELOPMENT PROCESS" title="AI原生開發流程" align="left" />
       </div>
 
       <!-- Content area -->
-      <div class="relative w-full mt-[100px]">
+      <div class="relative w-full mt-[100px] max-lg:mt-12 max-md:mt-8">
         <!-- Left content -->
-        <div class="flex flex-col max-w-[700px] px-6">
-          <div class="w-[233px] h-[42px] flex items-center font-semibold text-cyan-500 text-[34px] leading-8 mb-4">
-            01-自動化測試
+        <div class="flex flex-col max-w-[700px] max-lg:max-w-full px-6 max-md:px-0">
+          <div class="max-lg:w-full h-[42px] max-lg:h-auto flex items-center font-semibold text-cyan-500 text-[34px] max-md:text-2xl leading-8 mb-4">
+            {{ devProcessSteps[activeStep].number }}-{{ devProcessSteps[activeStep].title }}
           </div>
-          <div class="w-full max-w-[831px] font-normal text-white text-2xl leading-[48px] mb-16">
-            AI 自動生成測試案例與腳本，覆蓋極端邊界情境。<br />
-            每一次更新都經過數千次自動驗證，確保系統穩如泰山。
+          <div class="w-full max-w-[831px] font-normal text-white text-2xl max-md:text-lg leading-[48px] max-md:leading-8 mb-16 max-md:mb-8">
+            <template v-for="(line, i) in devProcessSteps[activeStep].description.split('\n')" :key="i">
+              {{ line }}<br v-if="i < devProcessSteps[activeStep].description.split('\n').length - 1" class="max-md:hidden" />
+            </template>
           </div>
 
           <!-- Step indicators -->
-          <div class="relative w-[757px] h-[130px]">
-            <div class="absolute top-0 left-0 w-[152px] h-24 flex items-center text-[24px] leading-8" style="font-family:'DIN_BlackAlternate-Regular',Helvetica">
-              <span style="color:#404852">STEP</span>
-              <span style="color:#404852; font-size:64px; font-family:'DIN-Regular',Helvetica">1</span>
+          <div class="relative w-[757px] max-lg:w-full h-[130px] max-lg:h-auto max-lg:flex max-lg:gap-0 max-lg:items-center max-lg:justify-start">
+            <div
+              v-for="(step, index) in devProcessSteps"
+              :key="index"
+              class="absolute top-0 w-[157px] h-24 flex items-center text-[24px] leading-8 cursor-pointer max-lg:relative max-lg:!left-auto max-lg:w-auto max-lg:flex-1 max-lg:justify-center max-md:text-[18px]"
+              :style="{ left: `${index * 252}px`, fontFamily: '\'DIN_BlackAlternate-Regular\',Helvetica' }"
+              @click="activeStep = index"
+            >
+              <span :class="activeStep === index ? 'text-cyan-500' : 'text-[#404852]'">STEP</span>
+              <span
+                :class="activeStep === index ? 'text-cyan-500' : 'text-[#404852]'"
+                class="max-md:!text-[36px]"
+                :style="{ fontSize: '64px', fontFamily: activeStep === index ? '\'DIN-Bold\',Helvetica' : '\'DIN-Regular\',Helvetica', fontWeight: activeStep === index ? 'bold' : 'normal' }"
+              >{{ index + 1 }}</span>
             </div>
-            <div class="absolute top-0 left-[252px] w-[157px] h-24 flex items-center text-[24px] leading-8" style="font-family:'DIN_BlackAlternate-Regular',Helvetica">
-              <span class="text-cyan-500">STEP</span>
-              <span class="text-cyan-500" style="font-size:64px; font-family:'DIN-Bold',Helvetica; font-weight:bold">2</span>
-            </div>
-            <div class="absolute top-0 left-[502px] w-[157px] h-24 flex items-center text-[24px] leading-8" style="font-family:'DIN_BlackAlternate-Regular',Helvetica">
-              <span style="color:#404852">STEP</span>
-              <span style="color:#404852; font-size:64px; font-family:'DIN-Regular',Helvetica">3</span>
-            </div>
-            <img class="absolute top-[128px] left-1 w-[747px] h-px" alt="Line" src="/images/mn69fej5o9rxxH/line-6.svg" />
-            <div class="absolute top-[128px] left-[252px] w-[250px] h-0.5 bg-cyan-500 rounded-[50px]" />
+            <img class="absolute top-[128px] left-1 w-[747px] h-px max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-6.svg" />
+            <div
+              class="absolute top-[128px] w-[250px] h-0.5 bg-cyan-500 rounded-[50px] transition-all duration-300 max-lg:hidden"
+              :style="{ left: `${activeStep * 252}px` }"
+            />
           </div>
         </div>
 
         <!-- Right image -->
         <img
-          class="absolute top-[-100px] right-0 w-[640px] h-[640px] object-contain"
+          class="absolute top-[-100px] right-0 w-[640px] h-[640px] object-contain max-lg:hidden"
           alt="Image"
           src="/images/mn69fej5o9rxxH/image-34.png"
         />
 
         <!-- Decorative mask group -->
         <img
-          class="absolute top-[459px] right-[-120px] w-[273px] h-[618px] object-contain pointer-events-none"
+          class="absolute top-[459px] right-[-120px] w-[273px] h-[618px] object-contain pointer-events-none max-lg:hidden"
           alt="Mask group"
           src="/images/mn69fej5o9rxxH/mask-group-1.png"
         />
@@ -187,6 +194,26 @@
 </template>
 
 <script setup lang="ts">
+const activeStep = ref(0)
+
+const devProcessSteps = [
+  {
+    number: '01',
+    title: '自動化測試',
+    description: 'AI 自動生成測試案例與腳本，覆蓋極端邊界情境。\n每一次更新都經過數千次自動驗證，確保系統穩如泰山。',
+  },
+  {
+    number: '02',
+    title: '智能代碼生成',
+    description: 'AI 輔助生成高品質程式碼，大幅提升開發效率。\n自動遵循最佳實踐與編碼規範，減少人為錯誤。',
+  },
+  {
+    number: '03',
+    title: '持續部署優化',
+    description: 'AI 驅動的自動化部署流程，實現零停機更新。\n智能監控與回滾機制，確保服務穩定運行。',
+  },
+]
+
 const corePhilosophyCards = [
   {
     title: 'AI 原生思維',

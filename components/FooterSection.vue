@@ -1,10 +1,10 @@
 <template>
-  <footer class="flex flex-col w-full items-start pt-[79px] pb-8 px-20 bg-[#0b1121] border-t border-[#00000014]">
-    <div class="flex flex-col items-start gap-2 px-6 py-0 w-full">
+  <footer class="flex flex-col w-full items-start pt-[79px] max-md:pt-10 pb-8 px-20 max-lg:px-8 max-md:px-4 bg-[#0b1121] border-t border-[#00000014]">
+    <div class="flex flex-col items-start gap-2 px-6 max-md:px-0 py-0 w-full">
       <!-- Main footer columns -->
-      <div class="flex items-end justify-center gap-12 self-stretch w-full">
+      <div class="flex max-lg:flex-col items-start justify-between max-lg:gap-8 self-stretch w-full">
         <!-- Brand / Description column -->
-        <div class="flex flex-col w-[435px] items-start gap-[23px]">
+        <div class="flex flex-col w-[435px] max-lg:w-full items-start gap-[23px]">
           <!-- Logo -->
           <NuxtLink to="/" class="flex items-center gap-3 self-stretch w-full no-underline">
             <img
@@ -18,28 +18,27 @@
           </NuxtLink>
 
           <!-- Description -->
-          <div class="flex flex-col max-w-xs w-80 items-start">
-            <p class="w-80 font-normal text-slate-400 text-base tracking-[0] leading-[28.8px]">
+          <div class="flex flex-col max-w-xs w-80 max-lg:w-full items-start">
+            <p class="w-80 max-lg:w-full font-normal text-slate-400 text-base tracking-[0] leading-[28.8px]">
               AI 驅動開發，智慧交付每一行程式碼。<br />
-              致力於運用最先進的人工智慧技術，為企業打<br />
-              造高效、穩定的數位產品。
+              致力於運用最先進的人工智慧技術，為企業打造高效、穩定的數位產品。
             </p>
           </div>
         </div>
 
         <!-- Quick Links column -->
-        <div class="flex flex-col w-[218px] items-start gap-6 self-stretch">
+        <div class="flex flex-col w-[218px] max-lg:w-full items-start gap-6 self-stretch">
           <div class="self-stretch flex flex-col items-start pb-[0.59px]">
             <span class="font-normal text-slate-50 text-base tracking-[0] leading-[25.6px]">
               快速連結
             </span>
           </div>
 
-          <nav class="flex flex-col items-start gap-4 self-stretch w-full">
+          <nav class="flex flex-col max-md:flex-row max-md:flex-wrap max-md:gap-x-6 items-start gap-4 self-stretch w-full">
             <div
               v-for="link in quickLinks"
               :key="link.label"
-              class="flex flex-col items-start pt-px pb-[1.59px] px-0 self-stretch w-full"
+              class="flex flex-col items-start pt-px pb-[1.59px] px-0 self-stretch max-md:self-auto w-full max-md:w-auto"
             >
               <NuxtLink
                 :to="link.to"
@@ -53,7 +52,7 @@
         </div>
 
         <!-- Contact Info column -->
-        <div class="flex flex-col w-[218px] items-start gap-6 self-stretch">
+        <div class="flex flex-col w-[218px] max-lg:w-full items-start gap-6 self-stretch">
           <div class="self-stretch flex flex-col items-start pb-[0.59px]">
             <span class="font-normal text-slate-50 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
               聯絡資訊
@@ -87,7 +86,7 @@
         </div>
 
         <!-- Follow Us column -->
-        <div class="flex flex-col w-[218px] items-start gap-6 self-stretch">
+        <div class="flex flex-col w-[218px] max-lg:w-full items-start gap-6 self-stretch">
           <div class="self-stretch flex flex-col items-start pb-[0.59px]">
             <span class="font-normal text-slate-50 text-base tracking-[0] leading-[25.6px]">
               追蹤我們
@@ -95,7 +94,7 @@
           </div>
 
           <img
-            class="self-stretch w-full"
+            class="self-stretch w-full max-lg:max-w-[218px]"
             alt="Social media links"
             src="/images/mn6tdh0s8MHj5j/container.svg"
           />
@@ -103,7 +102,7 @@
       </div>
 
       <!-- Bottom bar -->
-      <div class="flex items-center justify-between pt-8 pb-0 px-0 self-stretch w-full border-t border-[#00000014]">
+      <div class="flex max-md:flex-col items-center max-md:items-start justify-between pt-8 pb-0 px-0 self-stretch w-full border-t border-[#00000014] max-md:gap-4">
         <p class="font-normal text-slate-400 text-[13px] tracking-[0] leading-[20.8px] whitespace-nowrap">
           &copy; 2026 智慧時尚 Smart Fashion. All rights reserved.
         </p>

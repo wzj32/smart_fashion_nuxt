@@ -1,5 +1,10 @@
 <template>
-  <section class="relative w-full py-12 md:py-16 overflow-hidden">
+  <section
+    class="relative w-full py-12 md:py-16 overflow-hidden"
+    @touchstart="onTouchStart"
+    @touchmove="onTouchMove"
+    @touchend="onTouchEnd"
+  >
     <!-- Section Header -->
     <div class="mb-8 md:mb-12">
       <SectionHeader first-letter="S" rest-text="ELECTED CASES" title="精選案例" fill-third />
@@ -171,6 +176,36 @@ const cases: CaseItem[] = [
 ]
 
 const currentIndex = ref(0)
+
+// Touch swipe support for mobile
+const touchStartX = ref(0)
+const touchStartY = ref(0)
+const isSwiping = ref(false)
+
+function onTouchStart(e: TouchEvent) {
+  touchStartX.value = e.touches[0].clientX
+  touchStartY.value = e.touches[0].clientY
+  isSwiping.value = false
+}
+
+function onTouchMove(e: TouchEvent) {
+  const diffX = Math.abs(e.touches[0].clientX - touchStartX.value)
+  const diffY = Math.abs(e.touches[0].clientY - touchStartY.value)
+  // If horizontal swipe is dominant, prevent page scroll
+  if (diffX > diffY && diffX > 10) {
+    isSwiping.value = true
+    e.preventDefault()
+  }
+}
+
+function onTouchEnd(e: TouchEvent) {
+  const endX = e.changedTouches[0].clientX
+  const diff = touchStartX.value - endX
+  if (isSwiping.value && Math.abs(diff) > 40) {
+    if (diff > 0) next()
+    else prev()
+  }
+}
 
 function getWrappedIndex(index: number) {
   return ((index % cases.length) + cases.length) % cases.length

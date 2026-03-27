@@ -1,10 +1,10 @@
 <template>
-  <section class="px-20 py-10 border-b border-[#00000014] backdrop-blur-[5px] flex flex-col items-center self-stretch w-full">
-    <div class="flex items-stretch justify-center gap-8 w-full max-w-screen-xl">
+  <section class="px-20 max-lg:px-8 max-md:px-4 py-10 border-b border-[#00000014] backdrop-blur-[5px] flex flex-col items-center self-stretch w-full">
+    <div class="flex max-md:flex-wrap items-stretch justify-center gap-8 max-md:gap-4 w-full max-w-screen-xl">
       <div
         v-for="(stat, index) in statisticsData"
         :key="index"
-        class="relative flex flex-col items-center justify-center gap-2 flex-1 rounded-[10px] py-6 px-4"
+        class="relative flex flex-col items-center justify-center gap-2 flex-1 max-md:basis-[calc(50%-0.5rem)] max-md:flex-grow-0 rounded-[10px] py-6 px-4"
         :style="{ background: stat.cardBg }"
       >
         <!-- Gradient border overlay -->
@@ -15,11 +15,11 @@
 
         <!-- Icon image -->
         <div class="flex flex-col items-center w-full">
-          <img class="w-[100px] h-[100px]" :alt="stat.imgAlt" :src="stat.imgSrc" />
+          <img class="w-[100px] h-[100px] max-md:w-16 max-md:h-16" :alt="stat.imgAlt" :src="stat.imgSrc" />
 
           <!-- Stat number -->
           <div
-            class="flex items-center justify-center h-[59px] font-normal text-5xl text-center tracking-[0] leading-normal text-transparent"
+            class="flex items-center justify-center h-[59px] font-normal text-5xl max-md:text-3xl text-center tracking-[0] leading-normal text-transparent"
             style="background-image: linear-gradient(180deg, rgba(248,250,252,1) 0%, rgba(148,163,184,1) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;"
           >
             {{ stat.value }}
@@ -28,7 +28,7 @@
 
         <!-- Label -->
         <div class="flex flex-col items-center pb-0.5 w-full">
-          <div class="flex items-center justify-center h-5 font-normal text-cyan-500 text-base text-center tracking-[0] leading-normal">
+          <div class="flex items-center justify-center h-5 font-normal text-cyan-500 text-base max-md:text-sm text-center tracking-[0] leading-normal">
             {{ stat.label }}
           </div>
         </div>

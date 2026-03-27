@@ -1,5 +1,5 @@
 <template>
-  <section class="px-[120px] flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px]">
+  <section class="px-[120px] max-lg:px-8 max-md:px-4 flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px] max-md:mt-6">
     <!-- Badge -->
     <div class="flex items-center gap-2 bg-[#06b6d41a] rounded-xl px-4 h-[34.39px]">
       <img
@@ -16,7 +16,7 @@
     <div class="relative flex flex-col items-center w-full">
       <!-- Background decorative image -->
       <img
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[989px] h-[610px] pointer-events-none"
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[989px] max-lg:w-full h-[610px] pointer-events-none"
         alt="Mask group"
         src="/images/mn6whp7lktE587/mask-group.png"
       />
@@ -25,27 +25,27 @@
       <div class="relative flex flex-col items-center gap-1.5 z-10">
         <div class="flex flex-col items-center">
           <h1
-            class="font-semibold text-5xl text-center tracking-[-0.96px] leading-[57.6px] whitespace-nowrap font-inter"
+            class="font-semibold text-5xl max-lg:text-4xl max-md:text-3xl text-center tracking-[-0.96px] leading-[57.6px] max-md:leading-normal whitespace-nowrap font-inter"
             style="background: linear-gradient(90deg, rgba(82,85,238,1) 0%, rgba(255,255,255,1) 55%, rgba(60,180,217,1) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
           >
             核心技術
           </h1>
         </div>
 
-        <h2 class="font-semibold text-white text-5xl text-center leading-[normal] tracking-[0] font-inter">
+        <h2 class="font-semibold text-white text-5xl max-lg:text-4xl max-md:text-3xl text-center leading-[normal] tracking-[0] font-inter max-md:whitespace-normal whitespace-nowrap">
           以 AI 為核心的技術生態
         </h2>
       </div>
 
       <!-- Subtitle text -->
-      <div class="relative z-10 mt-6 flex items-center justify-center">
-        <p class="font-normal text-white text-lg text-center leading-[28.8px] whitespace-nowrap tracking-[0] font-inter">
+      <div class="relative z-10 mt-6 flex items-center justify-center max-md:px-2">
+        <p class="font-normal text-white text-lg max-md:text-base text-center leading-[28.8px] whitespace-nowrap max-lg:whitespace-normal tracking-[0] font-inter">
           我們精選現代化開源技術，結合自研 AI 模型，構建高擴展、高並發、高安全的企業級軟體系統。
         </p>
       </div>
 
       <!-- Spacer -->
-      <div class="h-[280px]" />
+      <div class="h-[280px] max-lg:h-[180px] max-md:h-[100px]" />
     </div>
 
     <!-- Tech Stack Section -->
@@ -54,23 +54,23 @@
       <SectionHeader first-letter="S" rest-text="TACK" title="開發技術棧" fill-second />
 
       <!-- Tab buttons -->
-      <div class="flex items-center gap-[60px] flex-wrap justify-center">
+      <div class="flex items-center gap-[60px] max-lg:gap-4 max-md:gap-3 flex-wrap justify-center">
         <button
           v-for="tab in techTabs"
           :key="tab.id"
           @click="activeTab = tab.id"
-          class="flex w-[200px] h-[72px] items-center justify-center gap-2.5 rounded-[10px] transition-colors cursor-pointer border-none"
+          class="flex w-[200px] max-md:w-[140px] h-[72px] max-md:h-[56px] items-center justify-center gap-2.5 rounded-[10px] transition-colors cursor-pointer border-none"
           :class="activeTab === tab.id ? 'bg-violet-600' : 'bg-[#262c3a] hover:bg-[#363d4f]'"
         >
-          <img class="w-14 h-14" alt="Rectangle" :src="tab.img" />
-          <span class="font-normal text-white text-xl tracking-[0] leading-[normal] whitespace-nowrap" style="font-family: 'Bebas Neue', sans-serif;">
+          <img class="w-14 max-md:w-10 h-14 max-md:h-10" alt="Rectangle" :src="tab.img" />
+          <span class="font-normal text-white text-xl max-md:text-base tracking-[0] leading-[normal] whitespace-nowrap" style="font-family: 'Bebas Neue', sans-serif;">
             {{ tab.label }}
           </span>
         </button>
       </div>
 
       <!-- Content area: bullet list + image -->
-      <div class="relative flex w-full items-start justify-between mt-4">
+      <div class="relative flex max-lg:flex-col w-full items-start max-lg:items-center justify-between mt-4 max-lg:gap-8">
         <!-- Bullet points list -->
         <div class="flex flex-col gap-0">
           <div
@@ -79,7 +79,7 @@
             class="flex items-center gap-4 h-16"
           >
             <img class="w-5 h-5 flex-shrink-0" alt="Group" :src="item.icon" />
-            <span class="font-normal text-white text-xl leading-[64px] tracking-[0] whitespace-nowrap font-inter">
+            <span class="font-normal text-white text-xl max-md:text-base leading-[64px] max-md:leading-normal tracking-[0] whitespace-nowrap max-lg:whitespace-normal font-inter">
               {{ item.text }}
             </span>
           </div>
@@ -87,7 +87,7 @@
 
         <!-- 3D decorative image -->
         <img
-          class="w-[325px] h-[323px] object-cover flex-shrink-0"
+          class="w-[325px] max-lg:w-full max-lg:max-w-[280px] h-[323px] max-lg:h-auto object-cover flex-shrink-0"
           alt="Image"
           src="/images/mn6whp7lktE587/image-58.png"
         />
@@ -95,7 +95,7 @@
     </div>
 
     <!-- CTA Card -->
-    <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden" style="background: linear-gradient(164deg, rgba(124,58,237,0.1) 0%, rgba(59,130,246,0.1) 100%)">
+    <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden" style="background: linear-gradient(164deg, rgba(124,58,237,0.1) 0%, rgba(59,130,246,0.1) 100%)">
       <!-- Background mask image -->
       <img
         class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
@@ -105,15 +105,15 @@
 
       <!-- CTA heading -->
       <div class="relative z-10 flex items-center justify-center">
-        <h2 class="font-semibold text-slate-50 text-[32px] text-center leading-[51.2px] whitespace-nowrap tracking-[0] font-inter">
+        <h2 class="font-semibold text-slate-50 text-[32px] max-md:text-2xl text-center leading-[51.2px] max-md:leading-normal whitespace-nowrap max-md:whitespace-normal tracking-[0] font-inter">
           準備好開始您的專案了嗎？
         </h2>
       </div>
 
       <!-- CTA subtitle -->
       <div class="relative z-10 flex flex-col max-w-[600px] w-full items-center pb-[17.79px]">
-        <p class="font-normal text-slate-400 text-lg text-center leading-[28.8px] tracking-[0] font-inter">
-          從概念到落地，我們是您最值得信賴的技術夥伴。立即預約，<br />開啟高效開發之旅。
+        <p class="font-normal text-slate-400 text-lg max-md:text-base text-center leading-[28.8px] tracking-[0] font-inter">
+          從概念到落地，我們是您最值得信賴的技術夥伴。立即預約，開啟高效開發之旅。
         </p>
       </div>
 

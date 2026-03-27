@@ -47,14 +47,14 @@ function handleSubmit() {
 </script>
 
 <template>
-  <section class="flex flex-col w-full max-w-screen-xl mx-auto items-start px-20 py-0">
+  <section class="flex flex-col w-full max-w-screen-xl mx-auto items-start px-20 max-lg:px-8 max-md:px-4 py-0">
     <!-- Header section -->
     <div
-      class="flex flex-col items-center gap-[14.9px] pt-[79px] pb-[60px] px-0 relative self-stretch w-full"
+      class="flex flex-col items-center gap-[14.9px] pt-[79px] max-md:pt-10 pb-[60px] max-md:pb-8 px-0 relative self-stretch w-full"
     >
       <!-- Decorative background image -->
       <img
-        class="absolute top-0 right-0 w-[400px] h-[400px] object-cover pointer-events-none opacity-60"
+        class="absolute top-0 right-0 w-[400px] h-[400px] max-md:w-[200px] max-md:h-[200px] object-cover pointer-events-none opacity-60"
         alt="Decorative wave"
         src="/images/mn6wtbljcCQQNA/image-22.png"
       />
@@ -64,7 +64,7 @@ function handleSubmit() {
         class="items-center pt-0 pb-[0.8px] px-0 relative self-stretch flex-[0_0_auto] flex flex-col w-full z-10"
       >
         <h1
-          class="flex items-center justify-center h-[77px] bg-[linear-gradient(90deg,rgba(82,85,238,1)_0%,rgba(255,255,255,1)_55%,rgba(60,180,217,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] font-semibold text-5xl text-center tracking-[-0.96px] leading-[76.8px] whitespace-nowrap"
+          class="flex items-center justify-center h-[77px] max-md:h-auto bg-[linear-gradient(90deg,rgba(82,85,238,1)_0%,rgba(255,255,255,1)_55%,rgba(60,180,217,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] font-semibold text-5xl max-lg:text-4xl max-md:text-3xl text-center tracking-[-0.96px] leading-[76.8px] max-md:leading-normal whitespace-nowrap max-md:whitespace-normal"
         >
           開始您的 AI 轉型之旅
         </h1>
@@ -74,17 +74,16 @@ function handleSubmit() {
       <div
         class="flex flex-col max-w-[600px] items-center pt-0 pb-[0.69px] px-0 relative flex-[0_0_auto] z-10"
       >
-        <p class="text-lg text-center leading-[28.8px] font-normal text-slate-400 tracking-[0]">
-          無論是專案開發、系統升級或技術諮詢，我們隨時準備為您服務。請填寫下<br />
-          方表單，我們將在 24 小時內與您聯繫。
+        <p class="text-lg max-md:text-base text-center leading-[28.8px] font-normal text-slate-400 tracking-[0]">
+          無論是專案開發、系統升級或技術諮詢，我們隨時準備為您服務。請填寫下方表單，我們將在 24 小時內與您聯繫。
         </p>
       </div>
     </div>
 
     <!-- Main content: left info + right form -->
-    <div class="flex items-start justify-center gap-20 relative self-stretch w-full flex-[0_0_auto]">
+    <div class="flex max-lg:flex-col items-start justify-center gap-20 max-lg:gap-10 relative self-stretch w-full flex-[0_0_auto]">
       <!-- Left column: contact info -->
-      <div class="flex flex-col w-[428px] items-start gap-8 relative self-stretch">
+      <div class="flex flex-col w-[428px] max-lg:w-full items-start gap-8 relative self-stretch">
         <!-- Contact info items -->
         <div
           v-for="(item, index) in contactInfoItems"
@@ -96,7 +95,7 @@ function handleSubmit() {
             <span class="font-medium text-slate-50 text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
               {{ item.title }}
             </span>
-            <span class="font-normal text-slate-400 text-[15px] tracking-[0] leading-6 whitespace-nowrap">
+            <span class="font-normal text-slate-400 text-[15px] tracking-[0] leading-6 whitespace-nowrap max-md:whitespace-normal">
               {{ item.detail }}
             </span>
             <span
@@ -136,16 +135,16 @@ function handleSubmit() {
 
       <!-- Right column: contact form -->
       <div
-        class="flex-1 bg-[#ffffff0d] rounded-lg border border-solid border-[#00000014] self-stretch"
+        class="flex-1 max-lg:w-full bg-[#ffffff0d] rounded-lg border border-solid border-[#00000014] self-stretch"
       >
         <form
-          class="flex flex-col items-start gap-[23px] pt-[39px] pb-14 px-10"
+          class="flex flex-col items-start gap-[23px] pt-[39px] pb-14 max-md:pb-8 px-10 max-md:px-4"
           @submit.prevent="handleSubmit"
         >
           <!-- Name + Email row -->
-          <div class="flex items-start justify-center gap-6 relative self-stretch w-full flex-[0_0_auto]">
+          <div class="flex max-md:flex-col items-start justify-center gap-6 relative self-stretch w-full flex-[0_0_auto]">
             <!-- Name field -->
-            <div class="flex flex-col items-start gap-2 relative flex-1 self-stretch grow">
+            <div class="flex flex-col items-start gap-2 relative flex-1 max-md:w-full self-stretch grow">
               <div class="flex items-center gap-1">
                 <label class="font-normal text-slate-50 text-sm tracking-[0] leading-[22.4px] whitespace-nowrap">
                   您的姓名
@@ -160,7 +159,7 @@ function handleSubmit() {
             </div>
 
             <!-- Email field -->
-            <div class="flex flex-col items-start gap-2 relative flex-1 self-stretch grow">
+            <div class="flex flex-col items-start gap-2 relative flex-1 max-md:w-full self-stretch grow">
               <div class="flex items-center gap-1">
                 <label class="font-medium text-slate-50 text-sm tracking-[0] leading-[22.4px] whitespace-nowrap">
                   聯絡 Email
