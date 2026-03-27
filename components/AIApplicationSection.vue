@@ -63,7 +63,7 @@
             >
               <!-- Badge -->
               <span
-                class="inline-block self-start rounded-full border px-4 py-0.5 text-sm md:text-base whitespace-nowrap transition-colors duration-300"
+                class="inline-block self-start rounded-full border px-4 py-0.5 text-[8px] md:text-[10px] whitespace-nowrap transition-colors duration-300"
                 :class="[pos.item.badgeBorderClass, pos.item.badgeTextClass]"
               >
                 {{ pos.item.badge }}

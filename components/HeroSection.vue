@@ -4,7 +4,7 @@
     <img
       class="absolute w-full h-full top-0 left-0 object-cover"
       alt="AI background"
-      src="/images/mn5gtr03DZ8elR/img---ai-background-mask-group.svg"
+      src="/images/mn5gtr03DZ8elR/bg-2.png"
     />
 
     <!-- Hero content -->

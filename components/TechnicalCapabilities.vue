@@ -72,7 +72,7 @@
       </div>
 
       <!-- Content area: bullet list + image -->
-      <div class="relative flex max-lg:flex-col w-full items-start max-lg:items-center justify-between mt-4 max-lg:gap-8">
+      <div class="relative flex max-lg:flex-col w-full max-w-[980px] items-start max-lg:items-center justify-between mt-4 max-lg:gap-8">
         <!-- Bullet points list -->
         <Transition name="tab-bullets" mode="out-in">
           <div :key="activeTab" class="flex flex-col gap-0">

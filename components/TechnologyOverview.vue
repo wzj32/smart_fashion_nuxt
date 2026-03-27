@@ -52,8 +52,8 @@
           <img class="absolute top-[219px] left-[75%] w-px h-[535px] max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-5.svg" />
 
           <!-- 12+ 年開發經驗 -->
-          <div v-reveal="{ direction: 'up', delay: 0, duration: 800 }" class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-64 left-[33.5%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 0, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-64 left-[25%] right-[50%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
+            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               12+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -62,8 +62,8 @@
           </div>
 
           <!-- 200+ 服務客戶 -->
-          <div v-reveal="{ direction: 'up', delay: 150, duration: 800 }" class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-[455px] left-[8%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 150, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-[455px] left-0 right-[75%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
+            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               200+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -72,8 +72,8 @@
           </div>
 
           <!-- AI 核心驅動 -->
-          <div v-reveal="{ direction: 'up', delay: 300, duration: 800 }" class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-[455px] left-[33.5%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(152deg,#5255ee 0%,#fff 55%,#3cb4d9 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 300, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-[455px] left-[25%] right-[50%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
+            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               AI
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -82,8 +82,8 @@
           </div>
 
           <!-- 100+ 專案交付 -->
-          <div v-reveal="{ direction: 'up', delay: 450, duration: 800 }" class="inline-flex flex-col h-[140px] items-center gap-[7px] absolute top-64 left-[56.8%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:basis-[40%] max-md:basis-full">
-            <div class="relative flex items-center justify-center w-[226px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN_BlackAlternate-Regular',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 450, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-64 left-[50%] right-[25%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
+            <div class="relative flex items-center justify-center w-[226px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               100+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -137,8 +137,8 @@
     </section>
 
     <!-- AI Development Process Section -->
-    <section class="flex flex-col w-full items-start px-[120px] max-lg:px-8 max-md:px-4 py-[100px] max-lg:py-16 max-md:py-10 relative overflow-hidden">
-      <div v-reveal="{ direction: 'left', duration: 800, distance: '40px' }" class="flex flex-col max-w-screen-xl items-start gap-16 max-md:gap-8 px-6 max-md:px-0 py-0 relative w-full">
+    <section class="flex flex-col max-w-screen-xl w-full items-start px-6 max-md:px-4 py-[100px] max-lg:py-16 max-md:py-10 relative">
+      <div v-reveal="{ direction: 'left', duration: 800, distance: '40px' }" class="flex flex-col items-start gap-16 max-md:gap-8 py-0 relative w-full">
         <SectionHeader first-letter="D" rest-text="EVELOPMENT PROCESS" title="AI原生開發流程" align="left" />
       </div>
 
@@ -148,10 +148,10 @@
         <div class="flex flex-col max-w-[700px] max-lg:max-w-full px-6 max-md:px-0">
           <Transition name="step-content" mode="out-in">
             <div :key="activeStep" class="flex flex-col">
-              <div class="max-lg:w-full h-[42px] max-lg:h-auto flex items-center font-semibold text-cyan-500 text-[34px] max-md:text-2xl leading-8 mb-4">
+              <div class="max-lg:w-full h-[42px] max-lg:h-auto flex items-center font-semibold text-cyan-500 text-[30px] max-md:text-2xl leading-8 mb-4">
                 {{ devProcessSteps[activeStep].number }}-{{ devProcessSteps[activeStep].title }}
               </div>
-              <div class="w-full max-w-[831px] font-normal text-white text-2xl max-md:text-lg leading-[48px] max-md:leading-8 mb-16 max-md:mb-8">
+              <div class="w-full max-w-[831px] font-normal text-white text-[20px] max-md:text-lg leading-[48px] max-md:leading-8 mb-16 max-md:mb-8">
                 <template v-for="(line, i) in devProcessSteps[activeStep].description.split('\n')" :key="i">
                   {{ line }}<br v-if="i < devProcessSteps[activeStep].description.split('\n').length - 1" class="max-md:hidden" />
                 </template>
@@ -164,15 +164,15 @@
             <div
               v-for="(step, index) in devProcessSteps"
               :key="index"
-              class="absolute top-0 w-[157px] h-24 flex items-center text-[24px] leading-8 cursor-pointer max-lg:relative max-lg:!left-auto max-lg:w-auto max-lg:flex-1 max-lg:justify-center max-md:text-[18px] transition-colors duration-300"
-              :style="{ left: `${index * 252}px`, fontFamily: '\'DIN_BlackAlternate-Regular\',Helvetica' }"
+              class="absolute top-0 w-[157px] h-24 flex items-center text-[20px] leading-8 cursor-pointer max-lg:relative max-lg:!left-auto max-lg:w-auto max-lg:flex-1 max-lg:justify-center max-md:text-[18px] transition-colors duration-300"
+              :style="{ left: `${index * 252}px`, fontFamily: '\'DIN-Black\',Helvetica' }"
               @click="activeStep = index"
             >
               <span :class="activeStep === index ? 'text-cyan-500' : 'text-[#404852]'">STEP</span>
               <span
                 :class="activeStep === index ? 'text-cyan-500' : 'text-[#404852]'"
                 class="max-md:!text-[36px] transition-all duration-300"
-                :style="{ fontSize: '64px', fontFamily: activeStep === index ? '\'DIN-Bold\',Helvetica' : '\'DIN-Regular\',Helvetica', fontWeight: activeStep === index ? 'bold' : 'normal' }"
+                :style="{ fontSize: '60px', fontFamily: '\'DIN-Black\',Helvetica' }"
               >{{ index + 1 }}</span>
             </div>
             <img class="absolute top-[128px] left-1 w-[747px] h-px max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-6.svg" />
@@ -187,7 +187,7 @@
         <Transition name="step-image" mode="out-in">
           <img
             :key="activeStep + '-img'"
-            class="absolute top-[-100px] right-0 w-[640px] h-[640px] max-[1400px]:w-[480px] max-[1400px]:h-[480px] object-contain max-lg:hidden"
+            class="absolute top-[-100px] right-[-100px] w-[640px] h-[640px] max-[1400px]:w-[480px] max-[1400px]:h-[480px] object-contain max-lg:hidden"
             alt="Image"
             :src="devProcessSteps[activeStep].image"
           />
@@ -277,4 +277,5 @@ const corePhilosophyCards = [
   opacity: 0;
   transform: scale(1.05);
 }
+
 </style>

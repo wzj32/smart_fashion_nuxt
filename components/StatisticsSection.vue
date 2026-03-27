@@ -7,8 +7,10 @@
       <div
         v-for="(stat, index) in statisticsData"
         :key="index"
-        class="relative flex flex-col items-center justify-center gap-2 flex-1 max-md:basis-[calc(50%-0.5rem)] max-md:flex-grow-0 rounded-[10px] py-6 px-4 hover-lift"
-        :style="{ background: stat.cardBg }"
+        class="group relative flex flex-col items-center justify-center gap-2 flex-1 max-md:basis-[calc(50%-0.5rem)] max-md:flex-grow-0 rounded-[10px] py-6 px-4 hover-lift transition-all duration-300"
+        :style="{ background: hoveredIndex === index ? 'linear-gradient(136deg, rgba(82,85,238,0.64) 0%, rgba(148,163,184,0.16) 100%)' : stat.cardBg }"
+        @mouseenter="hoveredIndex = index"
+        @mouseleave="hoveredIndex = -1"
       >
         <!-- Gradient border overlay -->
         <div
@@ -18,7 +20,7 @@
 
         <!-- Icon image -->
         <div class="flex flex-col items-center w-full">
-          <img class="w-[100px] h-[100px] max-md:w-16 max-md:h-16" :alt="stat.imgAlt" :src="stat.imgSrc" />
+          <img class="w-[100px] h-[100px] max-md:w-16 max-md:h-16 object-contain transition-transform duration-300 group-hover:scale-110" :alt="stat.imgAlt" :src="stat.imgSrc" />
 
           <!-- Stat number with count-up -->
           <div
@@ -49,7 +51,7 @@ const statisticsData = [
     label: '年開發經驗',
     imgSrc: '/images/mn5gtr03DZ8elR/mask-group.png',
     imgAlt: 'Mask group',
-    cardBg: 'linear-gradient(136deg, rgba(82,85,238,0.64) 0%, rgba(148,163,184,0.16) 100%)',
+    cardBg: 'linear-gradient(136deg, rgba(148,163,184,0.16) 0%, rgba(148,163,184,0.04) 100%)',
   },
   {
     value: 100,
@@ -77,6 +79,7 @@ const statisticsData = [
   },
 ]
 
+const hoveredIndex = ref(-1)
 const statRefs = ref<HTMLElement[]>([])
 const statDisplayValues = ref(statisticsData.map(s => '0' + s.suffix))
 const hasAnimated = ref(false)
