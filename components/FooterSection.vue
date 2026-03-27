@@ -127,7 +127,7 @@ const route = useRoute()
 const quickLinks = [
   { label: '首頁', to: '/' },
   { label: '關於我們', to: '/about' },
-  { label: '服務項目', to: '/services' },
+  // { label: '服務項目', to: '/services' },
   { label: '作品案例', to: '/cases' },
   { label: '技術能力', to: '/technology' },
   { label: '聯絡我們', to: '/contact' },

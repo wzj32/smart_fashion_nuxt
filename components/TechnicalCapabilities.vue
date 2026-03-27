@@ -89,7 +89,7 @@
         <img
           class="w-[325px] max-lg:w-full max-lg:max-w-[280px] h-[323px] max-lg:h-auto object-cover flex-shrink-0"
           alt="Image"
-          src="/images/mn6whp7lktE587/image-58.png"
+          :src="contentImage"
         />
       </div>
     </div>
@@ -179,33 +179,44 @@ const techTabs: TechTab[] = [
   },
 ]
 
-const bulletItems: BulletItem[] = [
-  {
-    id: 'item-1',
-    text: '雲原生應用設計：打造彈性高、易擴展的雲端應用架構',
-    icon: '/images/mn6whp7lktE587/group-29.png',
-  },
-  {
-    id: 'item-2',
-    text: '微服務架構：將系統拆分模組，提升維護與擴充效率',
-    icon: '/images/mn6whp7lktE587/group-30.png',
-  },
-  {
-    id: 'item-3',
-    text: '容器化技術：以容器封裝應用，實現快速部署與管理',
-    icon: '/images/mn6whp7lktE587/group-31.png',
-  },
-  {
-    id: 'item-4',
-    text: '無服務器計算：免維護伺服器，按需執行降低營運成本',
-    icon: '/images/mn6whp7lktE587/group-32.png',
-  },
-  {
-    id: 'item-5',
-    text: '高可用架構：確保系統穩定運行，降低中斷風險',
-    icon: '/images/mn6whp7lktE587/group-33.png',
-  },
-]
+const tabBulletItems: Record<string, BulletItem[]> = {
+  architecture: [
+    { id: 'arch-1', text: '雲原生應用設計：打造彈性高、易擴展的雲端應用架構', icon: '/images/mn6whp7lktE587/group-29.png' },
+    { id: 'arch-2', text: '微服務架構：將系統拆分模組，提升維護與擴充效率', icon: '/images/mn6whp7lktE587/group-30.png' },
+    { id: 'arch-3', text: '容器化技術：以容器封裝應用，實現快速部署與管理', icon: '/images/mn6whp7lktE587/group-31.png' },
+    { id: 'arch-4', text: '無服務器計算：免維護伺服器，按需執行降低營運成本', icon: '/images/mn6whp7lktE587/group-32.png' },
+    { id: 'arch-5', text: '高可用架構：確保系統穩定運行，降低中斷風險', icon: '/images/mn6whp7lktE587/group-33.png' },
+  ],
+  ai: [
+    { id: 'ai-1', text: '大語言模型應用：基於 LLM 實現智慧對話、內容生成、知識問答等場景落地。', icon: '/images/mn6whp7lktE587/group-29.png' },
+    { id: 'ai-2', text: '預訓練與微調：以通用大模型為基礎，針對企業資料進行微調，提升專業效果。', icon: '/images/mn6whp7lktE587/group-30.png' },
+    { id: 'ai-3', text: '領域適應：針對金融、製造、客服等垂直場景做知識與規則适配，更貼近業務。', icon: '/images/mn6whp7lktE587/group-31.png' },
+    { id: 'ai-4', text: 'AI 流程自動化：將重複性人工流程交由 AI 自動執行，降低成本、提升效率。', icon: '/images/mn6whp7lktE587/group-32.png' },
+  ],
+  llm: [
+    { id: 'llm-1', text: '模型部署優化：針對伺服器、邊緣設備進行調校，提升推理速度與資源利用率。', icon: '/images/mn6whp7lktE587/group-29.png' },
+    { id: 'llm-2', text: '垂直領域適應：融入行業知識與業務規則，讓模型回答更專業、更貼近場景需求。', icon: '/images/mn6whp7lktE587/group-30.png' },
+    { id: 'llm-3', text: '知識蒸餾：將大模型能力遷移至輕量模型，在效果損失極小前提下大幅簡化模型。', icon: '/images/mn6whp7lktE587/group-31.png' },
+    { id: 'llm-4', text: '量化與壓縮：透過數值精度優化與模型壓縮，減少佔用空間，提升部署與執行效率。', icon: '/images/mn6whp7lktE587/group-32.png' },
+  ],
+  rag: [
+    { id: 'rag-1', text: '向量數據庫：高效存儲與檢索語義向量，為快速相似性匹配提供底層支撐。', icon: '/images/mn6whp7lktE587/group-29.png' },
+    { id: 'rag-2', text: '語義搜索：突破關鍵字匹配限制，依據語義含義理解並召回相關內容。', icon: '/images/mn6whp7lktE587/group-30.png' },
+    { id: 'rag-3', text: '證據檢索：從企業知識庫中精準抽取事實依據，為模型生成提供可信來源。', icon: '/images/mn6whp7lktE587/group-31.png' },
+    { id: 'rag-4', text: '知識融合：將檢索到的多個知識片段進行關聯與彙整，形成完整邏輯。', icon: '/images/mn6whp7lktE587/group-32.png' },
+    { id: 'rag-5', text: '信息整合：對雜散信息進行梳理與提煉，讓輸出內容更連貫、更具參考價值。', icon: '/images/mn6whp7lktE587/group-33.png' },
+  ],
+}
+
+const tabImages: Record<string, string> = {
+  architecture: '/images/jiagousheji.png',
+  ai: '/images/AIdaoru.png',
+  llm: '/images/siyou.png',
+  rag: '/images/RAGjishu.png',
+}
 
 const activeTab = ref<string>('architecture')
+
+const bulletItems = computed(() => tabBulletItems[activeTab.value])
+const contentImage = computed(() => tabImages[activeTab.value])
 </script>

@@ -69,12 +69,15 @@
     </div>
 
     <!-- Case Study Info + Navigation -->
-    <div class="relative w-full max-w-[1280px] flex flex-col items-start px-4 mt-[20px]">
-      <div class="flex w-full justify-center max-[1400px]:justify-start">
-        <!-- Animated spacer (desktop only) -->
+    <div
+      class="relative w-full max-w-[1280px] max-[1400px]:max-w-[700px] max-md:max-w-full flex flex-col items-start px-4 mx-auto transition-all duration-[400ms] ease-in-out"
+      :style="{ marginTop: infoMarginTop }"
+    >
+      <div class="flex w-full">
+        <!-- Animated spacer -->
         <div
           :style="{ width: spacerWidth }"
-          class="flex-shrink-0 transition-all duration-[400ms] ease-in-out max-[1400px]:hidden"
+          class="flex-shrink-0 transition-all duration-[400ms] ease-in-out"
         />
 
         <div class="flex flex-col w-80 max-md:w-full transition-all duration-[400ms] ease-in-out">
@@ -202,9 +205,44 @@ const BAR_WIDTH = 380
 const activeTab = ref('all')
 const activeIndex = ref(0)
 
+const windowWidth = ref(1600)
+
+onMounted(() => {
+  windowWidth.value = window.innerWidth
+  window.addEventListener('resize', () => {
+    windowWidth.value = window.innerWidth
+  })
+})
+
 const segW = computed(() => BAR_WIDTH / TOTAL)
 const indicatorLeft = computed(() => activeIndex.value * segW.value)
-const spacerWidth = computed(() => `calc(50% - 670px + ${activeIndex.value * 340}px)`)
+const spacerWidth = computed(() => {
+  if (windowWidth.value <= 768) {
+    // 移動端：全寬，不需要偏移
+    return '0px'
+  }
+  if (windowWidth.value <= 1400) {
+    // 平板/小螢幕：2×2 網格佈局，容器 max-w-700px
+    // 每張圖寬 calc(50% - 10px)，左列 index 0,2 右列 index 1,3
+    const col = activeIndex.value % 2
+    return col === 0 ? '0px' : 'calc(50%)'
+  }
+  // 桌面：4 張橫排，每張 320px + 20px gap = 340px stride
+  return `calc(50% - 670px + ${activeIndex.value * 340}px)`
+})
+
+// 每張圖片底部距容器底部的間距（桌面佈局）
+// 圖0: mt-70+h-400=470(容器高), 圖1: h-400=400, 圖2: mt-80+h-320=400, 圖3: h-400=400
+// 容器高度=470, 所以圖1,2,3底部距容器底部 70px
+const desktopBottomGaps = [0, 70, 70, 70]
+
+const infoMarginTop = computed(() => {
+  if (windowWidth.value <= 1400) {
+    return '20px'
+  }
+  // 桌面：20px - 該圖片底部到容器底部的間距
+  return `${20 - desktopBottomGaps[activeIndex.value]}px`
+})
 
 function goLeft() {
   activeIndex.value = (activeIndex.value - 1 + TOTAL) % TOTAL

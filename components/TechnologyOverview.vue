@@ -176,9 +176,9 @@
 
         <!-- Right image -->
         <img
-          class="absolute top-[-100px] right-0 w-[640px] h-[640px] object-contain max-lg:hidden"
+          class="absolute top-[-100px] right-0 w-[640px] h-[640px] max-[1400px]:w-[480px] max-[1400px]:h-[480px] object-contain max-lg:hidden"
           alt="Image"
-          src="/images/mn69fej5o9rxxH/image-34.png"
+          :src="devProcessSteps[activeStep].image"
         />
 
         <!-- Decorative mask group -->
@@ -201,16 +201,19 @@ const devProcessSteps = [
     number: '01',
     title: '自動化測試',
     description: 'AI 自動生成測試案例與腳本，覆蓋極端邊界情境。\n每一次更新都經過數千次自動驗證，確保系統穩如泰山。',
+    image: '/images/01-ceshi.png',
   },
   {
     number: '02',
     title: '智能代碼生成',
     description: 'AI 輔助生成高品質程式碼，大幅提升開發效率。\n自動遵循最佳實踐與編碼規範，減少人為錯誤。',
+    image: '/images/02-kaifa.png',
   },
   {
     number: '03',
     title: '持續部署優化',
     description: 'AI 驅動的自動化部署流程，實現零停機更新。\n智能監控與回滾機制，確保服務穩定運行。',
+    image: '/images/03-jiankong.png',
   },
 ]
 
