@@ -21,7 +21,7 @@
           <img
             class="relative w-[441.7px] max-lg:w-full max-lg:max-w-[350px] max-md:max-w-[280px] h-auto"
             alt="Ai"
-            src="/images/mn69fej5o9rxxH/--------ai--------.svg"
+            src="/images/mn69fej5o9rxxH/ai-banner.svg"
           />
         </div>
 
