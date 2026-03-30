@@ -47,7 +47,7 @@ function handleSubmit() {
 </script>
 
 <template>
-  <section class="flex flex-col w-full max-w-screen-xl mx-auto items-start px-20 max-lg:px-8 max-md:px-4 py-0">
+  <section class="flex flex-col w-full items-start px-20 max-lg:px-8 max-md:px-4 py-0">
     <!-- Header section -->
     <div
       class="flex flex-col items-center gap-[14.9px] pt-[79px] max-md:pt-10 pb-[60px] max-md:pb-8 px-0 relative self-stretch w-full"

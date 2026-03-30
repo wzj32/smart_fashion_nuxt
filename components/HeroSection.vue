@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-[800px] max-lg:min-h-[500px] max-md:min-h-[400px] justify-end px-[120px] max-lg:px-8 max-md:px-4 py-[150px] max-lg:py-20 max-md:py-16 flex flex-col items-start relative self-stretch w-full overflow-hidden">
+  <section class="min-h-[800px] max-lg:min-h-[500px] max-md:min-h-[400px] justify-end max-md:justify-center px-20 max-lg:px-8 max-md:px-4 py-[150px] max-lg:py-20 max-md:py-16 flex flex-col items-start relative self-stretch w-full overflow-hidden">
     <!-- Background SVG -->
     <img
       class="absolute w-full h-full top-0 left-0 object-cover"
@@ -8,7 +8,15 @@
     />
 
     <!-- Hero content -->
-    <div class="inline-flex flex-col max-w-[800px] items-start justify-end gap-2.5 relative flex-[0_0_auto]">
+    <div class="inline-flex flex-col max-w-[800px] items-start justify-end gap-2.5 max-md:gap-2 relative flex-[0_0_auto]">
+      <!-- Decorative image -->
+      <img
+        v-reveal="{ direction: 'left', delay: 100, duration: 1000, distance: '60px' }"
+        src="/20260330-094754.png"
+        alt=""
+        class="w-[280px] max-lg:w-[50%] max-md:w-[40%] h-auto mb-[50px] max-lg:mb-[20px] max-md:mb-0"
+      />
+
       <!-- Headline 1 -->
       <div class="h-[60px] max-md:h-auto items-start justify-center flex flex-col relative self-stretch w-full">
         <div
@@ -42,7 +50,7 @@
       <!-- CTA button -->
       <div
         v-reveal="{ direction: 'up', delay: 800, duration: 800 }"
-        class="flex items-start gap-4 pt-[17.2px] relative self-stretch w-full flex-[0_0_auto]"
+        class="flex items-start gap-4 pt-[17.2px] max-md:pt-2 relative self-stretch w-full flex-[0_0_auto]"
       >
         <NuxtLink
           to="/contact"

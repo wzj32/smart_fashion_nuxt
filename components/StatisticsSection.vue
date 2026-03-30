@@ -2,7 +2,7 @@
   <section class="px-20 max-lg:px-8 max-md:px-4 py-10 border-b border-[#00000014] backdrop-blur-[5px] flex flex-col items-center self-stretch w-full">
     <div
       v-reveal="{ stagger: 150, staggerEl: ':scope > div', duration: 700 }"
-      class="flex max-md:flex-wrap items-stretch justify-center gap-8 max-md:gap-4 w-full max-w-screen-xl"
+      class="flex max-md:flex-wrap items-stretch justify-center gap-8 max-md:gap-4 w-full"
     >
       <div
         v-for="(stat, index) in statisticsData"

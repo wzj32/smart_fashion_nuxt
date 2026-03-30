@@ -1,5 +1,5 @@
 <template>
-  <div class="px-[120px] max-lg:px-8 max-md:px-4 flex flex-col w-full items-center relative py-0">
+  <div class="px-20 max-lg:px-8 max-md:px-4 flex flex-col w-full items-center relative py-0">
     <!-- Top section: breadcrumb + hero + title -->
     <div class="flex flex-col items-center gap-6 px-0 py-[0px] relative self-stretch w-full">
       <!-- Hero card container -->

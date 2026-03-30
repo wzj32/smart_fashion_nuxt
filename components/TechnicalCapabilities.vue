@@ -1,5 +1,5 @@
 <template>
-  <section class="px-[120px] max-lg:px-8 max-md:px-4 flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px] max-md:mt-6">
+  <section class="px-20 max-lg:px-8 max-md:px-4 flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px] max-md:mt-6">
     <!-- Badge -->
     <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex items-center gap-2 bg-[#06b6d41a] rounded-xl px-4 h-[34.39px]">
       <img
@@ -72,7 +72,7 @@
       </div>
 
       <!-- Content area: bullet list + image -->
-      <div class="relative flex max-lg:flex-col w-full max-w-[980px] items-start max-lg:items-center justify-between mt-4 max-lg:gap-8">
+      <div class="relative flex max-lg:flex-col w-full items-start max-lg:items-center justify-between mt-4 max-lg:gap-8">
         <!-- Bullet points list -->
         <Transition name="tab-bullets" mode="out-in">
           <div :key="activeTab" class="flex flex-col gap-0">

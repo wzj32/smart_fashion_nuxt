@@ -4,7 +4,7 @@
       class="flex w-full h-20 items-center justify-center px-20 max-lg:px-4 border-b border-[#00000014] fixed top-0 left-0 z-50 transition-all duration-500"
       :class="headerClasses"
     >
-      <div class="flex w-full items-center justify-between px-6 max-lg:px-0 py-0">
+      <div class="flex w-full items-center justify-between max-lg:px-0 py-0">
         <!-- Logo -->
         <NuxtLink to="/" class="inline-flex items-center gap-3 flex-shrink-0">
           <img

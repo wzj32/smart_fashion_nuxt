@@ -2,7 +2,7 @@
   <div class="flex flex-col w-full items-center gap-[30px] relative">
 
     <!-- Hero Banner Section -->
-    <section class="flex flex-col h-[800px] max-lg:h-[500px] max-md:h-[400px] items-center justify-center px-[120px] max-lg:px-8 max-md:px-4 py-20 relative self-stretch w-full overflow-hidden">
+    <section class="flex flex-col h-[800px] max-lg:h-[500px] max-md:h-[400px] items-center justify-center px-20 max-lg:px-8 max-md:px-4 py-20 relative self-stretch w-full overflow-hidden">
       <img
         class="absolute top-0 left-0 w-full h-[800px] max-lg:h-[500px] max-md:h-[400px] object-cover"
         alt="Banner"
@@ -36,7 +36,7 @@
     </section>
 
     <!-- Company Overview / Stats Section -->
-    <section class="flex max-w-screen-xl w-full items-center justify-center gap-20 max-lg:gap-8 px-6 max-md:px-4 py-0 relative max-lg:flex-col">
+    <section class="flex w-full items-center justify-center gap-20 max-lg:gap-8 px-20 max-lg:px-8 max-md:px-4 py-0 relative max-lg:flex-col">
       <!-- Section heading -->
       <div v-reveal="{ direction: 'up', duration: 800 }" class="absolute top-0 left-1/2 -translate-x-1/2 max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:translate-x-0 max-lg:w-full max-lg:flex max-lg:justify-center">
         <SectionHeader first-letter="C" rest-text="OMPANY STORY" title="公司簡介" fill-first fill-second />
@@ -102,7 +102,7 @@
     </section>
 
     <!-- Core Philosophy Section -->
-    <section class="flex flex-col max-w-screen-xl w-full items-center gap-16 max-md:gap-8 pt-5 pb-0 px-6 max-md:px-4 relative">
+    <section class="flex flex-col w-full items-center gap-16 max-md:gap-8 pt-5 pb-0 px-20 max-lg:px-8 max-md:px-4 relative">
       <div v-reveal="{ direction: 'up', duration: 800 }">
         <SectionHeader first-letter="C" rest-text="ORE PHILOSOPHY" title="核心理念" fill-second />
       </div>
@@ -137,7 +137,7 @@
     </section>
 
     <!-- AI Development Process Section -->
-    <section class="flex flex-col max-w-screen-xl w-full items-start px-6 max-md:px-4 py-[100px] max-lg:py-16 max-md:py-10 relative">
+    <section class="flex flex-col w-full items-start px-20 max-lg:px-8 max-md:px-4 py-[100px] max-lg:py-16 max-md:py-10 relative overflow-hidden">
       <div v-reveal="{ direction: 'left', duration: 800, distance: '40px' }" class="flex flex-col items-start gap-16 max-md:gap-8 py-0 relative w-full">
         <SectionHeader first-letter="D" rest-text="EVELOPMENT PROCESS" title="AI原生開發流程" align="left" />
       </div>

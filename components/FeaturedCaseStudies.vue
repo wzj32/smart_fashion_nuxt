@@ -1,5 +1,5 @@
 <template>
-  <section class="relative w-full flex flex-col items-center overflow-hidden">
+  <section class="relative w-full flex flex-col items-center overflow-hidden px-20 max-lg:px-8 max-md:px-4">
     <!-- Header Section -->
     <div class="flex flex-col w-full items-center justify-center gap-12 max-md:gap-6 px-0 py-12 max-md:py-8">
       <!-- Title block -->
@@ -44,13 +44,13 @@
 
     <!-- Gallery Section -->
     <div class="relative w-full overflow-hidden max-md:px-4">
-      <div class="flex gap-5 max-md:gap-3 justify-center w-full max-[1400px]:flex-wrap max-[1400px]:max-w-[700px] max-[1400px]:mx-auto max-md:max-w-full px-6 max-md:px-0">
+      <div class="flex gap-5 max-md:gap-3 justify-center w-full max-[1400px]:flex-wrap max-[1400px]:max-w-[700px] max-[1400px]:mx-auto max-md:max-w-full">
         <div
           v-for="(image, index) in galleryImages"
           :key="index"
           :class="[
             image.className,
-            'max-[1400px]:!mt-0 max-[1400px]:w-[calc(50%-10px)] max-md:w-full max-[1400px]:!flex-shrink-0',
+            'max-[1400px]:!mt-0 max-[1400px]:w-[calc(50%-10px)] max-md:w-full max-[1400px]:!flex-none',
             'group overflow-hidden transition-all duration-500 ease-out cursor-pointer',
             activeIndex === index
               ? '-translate-y-4 max-[1400px]:translate-y-0 shadow-[0_24px_48px_rgba(124,58,237,0.35)]'
@@ -135,7 +135,7 @@
     </div>
 
     <!-- CTA Section -->
-    <div v-reveal="{ direction: 'up', delay: 200, duration: 900 }" class="relative w-full max-w-[1200px] mt-16 mb-0 max-md:px-4">
+    <div v-reveal="{ direction: 'up', delay: 200, duration: 900 }" class="relative w-full mt-16 mb-0 max-md:px-4">
       <div class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 rounded-[10px] border border-solid border-[#7c3aed33] bg-[linear-gradient(164deg,rgba(124,58,237,0.1)_0%,rgba(59,130,246,0.1)_100%)] overflow-hidden hover-border-glow">
         <img
           class="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
@@ -182,22 +182,22 @@ const galleryImages = [
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-42.png',
     alt: 'Rectangle',
-    className: 'mt-[70px] w-80 h-[400px] rounded-[20px] object-cover flex-shrink-0',
+    className: 'mt-[70px] flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-43.png',
     alt: 'Rectangle',
-    className: 'w-80 h-[400px] rounded-[20px] object-cover flex-shrink-0',
+    className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-44.png',
     alt: 'Rectangle',
-    className: 'mt-20 w-80 h-80 rounded-[20px] object-cover flex-shrink-0',
+    className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-45.png',
     alt: 'Rectangle',
-    className: 'w-80 h-[400px] rounded-[20px] object-cover flex-shrink-0',
+    className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
   },
 ]
 

@@ -11,7 +11,7 @@
     </div>
 
     <!-- Carousel -->
-    <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="relative max-w-screen-xl mx-auto px-4 md:px-20">
+    <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="relative mx-auto px-4 md:px-20">
       <!-- Cards container -->
       <div class="flex items-stretch justify-center gap-0 overflow-hidden">
         <div
@@ -26,7 +26,7 @@
           <button
             v-if="pos.position === 'left'"
             @click="prev"
-            class="absolute md:left-100 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer transition-transform duration-300 hover:scale-110"
+            class="absolute md:left-100 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
             style="right: 5px;"
           >
             <img src="/images/mn5gtr03DZ8elR/group-24.png" alt="上一個" class="w-10 h-10 md:w-12 md:h-12" />
@@ -34,7 +34,7 @@
           <button
             v-if="pos.position === 'right'"
             @click="next"
-            class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer transition-transform duration-300 hover:scale-110"
+            class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
             style="left: 5px;"
           >
             <img src="/images/mn5gtr03DZ8elR/group-23.png" alt="下一個" class="w-10 h-10 md:w-12 md:h-12" />

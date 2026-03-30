@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col h-[800px] max-lg:h-auto items-start max-lg:items-center gap-2.5 relative self-stretch w-full overflow-hidden max-lg:py-16 max-md:py-10 max-lg:px-4">
+  <section class="flex flex-col h-[800px] max-lg:h-auto items-start max-lg:items-center gap-2.5 relative self-stretch w-full overflow-hidden max-lg:py-16 max-md:py-10 px-20 max-lg:px-4">
     <!-- Section header decoration -->
     <div
       v-reveal="{ direction: 'up', delay: 0, duration: 800 }"
@@ -12,7 +12,7 @@
     <nav
       ref="tabsNavRef"
       v-reveal="{ direction: 'up', delay: 200, duration: 800 }"
-      class="flex w-full max-w-screen-xl mx-auto items-center justify-center gap-[120px] max-lg:gap-4 max-md:gap-2 absolute top-[286px] left-0 right-0 pb-[14px] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:flex-wrap max-lg:mb-8"
+      class="flex w-full items-center justify-center gap-[120px] max-lg:gap-4 max-md:gap-2 absolute top-[286px] left-0 right-0 px-20 max-lg:px-4 pb-[14px] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:flex-wrap max-lg:mb-8"
     >
       <button
         v-for="tab in serviceTabs"
@@ -39,7 +39,7 @@
     </nav>
 
     <!-- Content wrapper (centered) -->
-    <div class="absolute top-[355px] left-0 right-0 mx-auto w-full max-w-screen-xl flex justify-between items-start px-10 max-lg:relative max-lg:top-auto max-lg:flex-col max-lg:items-center max-lg:px-4 max-lg:gap-6">
+    <div class="absolute top-[355px] left-0 right-0 mx-auto w-full flex justify-between items-start px-20 max-lg:relative max-lg:top-auto max-lg:flex-col max-lg:items-center max-lg:px-4 max-lg:gap-6">
       <!-- Left: text content -->
       <Transition name="tab-content" mode="out-in">
         <div :key="activeTab" class="flex flex-col gap-3 w-[494px] mt-[89px] max-lg:w-full max-lg:mt-0">
