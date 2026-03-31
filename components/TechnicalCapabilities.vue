@@ -1,5 +1,5 @@
 <template>
-  <section class="px-20 max-lg:px-8 max-md:px-4 flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px] max-md:mt-6">
+  <section class="px-60 max-lg:px-8 max-md:px-4 flex flex-col items-center gap-[37px] py-0 w-full mx-auto mt-[49px] max-md:mt-6">
     <!-- Badge -->
     <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex items-center gap-2 bg-[#06b6d41a] rounded-xl px-4 h-[34.39px]">
       <img
@@ -56,12 +56,12 @@
       </div>
 
       <!-- Tab buttons -->
-      <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex items-center gap-[60px] max-lg:gap-4 max-md:gap-3 flex-wrap justify-center">
+      <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex items-center gap-[60px] max-lg:gap-4 max-md:gap-3 flex-wrap justify-center w-full">
         <button
           v-for="tab in techTabs"
           :key="tab.id"
           @click="activeTab = tab.id"
-          class="flex w-[200px] max-md:w-[140px] h-[72px] max-md:h-[56px] items-center justify-center gap-2.5 rounded-[10px] transition-all duration-300 cursor-pointer border-none"
+          class="flex flex-1 min-w-[140px] max-md:min-w-0 max-md:w-[140px] h-[72px] max-md:h-[56px] items-center justify-center gap-2.5 rounded-[10px] transition-all duration-300 cursor-pointer border-none"
           :class="activeTab === tab.id ? 'bg-violet-600 scale-105' : 'bg-[#262c3a] hover:bg-[#363d4f]'"
         >
           <img class="w-14 max-md:w-10 h-14 max-md:h-10" alt="Rectangle" :src="tab.img" />
@@ -79,11 +79,11 @@
             <div
               v-for="(item, index) in bulletItems"
               :key="item.id"
-              class="flex items-center gap-4 h-16"
+              class="flex items-center gap-4 h-[70px]"
               :style="{ transitionDelay: `${index * 80}ms` }"
             >
               <img class="w-5 h-5 flex-shrink-0" alt="Group" :src="item.icon" />
-              <span class="font-normal text-white text-xl max-md:text-base leading-[64px] max-md:leading-normal tracking-[0] whitespace-nowrap max-lg:whitespace-normal font-inter">
+              <span class="font-normal text-white text-base max-md:text-sm leading-[70px] max-md:leading-normal tracking-[0] whitespace-nowrap max-lg:whitespace-normal font-inter">
                 {{ item.text }}
               </span>
             </div>
@@ -105,7 +105,7 @@
     <!-- CTA Card -->
     <div
       v-reveal="{ direction: 'up', delay: 200, duration: 900 }"
-      class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden hover-border-glow"
+      class="relative flex flex-col w-full items-center gap-[14.9px] p-16 max-lg:p-10 max-md:p-6 mt-10 rounded-[10px] border border-solid border-[#7c3aed33] overflow-hidden hover-border-glow"
       style="background: linear-gradient(164deg, rgba(124,58,237,0.1) 0%, rgba(59,130,246,0.1) 100%)"
     >
       <!-- Background mask image -->

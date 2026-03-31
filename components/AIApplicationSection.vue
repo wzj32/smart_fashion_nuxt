@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative w-full py-12 md:py-16 overflow-hidden"
+    class="relative w-full py-12 md:py-16 overflow-hidden px-60 max-lg:px-8 max-md:px-4"
     @touchstart="onTouchStart"
     @touchmove="onTouchMove"
     @touchend="onTouchEnd"
@@ -11,41 +11,42 @@
     </div>
 
     <!-- Carousel -->
-    <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="relative mx-auto px-4 md:px-20">
-      <!-- Cards container -->
-      <div class="flex items-stretch justify-center gap-0 overflow-hidden">
-        <div
-          v-for="pos in visibleCards"
-          :key="pos.item.id + '-' + currentIndex"
-          class="relative flex-shrink-0 transition-all duration-500 ease-in-out bg-no-repeat"
-          :class="[
-            pos.position === 'center' ? 'z-20 w-full md:w-[387px]' : 'z-10 hidden md:block md:w-[387px]',
-          ]"
-          :style="cardBgStyle(pos.position)"
-        >
-          <button
-            v-if="pos.position === 'left'"
-            @click="prev"
-            class="absolute md:left-100 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
-            style="right: 5px;"
+    <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="relative mx-auto">
+      <!-- Cards + arrows wrapper -->
+      <div class="relative min-h-[295px]">
+        <!-- Arrows overlay: mirrors card layout, always on top, unaffected by transitions -->
+        <div class="absolute inset-0 hidden md:flex items-center justify-center gap-[60px] pointer-events-none z-30">
+          <div class="w-[387px] h-full relative flex-shrink-0">
+            <button @click="prev" class="absolute right-[5px] top-1/2 -translate-y-1/2 bg-transparent border-none p-0 cursor-pointer pointer-events-auto">
+              <img src="/images/mn5gtr03DZ8elR/group-24.png" alt="上一個" class="w-12 h-12" />
+            </button>
+          </div>
+          <div class="w-[387px] flex-shrink-0"></div>
+          <div class="w-[387px] h-full relative flex-shrink-0">
+            <button @click="next" class="absolute left-[5px] top-1/2 -translate-y-1/2 bg-transparent border-none p-0 cursor-pointer pointer-events-auto">
+              <img src="/images/mn5gtr03DZ8elR/group-23.png" alt="下一個" class="w-12 h-12" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Cards container -->
+        <TransitionGroup :name="`slide-${direction}`" tag="div" class="flex items-stretch justify-center gap-[60px] overflow-hidden relative">
+          <div
+            v-for="pos in visibleCards"
+            :key="pos.item.id"
+            class="relative flex-shrink-0 transition-all duration-500 ease-in-out bg-no-repeat"
+            :class="[
+              pos.position === 'center' ? 'z-20 w-full md:w-[387px]' : 'z-10 hidden md:block md:w-[387px]',
+            ]"
+            :style="cardBgStyle(pos.position)"
           >
-            <img src="/images/mn5gtr03DZ8elR/group-24.png" alt="上一個" class="w-10 h-10 md:w-12 md:h-12" />
-          </button>
-          <button
-            v-if="pos.position === 'right'"
-            @click="next"
-            class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-transparent border-none p-0 cursor-pointer"
-            style="left: 5px;"
-          >
-            <img src="/images/mn5gtr03DZ8elR/group-23.png" alt="下一個" class="w-10 h-10 md:w-12 md:h-12" />
-          </button>
 
           <!-- Center card decoration -->
           <img
             v-if="pos.position === 'center'"
-            class="absolute top-6 right-0 w-16 h-16 md:w-20 md:h-20 z-20 pointer-events-none"
+            class="absolute top-[24px] right-5 w-16 h-16 md:w-20 md:h-20 z-20 pointer-events-none"
             alt=""
-            src="/images/mn5gtr03DZ8elR/rectangle-58.png"
+            :src="pos.item.icon"
           />
 
           <!-- Card body -->
@@ -82,7 +83,7 @@
               <!-- Learn More -->
               <NuxtLink
                 :to="pos.item.link"
-                class="mt-5 inline-flex items-center gap-2 no-underline group"
+                class="mt-10 inline-flex items-center gap-2 no-underline group"
               >
                 <span
                   class="text-base transition-colors duration-300"
@@ -100,6 +101,7 @@
             </div>
           </div>
         </div>
+        </TransitionGroup>
       </div>
 
       <!-- Mobile dots indicator -->
@@ -125,6 +127,7 @@ interface CaseItem {
   title: string
   description: string
   link: string
+  icon: string
 }
 
 const cases: CaseItem[] = [
@@ -136,6 +139,7 @@ const cases: CaseItem[] = [
     title: 'AI 輔助獸醫系統',
     description: '使用 AI 模型，輔助獸醫進行病歷預覽，加速診斷進度，並提供寵物主人專業知識解釋的管道',
     link: '/cases',
+    icon: '/images/A.png',
   },
   {
     id: 'content-review',
@@ -145,6 +149,7 @@ const cases: CaseItem[] = [
     title: '專業知識內容審核系統',
     description: '使用 AI 技術分析專業文件與媒體內容，即時識別準確性與合規性問題，提升審核效率',
     link: '/cases/detail',
+    icon: '/images/B.png',
   },
   {
     id: 'ai-cs',
@@ -154,6 +159,7 @@ const cases: CaseItem[] = [
     title: '24/7 AI 智能客服',
     description: '使用 AI 模型協助客服 7*24 不間斷服務，確保降低真人客服 Loading',
     link: '/cases',
+    icon: '/images/C.png',
   },
   {
     id: 'ecommerce',
@@ -163,6 +169,7 @@ const cases: CaseItem[] = [
     title: '電商平台整合系統',
     description: '整合多通路電商平台，提供統一的商品管理、訂單處理與數據分析解決方案',
     link: '/cases',
+    icon: '/images/D.png',
   },
   {
     id: 'data-platform',
@@ -172,10 +179,12 @@ const cases: CaseItem[] = [
     title: '企業數據中台',
     description: '建構企業級數據中台，整合多源數據，提供即時分析與智能決策支援',
     link: '/cases',
+    icon: '/images/E.png',
   },
 ]
 
 const currentIndex = ref(0)
+const direction = ref('next')
 
 // Touch swipe support for mobile
 const touchStartX = ref(0)
@@ -217,10 +226,12 @@ const visibleCards = computed(() => [
 ])
 
 function prev() {
+  direction.value = 'prev'
   currentIndex.value = getWrappedIndex(currentIndex.value - 1)
 }
 
 function next() {
+  direction.value = 'next'
   currentIndex.value = getWrappedIndex(currentIndex.value + 1)
 }
 
@@ -242,3 +253,37 @@ function cardBgStyle(position: string) {
   return {}
 }
 </script>
+
+<style scoped>
+.slide-next-move,
+.slide-prev-move {
+  transition: all 0.5s ease;
+}
+.slide-next-enter-active,
+.slide-next-leave-active,
+.slide-prev-enter-active,
+.slide-prev-leave-active {
+  transition: all 0.5s ease;
+}
+.slide-next-leave-active,
+.slide-prev-leave-active {
+  position: absolute;
+  pointer-events: none;
+}
+.slide-next-enter-from {
+  opacity: 0;
+  transform: translateX(120px) scale(0.9);
+}
+.slide-next-leave-to {
+  opacity: 0;
+  transform: translateX(-120px) scale(0.9);
+}
+.slide-prev-enter-from {
+  opacity: 0;
+  transform: translateX(-120px) scale(0.9);
+}
+.slide-prev-leave-to {
+  opacity: 0;
+  transform: translateX(120px) scale(0.9);
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex flex-col w-full items-start pt-[79px] max-md:pt-10 pb-8 px-20 max-lg:px-8 max-md:px-4 bg-[#0b1121] border-t border-[#00000014]">
+  <footer class="flex flex-col w-full items-start pt-[79px] max-md:pt-10 pb-8 px-60 max-lg:px-8 max-md:px-4 bg-[#0b1121] border-t border-[#00000014]">
     <div class="flex flex-col items-start gap-2 px-6 max-md:px-0 py-0 w-full">
       <!-- Main footer columns -->
       <div v-reveal="{ direction: 'up', duration: 800, distance: '30px' }" class="flex max-lg:flex-col items-start justify-between max-lg:gap-8 self-stretch w-full">
