@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-[800px] max-lg:min-h-[500px] max-md:min-h-[400px] justify-end max-md:justify-center px-20 max-lg:px-8 max-md:px-4 py-[150px] max-lg:py-20 max-md:py-16 flex flex-col items-start relative self-stretch w-full overflow-hidden">
+  <section class="min-h-[800px] max-lg:min-h-[500px] max-md:min-h-[400px] justify-end max-md:justify-center px-60 max-lg:px-8 max-md:px-4 py-[150px] max-lg:py-20 max-md:py-16 flex flex-col items-start relative self-stretch w-full overflow-hidden">
     <!-- Background SVG -->
     <img
       class="absolute w-full h-full top-0 left-0 object-cover"

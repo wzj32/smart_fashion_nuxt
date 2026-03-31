@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col h-[800px] max-lg:h-auto items-start max-lg:items-center gap-2.5 relative self-stretch w-full overflow-hidden max-lg:py-16 max-md:py-10 px-20 max-lg:px-4">
+  <section class="flex flex-col h-[800px] max-lg:h-auto items-start max-lg:items-center gap-2.5 relative self-stretch w-full overflow-hidden max-lg:py-16 max-md:py-10 px-60 max-lg:px-4">
     <!-- Section header decoration -->
     <div
       v-reveal="{ direction: 'up', delay: 0, duration: 800 }"
@@ -8,11 +8,15 @@
       <SectionHeader first-letter="C" rest-text="ORE SERVICES" title="核心服務" fill-first />
     </div>
 
+    <!-- Shared container: tabs + content aligned -->
+    <div
+      class="absolute top-[286px] left-0 right-0 px-60 flex flex-col max-lg:relative max-lg:top-auto max-lg:px-4"
+    >
     <!-- Service tabs with dynamic underline -->
     <nav
       ref="tabsNavRef"
       v-reveal="{ direction: 'up', delay: 200, duration: 800 }"
-      class="flex w-full items-center justify-center gap-[120px] max-lg:gap-4 max-md:gap-2 absolute top-[286px] left-0 right-0 px-20 max-lg:px-4 pb-[14px] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:flex-wrap max-lg:mb-8"
+      class="flex w-full items-center justify-between max-lg:gap-4 max-md:gap-2 max-lg:flex-wrap max-lg:mb-8 relative pb-[14px]"
     >
       <button
         v-for="tab in serviceTabs"
@@ -38,11 +42,11 @@
       />
     </nav>
 
-    <!-- Content wrapper (centered) -->
-    <div class="absolute top-[355px] left-0 right-0 mx-auto w-full flex justify-between items-start px-20 max-lg:relative max-lg:top-auto max-lg:flex-col max-lg:items-center max-lg:px-4 max-lg:gap-6">
+    <!-- Content wrapper -->
+    <div class="w-full flex justify-between items-center mt-[40px] max-lg:flex-col max-lg:items-center max-lg:gap-6 max-lg:mt-0">
       <!-- Left: text content -->
       <Transition name="tab-content" mode="out-in">
-        <div :key="activeTab" class="flex flex-col gap-3 w-[494px] mt-[89px] max-lg:w-full max-lg:mt-0">
+        <div :key="activeTab" class="flex flex-col gap-3 w-[494px] max-lg:w-full">
           <!-- Service icon + title -->
           <div class="flex items-center gap-3">
             <img class="w-9 h-9 flex-shrink-0" alt="Service icon" :src="currentContent.icon" />
@@ -67,11 +71,12 @@
       <Transition name="tab-image" mode="out-in">
         <img
           :key="activeTab + '-img'"
-          class="w-[422px] h-[423px] object-contain max-lg:w-full max-lg:max-w-[320px] max-lg:h-auto"
+          class="w-[422px] h-[423px] object-contain max-lg:w-full max-lg:max-w-[320px] max-lg:h-auto mt-[0px] max-lg:mt-0"
           alt="Service illustration"
           :src="currentContent.image"
         />
       </Transition>
+    </div>
     </div>
   </section>
 </template>

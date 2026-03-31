@@ -4,8 +4,8 @@
     <StatisticsSection />
     <CoreServicesSection />
     <AIApplicationSection />
-    <SelectedCasesSection />
     <ClientLogosSection />
+    <SelectedCasesSection />
   </div>
 </template>
 

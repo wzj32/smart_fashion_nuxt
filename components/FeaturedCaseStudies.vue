@@ -1,5 +1,5 @@
 <template>
-  <section class="relative w-full flex flex-col items-center overflow-hidden px-20 max-lg:px-8 max-md:px-4">
+  <section class="relative w-full flex flex-col items-center overflow-hidden px-60 max-lg:px-8 max-md:px-4">
     <!-- Header Section -->
     <div class="flex flex-col w-full items-center justify-center gap-12 max-md:gap-6 px-0 py-12 max-md:py-8">
       <!-- Title block -->
@@ -72,7 +72,7 @@
 
     <!-- Case Study Info + Navigation -->
     <div
-      class="relative w-full max-w-[1280px] max-[1400px]:max-w-[700px] max-md:max-w-full flex flex-col items-start px-4 mx-auto transition-all duration-[400ms] ease-in-out"
+      class="relative z-10 w-full flex flex-col items-start transition-all duration-[400ms] ease-in-out"
       :style="{ marginTop: infoMarginTop }"
     >
       <div class="flex w-full">
@@ -84,22 +84,20 @@
 
         <div class="flex flex-col w-80 max-md:w-full transition-all duration-[400ms] ease-in-out">
           <h3 class="font-semibold text-white text-xl leading-7 whitespace-nowrap [font-family:'Inter',Helvetica] tracking-[0]">
-            專業知識內容審核系統
+            {{ currentImage.title }}
           </h3>
           <div class="flex items-end gap-3 mt-1">
             <p class="w-[245px] max-md:w-full max-md:flex-1 text-slate-400 text-sm leading-5 [font-family:'Inter',Helvetica] font-normal tracking-[0]">
-              使用 AI 技術分析專業文件與媒體內容，即時識別準確性與合規性問題，提升審核效率與內容品質
+              {{ currentImage.description }}
             </p>
             <NuxtLink
-              to="/cases/detail"
-              class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(124,58,237,0.7)] active:scale-95"
+              :to="`/cases/${currentImage.caseId}`"
+              class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full border border-white/40 transition-all duration-300 hover:scale-110 hover:border-violet-400 hover:drop-shadow-[0_0_8px_rgba(124,58,237,0.7)] active:scale-95"
               aria-label="查看詳情"
             >
-              <img
-                class="w-10 h-10"
-                alt="詳情"
-                src="/images/mn6sgmdo6ocCMY/group-20.png"
-              />
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.75 9H14.25M14.25 9L9.75 4.5M14.25 9L9.75 13.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </NuxtLink>
           </div>
         </div>
@@ -108,12 +106,15 @@
       <!-- Progress bar + navigation arrows -->
       <div class="flex items-center justify-center w-full gap-6 max-md:gap-3 mt-8">
         <!-- Left arrow -->
-        <img
-          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200"
-          alt="向左"
-          src="/images/mn6sgmdo6ocCMY/group-18.png"
+        <button
+          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent hover:border-violet-500"
           @click="goLeft"
-        />
+          aria-label="向左"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 15L7.5 10L12.5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
 
         <!-- Progress bar -->
         <div class="relative w-[380px] max-md:flex-1 h-0.5 flex-shrink-0 max-md:flex-shrink">
@@ -125,12 +126,15 @@
         </div>
 
         <!-- Right arrow -->
-        <img
-          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200"
-          alt="向右"
-          src="/images/mn6sgmdo6ocCMY/group-17.png"
+        <button
+          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent hover:border-violet-500"
           @click="goRight"
-        />
+          aria-label="向右"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 5L12.5 10L7.5 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
 
@@ -170,6 +174,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed, onMounted, watch } from 'vue'
+
 const filterTabs = [
   { id: 'all', label: '全部案例' },
   { id: 'webapp', label: 'Web App' },
@@ -178,34 +184,99 @@ const filterTabs = [
   { id: 'enterprise', label: '企業系統' },
 ]
 
-const galleryImages = [
+const allGalleryImages = [
   {
-    src: '/images/mn6sgmdo6ocCMY/rectangle-42.png',
-    alt: 'Rectangle',
+    src: '/shenhe.jpg',
+    alt: '內容審核系統',
     className: 'mt-[70px] flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
+    title: '專業知識內容審核系統',
+    description: '使用 AI 技術分析專業文件與媒體內容，即時識別準確性與合規性問題，提升審核效率與內容品質',
+    tabs: ['all', 'ai'],
+    caseId: 'content-review',
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-43.png',
-    alt: 'Rectangle',
+    alt: '企業架構',
     className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
+    title: '企業系統架構優化',
+    description: '針對企業現有系統進行全面健檢，提供混合雲佈署與高效能架構設計，確保系統穩定擴展',
+    tabs: ['all', 'enterprise'],
+    caseId: 'enterprise-arch',
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-44.png',
-    alt: 'Rectangle',
+    alt: 'AI 客服',
     className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
+    title: 'AI 智能客服平台',
+    description: '整合大語言模型打造智能客服系統，自動處理常見問題，降低人工客服成本，提升客戶滿意度',
+    tabs: ['all', 'ai', 'webapp'],
+    caseId: 'ai-customer-service',
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-45.png',
-    alt: 'Rectangle',
+    alt: '即時通訊',
     className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
+    title: '即時通訊企業解決方案',
+    description: '提供完整 SDK 與預建 UI 組件，快速整合聊天、群組、檔案共享等功能，支援雲端與私有化部署',
+    tabs: ['all', 'webapp', 'enterprise'],
+    caseId: 'realtime-chat',
+  },
+  {
+    src: '/images/mn6sgmdo6ocCMY/rectangle-42.png',
+    alt: '移動端購物',
+    className: 'mt-[70px] flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
+    title: '零售 O2O 購物 App',
+    description: '打通線上線下消費場景，支援掃碼購、門店自取等創新功能，整合會員體系與個性化推薦服務',
+    tabs: ['mobileapp'],
+    caseId: 'content-review',
+  },
+  {
+    src: '/images/mn6sgmdo6ocCMY/rectangle-43.png',
+    alt: '移動辦公',
+    className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
+    title: '企業移動辦公平台',
+    description: '涵蓋審批流程、考勤管理與移動 CRM 的企業辦公 App，助力業務人員隨時隨地高效完成工作',
+    tabs: ['mobileapp'],
+    caseId: 'content-review',
+  },
+  {
+    src: '/images/mn6sgmdo6ocCMY/rectangle-44.png',
+    alt: 'SaaS 平台',
+    className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
+    title: '企業級 SaaS 管理平台',
+    description: '採用微服務架構打造的多租戶 SaaS 系統，支援千人同時在線，系統可用性 99.99%，彈性擴展無上限',
+    tabs: ['webapp'],
+    caseId: 'content-review',
+  },
+  {
+    src: '/images/mn6sgmdo6ocCMY/rectangle-45.png',
+    alt: 'ERP 系統',
+    className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
+    title: '智慧製造 ERP 系統',
+    description: '針對製造業打造的全流程 ERP 解決方案，整合生產排程、物料管理與品質追溯，助力工廠智慧化升級',
+    tabs: ['enterprise'],
+    caseId: 'enterprise-arch',
   },
 ]
 
-const TOTAL = galleryImages.length
-const BAR_WIDTH = 380
-
 const activeTab = ref('all')
 const activeIndex = ref(0)
+
+const galleryImages = computed(() =>
+  allGalleryImages.filter(img => img.tabs.includes(activeTab.value))
+)
+
+const TOTAL = computed(() => galleryImages.value.length)
+
+// flush: 'sync' 確保 activeIndex 在下次渲染前就已重置
+watch(activeTab, () => {
+  activeIndex.value = 0
+}, { flush: 'sync' })
+
+// 安全的當前圖片，避免 undefined 訪問
+const currentImage = computed(() =>
+  galleryImages.value[activeIndex.value] ?? galleryImages.value[0]
+)
 
 const windowWidth = ref(1600)
 
@@ -216,40 +287,35 @@ onMounted(() => {
   })
 })
 
-const segW = computed(() => BAR_WIDTH / TOTAL)
-const indicatorLeft = computed(() => activeIndex.value * segW.value)
 const spacerWidth = computed(() => {
   if (windowWidth.value <= 768) {
-    // 移動端：全寬，不需要偏移
     return '0px'
   }
   if (windowWidth.value <= 1400) {
-    // 平板/小螢幕：2×2 網格佈局，容器 max-w-700px
-    // 每張圖寬 calc(50% - 10px)，左列 index 0,2 右列 index 1,3
     const col = activeIndex.value % 2
     return col === 0 ? '0px' : 'calc(50%)'
   }
-  // 桌面：4 張橫排，每張 320px + 20px gap = 340px stride
-  return `calc(50% - 670px + ${activeIndex.value * 340}px)`
+  // 桌面：根據當前顯示圖片數量動態計算步距
+  const n = TOTAL.value
+  const contentWidth = windowWidth.value - 480 // px-60 兩側 = 240px * 2
+  const imageWidth = (contentWidth - (n - 1) * 20) / n
+  const stride = imageWidth + 20
+  // 確保 info 區塊(320px)不超出容器右邊界
+  const maxSpacer = Math.max(0, contentWidth - 320)
+  return `${Math.min(activeIndex.value * stride, maxSpacer)}px`
 })
-
-// 每張圖片底部距容器底部的間距（桌面佈局）
-// 圖0: mt-70+h-400=470(容器高), 圖1: h-400=400, 圖2: mt-80+h-320=400, 圖3: h-400=400
-// 容器高度=470, 所以圖1,2,3底部距容器底部 70px
-const desktopBottomGaps = [0, 70, 70, 70]
 
 const infoMarginTop = computed(() => {
   if (windowWidth.value <= 1400) {
     return '20px'
   }
-  // 桌面：20px - 該圖片底部到容器底部的間距
-  return `${20 - desktopBottomGaps[activeIndex.value]}px`
+  return '20px'
 })
 
 function goLeft() {
-  activeIndex.value = (activeIndex.value - 1 + TOTAL) % TOTAL
+  activeIndex.value = (activeIndex.value - 1 + TOTAL.value) % TOTAL.value
 }
 function goRight() {
-  activeIndex.value = (activeIndex.value + 1) % TOTAL
+  activeIndex.value = (activeIndex.value + 1) % TOTAL.value
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <header
-      class="flex w-full h-20 items-center justify-center px-20 max-lg:px-4 border-b border-[#00000014] fixed top-0 left-0 z-50 transition-all duration-500"
+      class="flex w-full h-20 items-center justify-center px-60 max-lg:px-4 border-b border-[#00000014] fixed top-0 left-0 z-50 transition-all duration-500"
       :class="headerClasses"
     >
       <div class="flex w-full items-center justify-between max-lg:px-0 py-0">

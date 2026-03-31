@@ -2,9 +2,9 @@
   <div class="flex flex-col w-full items-center gap-[30px] relative">
 
     <!-- Hero Banner Section -->
-    <section class="flex flex-col h-[800px] max-lg:h-[500px] max-md:h-[400px] items-center justify-center px-20 max-lg:px-8 max-md:px-4 py-20 relative self-stretch w-full overflow-hidden">
+    <section class="flex flex-col h-[800px] max-lg:h-[500px] max-md:h-[400px] items-center justify-center px-60 max-lg:px-8 max-md:px-4 py-20 relative self-stretch w-full overflow-hidden">
       <img
-        class="absolute top-0 left-0 w-full h-[800px] max-lg:h-[500px] max-md:h-[400px] object-cover"
+        class="absolute -top-5 left-[-100px] w-[calc(100%+100px)] h-[800px] max-lg:h-[500px] max-md:h-[400px] object-cover"
         alt="Banner"
         src="/images/mn69fej5o9rxxH/banner2-5.png"
       />
@@ -36,7 +36,7 @@
     </section>
 
     <!-- Company Overview / Stats Section -->
-    <section class="flex w-full items-center justify-center gap-20 max-lg:gap-8 px-20 max-lg:px-8 max-md:px-4 py-0 relative max-lg:flex-col">
+    <section class="flex w-full items-center justify-center gap-20 max-lg:gap-8 px-60 max-lg:px-8 max-md:px-4 py-0 relative max-lg:flex-col">
       <!-- Section heading -->
       <div v-reveal="{ direction: 'up', duration: 800 }" class="absolute top-0 left-1/2 -translate-x-1/2 max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:translate-x-0 max-lg:w-full max-lg:flex max-lg:justify-center">
         <SectionHeader first-letter="C" rest-text="OMPANY STORY" title="公司簡介" fill-first fill-second />
@@ -52,8 +52,8 @@
           <img class="absolute top-[219px] left-[75%] w-px h-[535px] max-lg:hidden" alt="Line" src="/images/mn69fej5o9rxxH/line-5.svg" />
 
           <!-- 12+ 年開發經驗 -->
-          <div v-reveal="{ direction: 'up', delay: 0, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-64 left-[25%] right-[50%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 0, duration: 800 }" class="stat-item flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-64 left-[25%] right-[50%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 cursor-default">
+            <div class="stat-number relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               12+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -62,8 +62,8 @@
           </div>
 
           <!-- 200+ 服務客戶 -->
-          <div v-reveal="{ direction: 'up', delay: 150, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-[455px] left-0 right-[75%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 150, duration: 800 }" class="stat-item flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-[455px] left-0 right-[75%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 cursor-default">
+            <div class="stat-number relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               200+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -72,8 +72,8 @@
           </div>
 
           <!-- AI 核心驅動 -->
-          <div v-reveal="{ direction: 'up', delay: 300, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-[455px] left-[25%] right-[50%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
-            <div class="relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 300, duration: 800 }" class="stat-item flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-[455px] left-[25%] right-[50%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 cursor-default">
+            <div class="stat-number relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               AI
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -82,8 +82,8 @@
           </div>
 
           <!-- 100+ 專案交付 -->
-          <div v-reveal="{ direction: 'up', delay: 450, duration: 800 }" class="flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-64 left-[50%] right-[25%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 hover:brightness-125 cursor-default">
-            <div class="relative flex items-center justify-center w-[226px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
+          <div v-reveal="{ direction: 'up', delay: 450, duration: 800 }" class="stat-item flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-64 left-[50%] right-[25%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full transition-all duration-300 hover:scale-110 cursor-default">
+            <div class="stat-number relative flex items-center justify-center w-[226px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
               100+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
@@ -91,18 +91,12 @@
             </div>
           </div>
 
-          <!-- Decorative mask group image -->
-          <img
-            class="absolute top-0 left-[-10%] w-[332px] h-[593px] object-contain pointer-events-none max-lg:hidden"
-            alt="Mask group"
-            src="/images/mn69fej5o9rxxH/mask-group.png"
-          />
         </div>
       </div>
     </section>
 
     <!-- Core Philosophy Section -->
-    <section class="flex flex-col w-full items-center gap-16 max-md:gap-8 pt-5 pb-0 px-20 max-lg:px-8 max-md:px-4 relative">
+    <section class="flex flex-col w-full items-center gap-16 max-md:gap-8 pt-5 pb-0 px-60 max-lg:px-8 max-md:px-4 relative">
       <div v-reveal="{ direction: 'up', duration: 800 }">
         <SectionHeader first-letter="C" rest-text="ORE PHILOSOPHY" title="核心理念" fill-second />
       </div>
@@ -115,10 +109,10 @@
         <div
           v-for="(card, index) in corePhilosophyCards"
           :key="index"
-          class="relative flex-1 min-w-0 max-lg:w-full max-lg:max-w-[400px] h-[280px] max-md:h-auto bg-[#ffffff1a] rounded-lg border border-solid border-[#00000014] max-md:flex max-md:flex-col max-md:items-center max-md:px-8 max-md:py-6 hover-lift"
+          class="group relative flex-1 min-w-0 max-lg:w-full max-lg:max-w-[400px] h-[280px] max-md:h-auto bg-[#ffffff1a] rounded-lg border border-solid border-[#00000014] max-md:flex max-md:flex-col max-md:items-center max-md:px-8 max-md:py-6 hover-lift transition-all duration-300 hover:bg-[linear-gradient(135deg,rgba(124,58,237,0.25)_0%,rgba(59,130,246,0.15)_100%)] hover:border-white/40 hover:shadow-[0_0_24px_rgba(124,58,237,0.25)]"
         >
           <img
-            class="absolute top-5 left-1/2 -translate-x-1/2 w-[100px] h-[100px] max-md:relative max-md:top-auto max-md:left-auto max-md:translate-x-0 max-md:w-[80px] max-md:h-[80px]"
+            class="card-icon absolute top-5 left-1/2 -translate-x-1/2 w-[100px] h-[100px] max-md:relative max-md:top-auto max-md:left-auto max-md:translate-x-0 max-md:w-[80px] max-md:h-[80px]"
             :alt="card.imgAlt"
             :src="card.imgSrc"
           />
@@ -137,7 +131,7 @@
     </section>
 
     <!-- AI Development Process Section -->
-    <section class="flex flex-col w-full items-start px-20 max-lg:px-8 max-md:px-4 py-[100px] max-lg:py-16 max-md:py-10 relative overflow-hidden">
+    <section class="flex flex-col w-full items-start px-60 max-lg:px-8 max-md:px-4 py-[100px] max-lg:py-16 max-md:py-10 relative overflow-hidden">
       <div v-reveal="{ direction: 'left', duration: 800, distance: '40px' }" class="flex flex-col items-start gap-16 max-md:gap-8 py-0 relative w-full">
         <SectionHeader first-letter="D" rest-text="EVELOPMENT PROCESS" title="AI原生開發流程" align="left" />
       </div>
@@ -278,4 +272,20 @@ const corePhilosophyCards = [
   transform: scale(1.05);
 }
 
+.stat-item:hover .stat-number {
+  background: linear-gradient(135deg, #7c3aed 0%, #ffffff 50%, #3b82f6 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  transition: background 0.3s ease;
+}
+
+.group:hover .card-icon {
+  animation: flipY360 0.6s ease forwards;
+}
+
+@keyframes flipY360 {
+  from { transform: translateX(-50%) rotateY(0deg); }
+  to   { transform: translateX(-50%) rotateY(360deg); }
+}
 </style>
