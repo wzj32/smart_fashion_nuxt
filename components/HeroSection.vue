@@ -1,21 +1,23 @@
 <template>
   <section class="min-h-[800px] max-lg:min-h-[500px] max-md:min-h-[400px] justify-end max-md:justify-center px-60 max-lg:px-8 max-md:px-4 py-[150px] max-lg:py-20 max-md:py-16 flex flex-col items-start relative self-stretch w-full overflow-hidden">
-    <!-- Background SVG -->
+    <!-- Background GIF -->
     <img
       class="absolute w-full h-full top-0 left-0 object-cover"
       alt="AI background"
-      src="/images/mn5gtr03DZ8elR/bg-2.png"
+      src="/kling_20260401_作品_外圈箭头旋转_中间的_2644_0.gif"
     />
 
     <!-- Hero content -->
     <div class="inline-flex flex-col max-w-[800px] items-start justify-end gap-2.5 max-md:gap-2 relative flex-[0_0_auto]">
-      <!-- Decorative image -->
-      <img
-        v-reveal="{ direction: 'left', delay: 100, duration: 1000, distance: '60px' }"
-        src="/20260330-094754.png"
-        alt=""
-        class="w-[280px] max-lg:w-[50%] max-md:w-[40%] h-auto mb-[50px] max-lg:mb-[20px] max-md:mb-0"
-      />
+      <!-- Decorative image: outer wrapper handles float, inner img handles reveal -->
+      <div class="diamond-float w-[280px] max-lg:w-[50%] max-md:w-[40%] mb-[50px] max-lg:mb-[20px] max-md:mb-0">
+        <img
+          v-reveal="{ direction: 'left', delay: 100, duration: 1000, distance: '60px' }"
+          src="/20260330-094754.png"
+          alt=""
+          class="w-full h-auto"
+        />
+      </div>
 
       <!-- Headline 1 -->
       <div class="h-[60px] max-md:h-auto items-start justify-center flex flex-col relative self-stretch w-full">
@@ -76,3 +78,14 @@
 
 <script setup lang="ts">
 </script>
+
+<style scoped>
+.diamond-float {
+  animation: diamond-float 3.5s ease-in-out infinite;
+}
+
+@keyframes diamond-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-18px); }
+}
+</style>

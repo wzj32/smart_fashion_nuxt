@@ -9,7 +9,7 @@
 
       <!-- Subtitle -->
       <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="flex flex-col items-center gap-[3px] pt-px pb-[18px] px-0 w-full">
-        <p class="font-medium text-slate-400 text-lg max-md:text-base text-center tracking-[0] leading-normal whitespace-nowrap max-md:whitespace-normal">
+        <p class="font-normal text-slate-400 text-lg max-md:text-base text-center tracking-[0] leading-normal whitespace-nowrap max-md:whitespace-normal">
           無論是技術諮詢還是專案開發，我們都樂意與您分享經驗。
         </p>
       </div>

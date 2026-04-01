@@ -12,9 +12,9 @@
         @mouseenter="hoveredIndex = index"
         @mouseleave="hoveredIndex = -1"
       >
-        <!-- Gradient border overlay -->
+        <!-- Gradient border overlay: hidden by default, shown on hover -->
         <div
-          class="absolute inset-0 rounded-[10px] pointer-events-none z-[1]"
+          class="absolute inset-0 rounded-[10px] pointer-events-none z-[1] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style="padding: 1px; background: linear-gradient(180deg, rgba(226,232,240,0.6) 0%, rgba(148,163,184,0.12) 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;"
         />
 
