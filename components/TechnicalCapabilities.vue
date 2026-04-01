@@ -123,8 +123,8 @@
       </div>
 
       <!-- CTA subtitle -->
-      <div class="relative z-10 flex flex-col max-w-[600px] w-full items-center pb-[17.79px]">
-        <p class="font-normal text-slate-400 text-lg max-md:text-base text-center leading-[28.8px] tracking-[0] font-inter">
+      <div class="relative z-10 flex flex-col w-full items-center pb-[17.79px]">
+        <p class="font-normal text-slate-400 text-base max-md:text-sm text-center leading-[28.8px] tracking-[0] font-inter whitespace-nowrap max-md:whitespace-normal">
           從概念到落地，我們是您最值得信賴的技術夥伴。立即預約，開啟高效開發之旅。
         </p>
       </div>

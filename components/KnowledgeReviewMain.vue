@@ -4,44 +4,23 @@
     <div class="flex flex-col items-center gap-6 px-0 py-[0px] relative self-stretch w-full">
       <!-- Hero card container -->
       <div class="flex flex-col items-center gap-20 max-lg:gap-10 max-md:gap-6 relative self-stretch w-full rounded-lg border border-solid border-[#00000014]">
-        <!-- Hero banner: 左下角破角 -->
+        <!-- Hero banner wrapper -->
         <div class="relative w-full">
-          <!-- Background frame -->
+          <!-- Hero image with clip-path -->
           <div
-            class="relative w-full h-[560px] max-lg:h-[400px] max-md:h-[260px] rounded-[20px] overflow-hidden"
-            style="background: linear-gradient(135deg, #0d1117 0%, #1a2840 55%, #0d1117 100%)"
-          >
-            <!-- Right side glow -->
-            <div class="absolute right-0 top-0 w-1/2 h-full pointer-events-none"
-              style="background: radial-gradient(ellipse at 85% 50%, rgba(124,58,237,0.25) 0%, transparent 65%)" />
-          </div>
-
-          <!-- Breaking image: left side, extends 64px below frame -->
-          <img
-            class="absolute left-0 bottom-[-64px] max-md:bottom-0 w-[62%] max-md:w-full h-[calc(100%+64px)] max-md:h-full object-cover rounded-tl-[20px] rounded-bl-[20px]"
-            :src="caseData.heroImage"
+            class="relative w-full h-[600px] max-lg:h-[400px] max-md:h-[250px] bg-cover bg-center hero-banner-clip"
+            :style="{ backgroundImage: `url(${caseData.heroImage})` }"
           />
 
-          <!-- Blend: right edge of image into background -->
-          <div
-            class="absolute left-[42%] bottom-[-64px] max-md:hidden w-[22%] h-[calc(100%+64px)] pointer-events-none"
-            style="background: linear-gradient(to right, transparent 0%, #0d1117 100%)"
-          />
-
-          <!-- Cyan circle -->
-          <div class="absolute bottom-[-24px] max-md:hidden left-[37px] w-[140px] h-[140px] bg-cyan-500 rounded-full z-20" />
+          <!-- Cyan circle: centered on the midpoint of the diagonal cut -->
+          <!-- Desktop cut=160px → midpoint=(80,80 from bottom), circle r=70 → left=10, bottom=10 -->
+          <!-- Tablet  cut=110px → midpoint=(55,55 from bottom), circle r=55 → left=0,  bottom=0  -->
+          <!-- Mobile  cut=70px  → midpoint=(35,35 from bottom), circle r=40 → left=0,  bottom=0  (small) -->
+          <div class="absolute bottom-[10px] max-lg:bottom-0 max-md:bottom-0 left-[10px] max-lg:left-0 max-md:left-0 w-[140px] max-lg:w-[110px] max-md:w-[80px] h-[140px] max-lg:h-[110px] max-md:h-[80px] bg-cyan-500 rounded-full z-10" />
           <!-- Label -->
-          <div class="absolute bottom-[28px] max-md:hidden left-[47px] z-30 h-9 flex items-center font-medium text-white text-3xl tracking-[0] leading-[normal] whitespace-nowrap">
+          <div class="absolute bottom-[62px] max-lg:bottom-[45px] max-md:bottom-[30px] left-[20px] max-lg:left-[10px] max-md:left-[8px] z-20 h-9 flex items-center font-medium text-white text-3xl max-lg:text-2xl max-md:text-lg tracking-[0] leading-[normal] whitespace-nowrap">
             {{ caseData.heroLabel }}
           </div>
-
-          <!-- Mobile: label inside frame -->
-          <div class="absolute bottom-[20px] left-[20px] md:hidden z-30 h-9 flex items-center font-medium text-white text-xl tracking-[0] leading-[normal] whitespace-nowrap">
-            {{ caseData.heroLabel }}
-          </div>
-
-          <!-- Bottom spacer for breaking image -->
-          <div class="h-[64px] max-md:h-0" />
         </div>
 
         <!-- Title + meta info row -->
@@ -265,8 +244,8 @@
          </div>
 
          <!-- Subtitle -->
-         <div class="relative flex flex-col max-w-[600px] w-full items-center z-10">
-           <p class="self-stretch font-normal text-slate-400 text-lg max-md:text-base text-center tracking-[0] leading-[28.8px]">
+         <div class="relative flex flex-col w-full items-center z-10">
+           <p class="font-normal text-slate-400 text-base max-md:text-sm text-center tracking-[0] leading-[28.8px] whitespace-nowrap max-md:whitespace-normal">
              從概念到落地，我們是您最值得信賴的技術夥伴。立即預約，開啟高效開發之旅。
            </p>
          </div>
@@ -306,6 +285,26 @@ const activeSolution = computed(
 </script>
 
 <style scoped>
+/* Hero banner: bottom-left corner cut */
+.hero-banner-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 160px 100%, 0 calc(100% - 160px));
+  border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+  .hero-banner-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 110px 100%, 0 calc(100% - 110px));
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 70px 100%, 0 calc(100% - 70px));
+    border-radius: 12px;
+  }
+}
+
 .group:hover .stat-value {
   background: linear-gradient(135deg, #7c3aed 0%, #ffffff 50%, #3b82f6 100%) !important;
   -webkit-background-clip: text !important;
