@@ -1,10 +1,12 @@
 <template>
-  <section class="min-h-[800px] max-lg:min-h-[500px] max-md:min-h-[400px] justify-end max-md:justify-center px-60 max-lg:px-8 max-md:px-4 py-[150px] max-lg:py-20 max-md:py-16 flex flex-col items-start relative self-stretch w-full overflow-hidden">
+  <section class="min-h-[800px] max-lg:min-h-[500px] max-md:min-h-[400px] justify-end max-md:justify-center px-60 max-lg:px-8 max-md:px-4 py-[150px] max-lg:py-20 max-md:py-16 flex flex-col items-start relative self-stretch w-full overflow-hidden" style="background-color: #050d1a;">
     <!-- Background GIF -->
     <img
       class="absolute w-full h-full top-0 left-0 object-cover"
       alt="AI background"
-      src="/kling_20260401_作品_外圈箭头旋转_中间的_2644_0.gif"
+      src="/kling.gif"
+      fetchpriority="high"
+      decoding="async"
     />
 
     <!-- Hero content -->
