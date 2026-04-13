@@ -46,7 +46,7 @@
 <script setup lang="ts">
 const statisticsData = [
   {
-    value: 12,
+    value: 6,
     suffix: '+',
     label: '年開發經驗',
     imgSrc: '/images/mn5gtr03DZ8elR/mask-group.png',

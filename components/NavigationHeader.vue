@@ -8,15 +8,10 @@
         <!-- Logo -->
         <NuxtLink to="/" class="inline-flex items-center gap-3 flex-shrink-0">
           <img
-            class="w-8 h-8 transition-transform duration-300 hover:rotate-12"
+            class="h-10 w-auto transition-transform duration-300 hover:rotate-12"
             alt="Background"
-            src="/images/mn6tdh0s8MHj5j/background.svg"
+            src="/logo.png"
           />
-          <span
-            class="flex items-center h-8 font-normal text-slate-50 text-xl tracking-[0] leading-8 whitespace-nowrap"
-          >
-            智慧時尚
-          </span>
         </NuxtLink>
 
         <!-- Desktop Navigation links + CTA button -->
@@ -39,7 +34,7 @@
           <NuxtLink
             to="/contact"
             class="h-auto inline-flex items-center justify-center pt-[7px] pb-[8.39px] px-6 rounded-md border-none hover-glow cursor-pointer no-underline"
-            style="background: linear-gradient(160deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%)"
+            style="background: linear-gradient(160deg, rgba(124,58,237,1) 0%, #194A9E 100%)"
           >
             <span
               class="flex items-center justify-center w-14 h-[23px] font-normal text-white text-sm text-center tracking-[0] leading-[22.4px] whitespace-nowrap"
@@ -96,7 +91,7 @@
         <NuxtLink
           to="/contact"
           class="mt-2 h-auto inline-flex items-center justify-center py-2 px-6 rounded-md border-none hover-glow cursor-pointer no-underline"
-          style="background: linear-gradient(160deg, rgba(124,58,237,1) 0%, rgba(59,130,246,1) 100%)"
+          style="background: linear-gradient(160deg, rgba(124,58,237,1) 0%, #194A9E 100%)"
           @click="mobileMenuOpen = false"
         >
           <span class="font-normal text-white text-base text-center tracking-[0] leading-[22.4px] whitespace-nowrap">
@@ -117,7 +112,7 @@ const isScrolled = ref(false)
 const navLinks = [
   { label: '首頁', to: '/' },
   { label: '關於我們', to: '/about' },
-  { label: '作品案例', to: '/cases' },
+  { label: '精選案例', to: '/cases' },
   { label: '技術能力', to: '/technology' },
 ]
 

@@ -18,7 +18,7 @@
           <!-- Mobile  cut=70px  → midpoint=(35,35 from bottom), circle r=40 → left=0,  bottom=0  (small) -->
           <div class="absolute bottom-[10px] max-lg:bottom-0 max-md:bottom-0 left-[10px] max-lg:left-0 max-md:left-0 w-[140px] max-lg:w-[110px] max-md:w-[80px] h-[140px] max-lg:h-[110px] max-md:h-[80px] bg-cyan-500 rounded-full z-10" />
           <!-- Label -->
-          <div class="absolute bottom-[62px] max-lg:bottom-[45px] max-md:bottom-[30px] left-[20px] max-lg:left-[10px] max-md:left-[8px] z-20 h-9 flex items-center font-medium text-white text-3xl max-lg:text-2xl max-md:text-lg tracking-[0] leading-[normal] whitespace-nowrap">
+          <div class="absolute bottom-[10px] max-lg:bottom-0 max-md:bottom-0 left-[10px] max-lg:left-0 max-md:left-0 w-[140px] max-lg:w-[110px] max-md:w-[80px] h-[140px] max-lg:h-[110px] max-md:h-[80px] z-20 flex items-center justify-center font-medium text-white text-3xl max-lg:text-2xl max-md:text-lg tracking-[0] leading-[normal]">
             {{ caseData.heroLabel }}
           </div>
         </div>
@@ -111,7 +111,6 @@
               class="flex items-center gap-2 font-medium tracking-[0] leading-[25.6px] transition-colors duration-300"
               :class="activeSolutionId === item.id ? 'text-white text-xl max-md:text-base' : 'text-slate-300 text-base'"
             >
-              <img v-if="activeSolutionId === item.id" src="/images/mn6tdh0s8MHj5j/background.svg" class="w-5 h-5" alt="icon" />
               {{ item.title }}
             </span>
             <span
