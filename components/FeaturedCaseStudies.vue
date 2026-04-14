@@ -43,7 +43,29 @@
     </div>
 
     <!-- Gallery Section -->
-    <div class="relative w-full overflow-hidden max-md:px-4">
+    <div class="relative w-full overflow-hidden max-md:px-4 group/gallery">
+      <!-- Left arrow -->
+      <button
+        class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-slate-500 bg-[#0b1121cc] backdrop-blur-sm cursor-pointer transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 hover:border-violet-500 hover:scale-110 active:scale-95 max-md:hidden"
+        @click="goLeft"
+        aria-label="向左"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.5 15L7.5 10L12.5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Right arrow -->
+      <button
+        class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-slate-500 bg-[#0b1121cc] backdrop-blur-sm cursor-pointer transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 hover:border-violet-500 hover:scale-110 active:scale-95 max-md:hidden"
+        @click="goRight"
+        aria-label="向右"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.5 5L12.5 10L7.5 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
       <TransitionGroup
         tag="div"
         name="card-slide"
@@ -119,35 +141,23 @@
         </div>
       </div>
 
-      <!-- Progress bar + navigation arrows -->
-      <div class="flex items-center justify-center w-full gap-6 max-md:gap-3 mt-8">
-        <!-- Left arrow -->
+      <!-- Mobile navigation arrows -->
+      <div class="flex items-center justify-center w-full gap-4 mt-6 md:hidden">
         <button
-          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent hover:border-violet-500"
+          class="w-10 h-10 flex-shrink-0 cursor-pointer active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent"
           @click="goLeft"
           aria-label="向左"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 15L7.5 10L12.5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-
-        <!-- Progress bar -->
-        <div class="relative w-[380px] max-md:flex-1 h-0.5 flex-shrink-0 max-md:flex-shrink">
-          <div class="w-full h-0.5 bg-slate-500 rounded-[10px]" />
-          <div
-            class="absolute top-0 h-0.5 bg-cyan-500 rounded-[10px] transition-all duration-[400ms] ease-in-out"
-            :style="{ width: (100 / TOTAL) + '%', left: (currentPage * 100 / TOTAL) + '%' }"
-          />
-        </div>
-
-        <!-- Right arrow -->
         <button
-          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent hover:border-violet-500"
+          class="w-10 h-10 flex-shrink-0 cursor-pointer active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent"
           @click="goRight"
           aria-label="向右"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.5 5L12.5 10L7.5 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
@@ -229,7 +239,7 @@ const allGalleryImages = [
     caseId: 'ai-customer-service',
   },
   {
-    src: '/images/mn6sgmdo6ocCMY/rectangle-45.png',
+    src: '/IM.jpg',
     alt: '即時通訊',
     className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
     title: 'IM SaaS 即時通訊平台',
@@ -265,7 +275,7 @@ const allGalleryImages = [
     caseId: 'wifi-rental',
   },
   {
-    src: '/images/mn6tdh0s8MHj5j/rectangle-48.png',
+    src: '/wifi.jpg',
     alt: 'GLOBAL WiFi',
     className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
     title: 'GLOBAL WiFi',
@@ -274,22 +284,14 @@ const allGalleryImages = [
     caseId: 'global-wifi',
   },
   {
-    src: '/images/mn6tdh0s8MHj5j/rectangle-48.png',
-    alt: 'AI 教育訓練模擬系統',
-    className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
-    title: 'AI 教育訓練模擬系統',
-    description: '透過大語言模型創建虛擬角色，讓學員進行逼真的互動式培訓，培訓成本降低 50%，練習機會增加 300%',
-    tabs: ['all', 'ai'],
-    caseId: 'edu-simulation',
-  },
-  {
-    src: '/images/mn6tdh0s8MHj5j/rectangle-48.png',
-    alt: '雲端架構設計',
-    className: 'mt-[70px] flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
-    title: '雲端架構設計',
-    description: '為企業打造高效能、可擴展的雲端基礎架構，結合混合雲、微服務與多層安全防護，系統效能提升 200%',
-    tabs: ['all', 'enterprise'],
-    caseId: 'cloud-architecture',
+    src: '',
+    alt: '',
+    className: 'flex-1 min-w-0 h-[400px] rounded-[20px]',
+    title: '',
+    description: '',
+    tabs: ['all', 'ai', 'webapp', 'enterprise'],
+    caseId: 'placeholder-2',
+    isPlaceholder: true,
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-43.png',
@@ -339,7 +341,6 @@ const displayedImages = computed(() =>
   galleryImages.value.slice(windowStart.value, windowStart.value + PAGE_SIZE)
 )
 
-const TOTAL = computed(() => totalPages.value)
 
 // flush: 'sync' 確保 activeIndex 在下次渲染前就已重置
 watch(activeTab, () => {
