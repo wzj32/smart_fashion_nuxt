@@ -8,13 +8,10 @@
           <!-- Logo -->
           <NuxtLink to="/" class="flex items-center gap-3 self-stretch w-full no-underline">
             <img
-              class="w-8 h-8"
+              class="h-[42px] w-auto"
               alt="Background"
-              src="/images/mn6tdh0s8MHj5j/background-1.svg"
+              src="/logo.png"
             />
-            <span class="flex items-center w-20 h-8 font-medium text-slate-50 text-xl tracking-[0] leading-8 whitespace-nowrap">
-              智慧時尚
-            </span>
           </NuxtLink>
 
           <!-- Description -->
@@ -67,7 +64,7 @@
               src="/images/mn6tdh0s8MHj5j/iconify-icon-margin.svg"
             />
             <span class="font-normal text-slate-400 text-sm tracking-[0] leading-[22.4px] whitespace-nowrap">
-              (02) 2331-2907
+              02-2331-2909
             </span>
           </div>
 
@@ -79,8 +76,7 @@
               src="/images/mn6tdh0s8MHj5j/iconify-icon-margin-1.svg"
             />
             <address class="not-italic font-normal text-slate-400 text-sm tracking-[0] leading-[22.4px]">
-              台北市信義區基隆路二段51號<br />
-              5樓之3
+              臺北市大安區信義路4段296號15樓
             </address>
           </div>
         </div>
@@ -128,7 +124,7 @@ const quickLinks = [
   { label: '首頁', to: '/' },
   { label: '關於我們', to: '/about' },
   // { label: '服務項目', to: '/services' },
-  { label: '作品案例', to: '/cases' },
+  { label: '精選案例', to: '/cases' },
   { label: '技術能力', to: '/technology' },
   { label: '聯絡我們', to: '/contact' },
 ]

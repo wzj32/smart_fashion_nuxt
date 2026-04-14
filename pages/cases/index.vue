@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-useHead({ title: '作品案例 - 智慧時尚 Smart Fashion' })
+useHead({ title: '精選案例 - 智慧時尚 Smart Fashion' })
 </script>

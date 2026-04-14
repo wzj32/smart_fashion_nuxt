@@ -43,31 +43,69 @@
     </div>
 
     <!-- Gallery Section -->
-    <div class="relative w-full overflow-hidden max-md:px-4">
-      <div class="flex gap-5 max-md:gap-3 justify-center w-full max-[1400px]:flex-wrap max-[1400px]:max-w-[700px] max-[1400px]:mx-auto max-md:max-w-full">
+    <div class="relative w-full overflow-hidden max-md:px-4 group/gallery">
+      <!-- Left arrow -->
+      <button
+        class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-slate-500 bg-[#0b1121cc] backdrop-blur-sm cursor-pointer transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 hover:border-violet-500 hover:scale-110 active:scale-95 max-md:hidden"
+        @click="goLeft"
+        aria-label="向左"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.5 15L7.5 10L12.5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Right arrow -->
+      <button
+        class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full border border-slate-500 bg-[#0b1121cc] backdrop-blur-sm cursor-pointer transition-all duration-300 opacity-0 group-hover/gallery:opacity-100 hover:border-violet-500 hover:scale-110 active:scale-95 max-md:hidden"
+        @click="goRight"
+        aria-label="向右"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.5 5L12.5 10L7.5 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <TransitionGroup
+        tag="div"
+        name="card-slide"
+        class="flex gap-5 max-md:gap-3 justify-center w-full max-[1400px]:flex-wrap max-[1400px]:max-w-[700px] max-[1400px]:mx-auto max-md:max-w-full"
+      >
         <div
-          v-for="(image, index) in galleryImages"
-          :key="index"
+          v-for="(image, i) in displayedImages"
+          :key="image.caseId"
           :class="[
             image.className,
             'max-[1400px]:!mt-0 max-[1400px]:w-[calc(50%-10px)] max-md:w-full max-[1400px]:!flex-none',
             'group overflow-hidden transition-all duration-500 ease-out cursor-pointer',
-            activeIndex === index
-              ? '-translate-y-4 max-[1400px]:translate-y-0 shadow-[0_24px_48px_rgba(124,58,237,0.35)]'
-              : 'hover:-translate-y-2 hover:shadow-[0_12px_32px_rgba(124,58,237,0.2)]',
+            image.isPlaceholder
+              ? 'border border-dashed border-slate-600 bg-[#ffffff05] flex items-center justify-center'
+              : activeIndex === windowStart + i
+                ? '-translate-y-4 max-[1400px]:translate-y-0 shadow-[0_24px_48px_rgba(124,58,237,0.35)]'
+                : 'hover:-translate-y-2 hover:shadow-[0_12px_32px_rgba(124,58,237,0.2)]',
           ]"
-          @click="activeIndex = index"
+          @click="!image.isPlaceholder && (activeIndex = windowStart + i)"
         >
+          <template v-if="image.isPlaceholder">
+            <div class="flex flex-col items-center gap-3 text-slate-500">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <span class="text-sm font-normal">敬請期待</span>
+            </div>
+          </template>
           <img
+            v-else
             :class="[
               'w-full h-full object-cover transition-transform duration-500 ease-out',
-              activeIndex === index ? 'scale-105' : 'group-hover:scale-105',
+              activeIndex === windowStart + i ? 'scale-105' : 'group-hover:scale-105',
             ]"
             :alt="image.alt"
             :src="image.src"
           />
         </div>
-      </div>
+      </TransitionGroup>
     </div>
 
     <!-- Case Study Info + Navigation -->
@@ -103,35 +141,23 @@
         </div>
       </div>
 
-      <!-- Progress bar + navigation arrows -->
-      <div class="flex items-center justify-center w-full gap-6 max-md:gap-3 mt-8">
-        <!-- Left arrow -->
+      <!-- Mobile navigation arrows -->
+      <div class="flex items-center justify-center w-full gap-4 mt-6 md:hidden">
         <button
-          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent hover:border-violet-500"
+          class="w-10 h-10 flex-shrink-0 cursor-pointer active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent"
           @click="goLeft"
           aria-label="向左"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.5 15L7.5 10L12.5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-
-        <!-- Progress bar -->
-        <div class="relative w-[380px] max-md:flex-1 h-0.5 flex-shrink-0 max-md:flex-shrink">
-          <div class="w-full h-0.5 bg-slate-500 rounded-[10px]" />
-          <div
-            class="absolute top-0 h-0.5 bg-cyan-500 rounded-[10px] transition-all duration-[400ms] ease-in-out"
-            :style="{ width: (100 / TOTAL) + '%', left: (activeIndex * 100 / TOTAL) + '%' }"
-          />
-        </div>
-
-        <!-- Right arrow -->
         <button
-          class="w-12 h-12 max-md:w-10 max-md:h-10 flex-shrink-0 cursor-pointer hover:opacity-80 active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent hover:border-violet-500"
+          class="w-10 h-10 flex-shrink-0 cursor-pointer active:scale-90 transition-all duration-200 rounded-full border border-slate-500 flex items-center justify-center bg-transparent"
           @click="goRight"
           aria-label="向右"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.5 5L12.5 10L7.5 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
@@ -195,28 +221,28 @@ const allGalleryImages = [
     caseId: 'content-review',
   },
   {
-    src: '/images/mn6sgmdo6ocCMY/rectangle-43.png',
-    alt: '企業架構',
+    src: '/shouyi.jpg',
+    alt: 'AI 輔助獸醫系統',
     className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
-    title: '企業系統架構優化',
-    description: '針對企業現有系統進行全面健檢，提供混合雲佈署與高效能架構設計，確保系統穩定擴展',
-    tabs: ['all', 'enterprise'],
-    caseId: 'enterprise-arch',
+    title: 'AI 輔助獸醫系統',
+    description: '運用 AI 技術輔助寵物診斷，整合智能病歷預覽、症狀診斷輔助與飼主知識解釋器，提升獸醫診療效率',
+    tabs: ['all', 'ai'],
+    caseId: 'vet-ai',
   },
   {
-    src: '/images/mn6sgmdo6ocCMY/rectangle-44.png',
+    src: '/24_7.jpg',
     alt: 'AI 客服',
     className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
-    title: 'AI 智能客服平台',
+    title: '24/7 AI 智能客服',
     description: '整合大語言模型打造智能客服系統，自動處理常見問題，降低人工客服成本，提升客戶滿意度',
     tabs: ['all', 'ai', 'webapp'],
     caseId: 'ai-customer-service',
   },
   {
-    src: '/images/mn6sgmdo6ocCMY/rectangle-45.png',
+    src: '/IM.jpg',
     alt: '即時通訊',
     className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
-    title: '即時通訊企業解決方案',
+    title: 'IM SaaS 即時通訊平台',
     description: '提供完整 SDK 與預建 UI 組件，快速整合聊天、群組、檔案共享等功能，支援雲端與私有化部署',
     tabs: ['all', 'webapp', 'enterprise'],
     caseId: 'realtime-chat',
@@ -229,6 +255,43 @@ const allGalleryImages = [
     description: '打通線上線下消費場景，支援掃碼購、門店自取等創新功能，整合會員體系與個性化推薦服務',
     tabs: ['mobileapp'],
     caseId: 'content-review',
+  },
+  {
+    src: '/yupenglai.jpeg',
+    alt: '興蓬萊台菜餐廳',
+    className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
+    title: '興蓬萊',
+    description: '為米其林餐盤推薦台菜餐廳打造數位化平台，整合線上訂位、數位菜單、電商購物與多語言介面，全面提升品牌數位競爭力',
+    tabs: ['all', 'webapp'],
+    caseId: 'hsing-penglai',
+  },
+  {
+    src: '/zujie.png',
+    alt: '台灣租借WiFi',
+    className: 'flex-1 min-w-0 h-[400px] rounded-[20px] object-cover',
+    title: '台灣租借WiFi',
+    description: '為行動 WiFi 租借服務商打造線上預訂平台，整合多元領還方式與自動化訂單管理，集團累計服務用戶突破 2,000 萬',
+    tabs: ['all'],
+    caseId: 'wifi-rental',
+  },
+  {
+    src: '/wifi.jpg',
+    alt: 'GLOBAL WiFi',
+    className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
+    title: 'GLOBAL WiFi',
+    description: '為出境旅遊 WiFi 租借品牌打造多語言預訂平台，整合機場、宅配、門市等彈性取還貨渠道，提升旅客訂購體驗',
+    tabs: ['all', 'webapp'],
+    caseId: 'global-wifi',
+  },
+  {
+    src: '',
+    alt: '',
+    className: 'flex-1 min-w-0 h-[400px] rounded-[20px]',
+    title: '',
+    description: '',
+    tabs: ['all', 'ai', 'webapp', 'enterprise'],
+    caseId: 'placeholder-2',
+    isPlaceholder: true,
   },
   {
     src: '/images/mn6sgmdo6ocCMY/rectangle-43.png',
@@ -266,7 +329,18 @@ const galleryImages = computed(() =>
   allGalleryImages.filter(img => img.tabs.includes(activeTab.value))
 )
 
-const TOTAL = computed(() => galleryImages.value.length)
+const PAGE_SIZE = 4
+
+const currentPage = computed(() => Math.floor(activeIndex.value / PAGE_SIZE))
+
+const totalPages = computed(() => Math.ceil(galleryImages.value.length / PAGE_SIZE))
+
+const windowStart = computed(() => currentPage.value * PAGE_SIZE)
+
+const displayedImages = computed(() =>
+  galleryImages.value.slice(windowStart.value, windowStart.value + PAGE_SIZE)
+)
+
 
 // flush: 'sync' 確保 activeIndex 在下次渲染前就已重置
 watch(activeTab, () => {
@@ -291,18 +365,18 @@ const spacerWidth = computed(() => {
   if (windowWidth.value <= 768) {
     return '0px'
   }
+  const posInWindow = activeIndex.value - windowStart.value
   if (windowWidth.value <= 1400) {
-    const col = activeIndex.value % 2
+    const col = posInWindow % 2
     return col === 0 ? '0px' : 'calc(50%)'
   }
-  // 桌面：根據當前顯示圖片數量動態計算步距
-  const n = TOTAL.value
-  const contentWidth = windowWidth.value - 480 // px-60 兩側 = 240px * 2
+  // 桌面：根據視窗內位置計算步距
+  const n = displayedImages.value.length
+  const contentWidth = windowWidth.value - 480
   const imageWidth = (contentWidth - (n - 1) * 20) / n
   const stride = imageWidth + 20
-  // 確保 info 區塊(320px)不超出容器右邊界
   const maxSpacer = Math.max(0, contentWidth - 320)
-  return `${Math.min(activeIndex.value * stride, maxSpacer)}px`
+  return `${Math.min(posInWindow * stride, maxSpacer)}px`
 })
 
 const infoMarginTop = computed(() => {
@@ -313,9 +387,28 @@ const infoMarginTop = computed(() => {
 })
 
 function goLeft() {
-  activeIndex.value = (activeIndex.value - 1 + TOTAL.value) % TOTAL.value
+  const prevPage = (currentPage.value - 1 + totalPages.value) % totalPages.value
+  activeIndex.value = prevPage * PAGE_SIZE
 }
 function goRight() {
-  activeIndex.value = (activeIndex.value + 1) % TOTAL.value
+  const nextPage = (currentPage.value + 1) % totalPages.value
+  activeIndex.value = nextPage * PAGE_SIZE
 }
 </script>
+
+<style scoped>
+.card-slide-enter-active {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.card-slide-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.card-slide-enter-from {
+  opacity: 0;
+  transform: translateX(40px) scale(0.96);
+}
+.card-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-40px) scale(0.96);
+}
+</style>

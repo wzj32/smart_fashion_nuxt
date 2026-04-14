@@ -3,20 +3,20 @@ const contactInfoItems = [
   {
     icon: '/images/mn6wtbljcCQQNA/overlay-border-1.svg',
     title: '電話諮詢',
-    detail: '(02) 2331-2907',
+    detail: '02-2331-2909',
     subDetail: '週一至週五 09:30 - 18:30',
     hasSubDetail: true,
   },
   {
     icon: '/images/mn6wtbljcCQQNA/overlay-border.svg',
     title: '公司地址',
-    detail: '台北市信義區基隆路二段 51 號 5 樓之 3',
+    detail: '臺北市大安區信義路4段296號15樓',
     hasSubDetail: false,
   },
   {
     icon: '/images/mn6wtbljcCQQNA/overlay-border-2.svg',
     title: '電子郵件',
-    detail: 'contact@smartfashion.com.tw',
+    detail: 'service@hising.com.tw',
     hasSubDetail: false,
   },
 ]

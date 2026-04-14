@@ -12,7 +12,7 @@
         <!-- Since 2011 Badge -->
         <div v-reveal="{ direction: 'up', delay: 200, duration: 800 }" class="inline-flex items-center justify-center px-3 py-1 bg-[#ffffff33] rounded-xl border border-solid border-[#7c3aed4c]">
           <span class="font-medium text-violet-400 text-[13px] text-center leading-[20.8px] whitespace-nowrap">
-            Since 2011
+            Since 2020
           </span>
         </div>
 
@@ -54,7 +54,7 @@
           <!-- 12+ 年開發經驗 -->
           <div v-reveal="{ direction: 'up', delay: 0, duration: 800 }" class="stat-item flex flex-col h-[140px] items-center justify-center gap-[7px] absolute top-64 left-[25%] right-[50%] max-lg:relative max-lg:top-auto max-lg:left-auto max-lg:right-auto max-lg:basis-[40%] max-md:basis-full cursor-default">
             <div class="stat-number relative flex items-center justify-center w-[186px] h-[93px] text-transparent text-[80px] max-md:text-[60px] text-center leading-[57.6px]" style="background: linear-gradient(176deg,#fff 0%,#94a3b8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-family:'DIN-Black',Helvetica">
-              12+
+              6+
             </div>
             <div class="relative flex items-center justify-center w-[106px] h-[23px] font-normal text-slate-400 text-base text-center leading-[22.4px] whitespace-nowrap">
               年開發經驗
