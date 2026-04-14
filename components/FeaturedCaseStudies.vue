@@ -230,7 +230,7 @@ const allGalleryImages = [
     caseId: 'vet-ai',
   },
   {
-    src: '/24:7.jpg',
+    src: '/24_7.jpg',
     alt: 'AI 客服',
     className: 'mt-20 flex-1 min-w-0 h-80 rounded-[20px] object-cover',
     title: '24/7 AI 智能客服',
